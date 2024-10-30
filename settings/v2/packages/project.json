@@ -1,0 +1,22 @@
+{
+  "__version__": "1.0.6",
+  "custom_joint_texture_layouts": [],
+  "script": {
+    "preserveSymlinks": true
+  },
+  "general": {
+    "designResolution": {
+      "width": 720,
+      "height": 1280,
+      "fitHeight": true,
+      "fitWidth": false
+    },
+    "renderPipeline": "fd8ec536-a354-4a17-9c74-4f3883c378c8"
+  },
+  "layer": [
+    {
+      "name": "VFX",
+      "value": 524288
+    }
+  ]
+}

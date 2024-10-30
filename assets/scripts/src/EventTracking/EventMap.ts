@@ -1,0 +1,1 @@
+export type EventMap = "pl43_home_loaded" | "pl43_home_click" | "pl43_game_start" | "pl43_game_step_1_end" | "pl43_game_step_2_loaded" | "pl43_game_step_2_play" | "pl43_game_step_3_play" | "pl43_game_step_4_play" | "pl43_game_step_5_play" | "pl43_game_step_6_play" | "pl43_game_step_result" | "pl43_game_step_cta_click";

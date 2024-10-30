@@ -1,0 +1,46 @@
+{
+    "$schema": "./@types/schema/package/index.json",
+    "package_version": 2,
+    "name": "init-cocos-project-template",
+    "version": "1.0.0",
+    "author": "Cocos Creator",
+    "editor": ">=3.8.3",
+    "scripts": {
+        "preinstall": "node ./scripts/preinstall.js",
+        "build": "tsc",
+        "watch": "tsc -w"
+    },
+    "description": "i18n:init-cocos-project-template.description",
+    "main": "./dist/main.js",
+    "devDependencies": {
+        "@cocos/creator-types": "^3.8.3",
+        "@types/node": "^18.17.1",
+        "typescript": "^4.3.4"
+    },
+    "contributions": {
+        "menu": [
+            {
+                "path": "Develop_TheOne",
+                "label": "Create Init",
+                "message": "create-script-prefab"
+            },
+            {
+                "path": "Develop_TheOne",
+                "label": "Build PlayableAds",
+                "message": "build-playable-ads"
+            }
+        ],
+        "messages": {
+            "create-script-prefab": {
+                "methods": [
+                    "createScriptAndPrefab"
+                ]
+            },
+            "build-playable-ads": {
+                "methods": [
+                    "buildPlayableAds"
+                ]
+            }
+        }
+    } 
+}

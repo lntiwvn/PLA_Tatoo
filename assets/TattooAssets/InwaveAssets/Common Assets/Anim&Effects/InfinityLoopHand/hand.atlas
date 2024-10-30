@@ -1,0 +1,20 @@
+
+hand.png
+size: 396,148
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Layer 1
+  rotate: false
+  xy: 314, 27
+  size: 80, 119
+  orig: 80, 119
+  offset: 0, 0
+  index: -1
+vocuc
+  rotate: false
+  xy: 2, 2
+  size: 310, 144
+  orig: 310, 144
+  offset: 0, 0
+  index: -1

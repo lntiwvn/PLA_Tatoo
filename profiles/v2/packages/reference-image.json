@@ -1,0 +1,345 @@
+{
+  "__version__": "1.0.0",
+  "config": {
+    "images": [
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 117
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_137\\Level_137.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_138\\Level_138.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_139\\Level_139.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_140\\Level_140.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_141\\Level_141.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_142\\Level_142.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_143\\Level_143.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_144\\Level_144.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_145\\Level_145.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_146\\Level_146.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_147\\Level_147.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_148\\Level_148.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_149\\Level_149.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_149\\Level_149.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_139\\Level_139.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_131\\Level_131.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_132\\Level_132.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_133\\Level_133.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_134\\Level_134.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_137\\Level_137.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_138\\Level_138.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_140\\Level_140.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_141\\Level_141.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_142\\Level_142.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_143\\Level_143.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_144\\Level_144.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_145\\Level_145.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_146\\Level_146.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_147\\Level_147.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_148\\Level_148.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_135\\Level_135.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      },
+      {
+        "path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png",
+        "x": 0,
+        "y": 0,
+        "sx": 1,
+        "sy": 1,
+        "opacity": 50
+      }
+    ],
+    "sceneUUID": {
+      "acbcfc6b-be5b-47a3-8547-3a27bd512762": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png"
+      },
+      "96200680-fecc-422a-b944-b4b811040285": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_137\\Level_137.png"
+      },
+      "1067f7d2-dbcc-4c66-b44b-71af206b141f": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_138\\Level_138.png"
+      },
+      "db7bc555-ba15-4143-a2b1-3604bf1234ae": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_139\\Level_139.png"
+      },
+      "738aefde-fd68-4a98-aa09-e94f47168c85": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_140\\Level_140.png"
+      },
+      "129cca96-e7a1-43dd-a080-5279023d6055": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_141\\Level_141.png"
+      },
+      "e0117c39-a766-4cc0-85cb-92194862494e": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_142\\Level_142.png"
+      },
+      "f352c39f-3dd4-4841-a365-3a28b5143593": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_143\\Level_143.png"
+      },
+      "a985c27d-5502-42ac-923d-b05b7233f487": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_144\\Level_144.png"
+      },
+      "7417f41a-9807-4de9-a22f-2045b43301c5": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_145\\Level_145.png"
+      },
+      "e3b0dd19-5647-4b83-9179-37fa0af0146e": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_146\\Level_146.png"
+      },
+      "cedfbcd1-8c0c-4b6c-b10b-7a1f1e5638e0": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_147\\Level_147.png"
+      },
+      "3bcfa470-25e8-411c-b25c-d49734430f70": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_148\\Level_148.png"
+      },
+      "11e51226-3dc4-4be0-b8bc-af8b6fe04014": {
+        "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_149\\Level_149.png"
+      },
+      "84e69d7d-344e-4be9-928c-fc06288207af": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_131\\Level_131.png"
+      },
+      "2df21f31-da05-47eb-9ac6-c82f85ad7d86": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_132\\Level_132.png"
+      },
+      "e79d2133-1913-44e6-8f53-4796364a8ae3": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_133\\Level_133.png"
+      },
+      "12fc1013-3820-4135-acbf-fcf52a27e4a2": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_135\\Level_135.png"
+      },
+      "4b171e11-e96d-4e5d-8c2b-feae01528799": {
+        "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_135\\Level_135.png"
+      },
+      "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c": {
+        "path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png"
+      }
+    },
+    "scene": "cc84ae57-d85b-4a4b-b848-00320af6ac43"
+  },
+  "show": false,
+  "root-path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136",
+  "opacity": 117
+}

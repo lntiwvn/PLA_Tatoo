@@ -1,0 +1,160 @@
+// Copyright (c) 2017-2020 Xiamen Yaji Software Co., Ltd.
+CCEffect %{
+  techniques:
+  - name: opaque
+    passes:
+    - vert: unlit-vs:vert
+      frag: unlit-fs:frag
+      blendState:
+        targets: &blend
+        - blend: true
+          blendSrc: src_alpha
+          blendDst: one_minus_src_alpha
+          blendSrcAlpha: src_alpha
+          blendDstAlpha: one_minus_src_alpha
+      rasterizerState:
+        cullMode: back
+      properties: &props
+        tilingOffset: { value: [1, 1, 0, 0] }
+        mainTex: { value: grey }
+        secTex: { value: grey }
+        mainColor:      { value: [1, 1, 1, 1], linear: true, editor: { type: color } }
+        angle: { value: 0, editor: { slide: true, range: [0, 180], step: 1 } }
+        warp: { value: 0, editor: { slide: true, range: [0, 10], step: 0.1 } }
+        warpPos: { value: 0, editor: { slide: true, range: [0, 1], step: 0.01 } }
+        downward: { value: 0, editor: { slide: true, range: [0, 1], step: 0.01 } }
+    - propertyIndex: 0
+      vert: unlit-vs:vert
+      frag: unlit-fs2:frag
+      blendState:
+        targets: *blend
+      rasterizerState:
+        cullMode: front
+      properties: *props
+}%
+
+CCProgram unlit-vs %{
+  precision highp float;
+  #include <legacy/input>
+  #include <builtin/uniforms/cc-global>
+  #include <legacy/local-batch>
+
+  #if USE_TEXTURE
+    out vec2 v_uv;
+    uniform TexCoords {
+      vec4 tilingOffset;
+    };
+  #endif
+
+  uniform ConstantVS {
+    float angle;
+    float warp;
+    float warpPos;
+    float downward;
+  };
+
+  float cubicIn(float k) {
+    return k * k * k;
+  }
+
+  vec4 vert () {
+    vec4 position;
+    CCVertInput(position);
+
+    mat4 matWorld;
+    CCGetWorldMatrix(matWorld);
+
+    #if USE_TEXTURE
+      v_uv = a_texCoord * tilingOffset.xy + tilingOffset.zw;
+      #if SAMPLE_FROM_RT
+        CC_HANDLE_RT_SAMPLE_FLIP(v_uv);
+      #endif
+    #endif
+
+    position += vec4(5, 0, 0, 0);
+    float r = radians(angle);
+    float s = sin(r);
+    float c = cos(r);
+
+    mat4 rotate = mat4(
+      c, s, 0, 0,
+      -s, c, 0, 0,
+      0, 0, 1, 0,
+      0, 0, 0, 1
+    );
+    float rangeF = clamp((1.0 - abs(90.0 - angle) / 90.0), 0.0, 1.0);
+    position.y += -warp * sin(position.x * 0.4 - warpPos * position.x) * rangeF;
+    position.x -= rangeF * position.x * downward;
+    position.z -= cubicIn(v_uv.x) * 3.0 * s;
+    position = rotate * position;
+    position += vec4(-5, 0, 0, 0);
+
+    return cc_matProj * (cc_matView * matWorld) * position;
+  }
+}%
+
+CCProgram unlit-fs %{
+  precision highp float;
+  #include <legacy/output-standard>
+
+  #if USE_TEXTURE
+    in vec2 v_uv;
+    uniform sampler2D mainTex;
+    uniform sampler2D secTex;
+  #endif
+
+  uniform Constant {
+    vec4 mainColor;
+  };
+
+  vec4 frag () {
+    vec4 o = mainColor;
+
+    #if USE_TEXTURE
+      vec2 uv0 = vec2(v_uv.x,v_uv.y);
+      // vec4 texColor = texture(mainTex, uv0);
+
+      vec4 mainColorTex1 = texture(mainTex, uv0);
+      vec4 mainColorTex2 = texture(secTex, uv0);
+
+      vec4 texColor = mix(mainColorTex2,vec4(0,0,0,0), mainColorTex1.a);
+      texColor.rgb = SRGBToLinear(texColor.rgb);
+      o *= texColor;
+    #endif
+
+    return CCFragOutput(o);
+  }
+}%
+
+CCProgram unlit-fs2 %{
+  precision highp float;
+  #include <legacy/output-standard>
+
+  #if USE_TEXTURE
+    in vec2 v_uv;
+    uniform sampler2D mainTex;
+    uniform sampler2D secTex;
+  #endif
+
+  uniform Constant {
+    vec4 mainColor;
+  };
+
+  vec4 frag () {
+    vec4 o = mainColor;
+
+    #if USE_TEXTURE
+      vec2 uv = vec2(v_uv.x,v_uv.y);
+      // vec4 texColor = texture(mainTex, uv);
+      vec4 mainColorTex1 = texture(mainTex, uv);
+      vec4 mainColorTex2 = texture(secTex, uv);
+
+      vec4 texColor = mix(mainColorTex2,vec4(0,0,0,0), mainColorTex1.a);
+
+      texColor.rgb = SRGBToLinear(texColor.rgb);
+      o *= texColor;
+    #endif
+
+    return CCFragOutput(o);
+  }
+}%

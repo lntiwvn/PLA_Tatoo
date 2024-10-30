@@ -1,0 +1,27 @@
+
+Effect.png
+size: 1024, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Circle A
+  rotate: false
+  xy: 796, 250
+  size: 157, 157
+  orig: 163, 163
+  offset: 3, 3
+  index: -1
+Circle B
+  rotate: false
+  xy: 409, 22
+  size: 385, 385
+  orig: 387, 387
+  offset: 1, 1
+  index: -1
+Circle LIGHT
+  rotate: false
+  xy: 2, 2
+  size: 405, 405
+  orig: 424, 424
+  offset: 10, 9
+  index: -1

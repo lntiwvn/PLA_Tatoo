@@ -1,0 +1,91 @@
+{
+  "__version__": "1.3.8",
+  "log": {
+    "level": 4
+  },
+  "common": {
+    "polyfills": {
+      "asyncFunctions": true
+    },
+    "buildPath": "project://build",
+    "outputName": "web-mobile",
+    "mainBundleCompressionType": "merge_dep",
+    "platform": "web-mobile",
+    "scenes": [
+      {
+        "url": "db://assets/Scene/Ads_1.scene",
+        "uuid": "cc84ae57-d85b-4a4b-b848-00320af6ac43"
+      }
+    ],
+    "nativeCodeBundleMode": "asmjs",
+    "startScene": "cc84ae57-d85b-4a4b-b848-00320af6ac43",
+    "useSplashScreen": false
+  },
+  "BuildTaskManager": {
+    "taskMap": {
+      "1726732905977": {
+        "type": "build",
+        "id": "1726732905977",
+        "progress": 1,
+        "state": "success",
+        "stage": "build",
+        "message": "10-30-2024 13:47:58 build success in 19 s!",
+        "detailMessage": "builder:build-project-total (18830ms)\r",
+        "options": {
+          "name": "CocosTattooShopsPLA",
+          "server": "",
+          "platform": "web-mobile",
+          "buildPath": "project://build",
+          "debug": false,
+          "md5Cache": false,
+          "skipCompressTexture": false,
+          "sourceMaps": false,
+          "overwriteProjectSettings": {
+            "includeModules": {
+              "gfx-webgl2": "on",
+              "physics": "inherit-project-setting",
+              "physics-2d": "inherit-project-setting"
+            },
+            "macroConfig": {
+              "cleanupImageCache": "inherit-project-setting"
+            }
+          },
+          "nativeCodeBundleMode": "asmjs",
+          "polyfills": {
+            "asyncFunctions": true
+          },
+          "experimentalEraseModules": false,
+          "startSceneAssetBundle": false,
+          "bundleConfigs": [],
+          "useBuiltinServer": false,
+          "mainBundleIsRemote": false,
+          "mainBundleCompressionType": "merge_dep",
+          "useSplashScreen": false,
+          "bundleCommonChunk": false,
+          "packAutoAtlas": true,
+          "startScene": "cc84ae57-d85b-4a4b-b848-00320af6ac43",
+          "outputName": "web-mobile",
+          "taskName": "web-mobile",
+          "scenes": [
+            {
+              "url": "db://assets/Scene/Ads_1.scene",
+              "uuid": "cc84ae57-d85b-4a4b-b848-00320af6ac43"
+            }
+          ],
+          "wasmCompressionMode": false,
+          "packages": {},
+          "__version__": "1.3.8",
+          "logDest": "project://temp/builder/log/web-mobile9-19-2024 15-01.log",
+          "md5CacheOptions": {
+            "excludes": [],
+            "includes": [],
+            "replaceOnly": [],
+            "handleTemplateMd5Link": true
+          }
+        },
+        "time": "10-30-2024 13:47:39",
+        "dirty": false
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "e22fe": {
+      "importer": "gltf-mesh",
+      "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287@e22fe",
+      "displayName": "",
+      "id": "e22fe",
+      "name": "pPlane1.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 480
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e7fbb": {
+      "importer": "gltf-animation",
+      "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287@e7fbb",
+      "displayName": "",
+      "id": "e7fbb",
+      "name": "PaperRoll_Cheo_Reverse.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.3333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "438fe": {
+      "importer": "gltf-skeleton",
+      "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287@438fe",
+      "displayName": "",
+      "id": "438fe",
+      "name": "UnnamedSkeleton.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 11
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8d883": {
+      "importer": "gltf-material",
+      "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287@8d883",
+      "displayName": "",
+      "id": "8d883",
+      "name": "lambert1.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cb713": {
+      "importer": "gltf-scene",
+      "uuid": "05ba738e-788f-4c9f-b6a6-2f2e79b93287@cb713",
+      "displayName": "",
+      "id": "cb713",
+      "name": "PaperRoll_Cheo_Reverse.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "PaperRoll_Cheo_Reverse",
+        "duration": 3.3333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "PaperRoll_Cheo_Reverse",
+            "from": 0,
+            "to": 3.3333332538604736,
+            "wrapMode": 2,
+            "previousId": "e7fbb"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "05ba738e-788f-4c9f-b6a6-2f2e79b93287@e22fe"
+      ],
+      "skeletons": [
+        "05ba738e-788f-4c9f-b6a6-2f2e79b93287@438fe"
+      ],
+      "textures": [],
+      "materials": [
+        "05ba738e-788f-4c9f-b6a6-2f2e79b93287@8d883"
+      ],
+      "scenes": [
+        "05ba738e-788f-4c9f-b6a6-2f2e79b93287@cb713"
+      ]
+    }
+  }
+}

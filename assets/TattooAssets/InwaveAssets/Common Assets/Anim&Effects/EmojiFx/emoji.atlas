@@ -1,0 +1,111 @@
+
+emoji.png
+size: 180, 272
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+H2O
+  rotate: false
+  xy: 140, 51
+  size: 35, 57
+  orig: 35, 57
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 154
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+cry_01
+  rotate: false
+  xy: 120, 48
+  size: 18, 60
+  orig: 18, 60
+  offset: 0, 0
+  index: -1
+cry_eye_02
+  rotate: true
+  xy: 102, 9
+  size: 25, 16
+  orig: 25, 16
+  offset: 0, 0
+  index: -1
+cry_eye_03
+  rotate: true
+  xy: 51, 4
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1
+cry_mouth
+  rotate: false
+  xy: 2, 2
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 120, 8
+  size: 38, 35
+  orig: 38, 35
+  offset: 0, 0
+  index: -1
+happy_eye
+  rotate: false
+  xy: 79, 8
+  size: 21, 26
+  orig: 21, 26
+  offset: 0, 0
+  index: -1
+happy_mouth
+  rotate: true
+  xy: 120, 190
+  size: 80, 42
+  orig: 80, 42
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 120, 110
+  size: 78, 39
+  orig: 78, 39
+  offset: 0, 0
+  index: -1
+sad_body
+  rotate: false
+  xy: 2, 36
+  size: 116, 116
+  orig: 116, 116
+  offset: 0, 0
+  index: -1
+sad_eye
+  rotate: true
+  xy: 29, 2
+  size: 32, 20
+  orig: 32, 20
+  offset: 0, 0
+  index: -1
+sad_eye_02
+  rotate: false
+  xy: 161, 174
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+sad_mouth
+  rotate: true
+  xy: 157, 11
+  size: 38, 20
+  orig: 38, 20
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: true
+  xy: 65, 4
+  size: 30, 12
+  orig: 30, 12
+  offset: 0, 0
+  index: -1

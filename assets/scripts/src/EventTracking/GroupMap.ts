@@ -1,0 +1,1 @@
+export type GroupMap = 'Google_Analytics' | "Firebase";

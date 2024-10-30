@@ -1,0 +1,20 @@
+
+Click.png
+size: 242, 154
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Finger
+  rotate: false
+  xy: 156, 64
+  size: 84, 88
+  orig: 84, 88
+  offset: 0, 0
+  index: -1
+Hand BOT
+  rotate: true
+  xy: 2, 2
+  size: 150, 152
+  orig: 152, 154
+  offset: 1, 1
+  index: -1
