@@ -6,7 +6,6 @@ library/
 temp/
 local/
 build/
-profiles/
 native
 #//////////////////////////
 # NPM
@@ -22,3 +21,5 @@ node_modules/
 # WebStorm
 #//////////////////////////
 .idea/
+
+profiles/

@@ -9,10 +9,10 @@
         "_value": true
       },
       "gfx-webgl2": {
-        "_value": false
+        "_value": true
       },
       "gfx-webgpu": {
-        "_value": false
+        "_value": true
       },
       "animation": {
         "_value": false
@@ -147,6 +147,8 @@
       "custom-pipeline",
       "custom-pipeline-post-process",
       "gfx-webgl",
+      "gfx-webgl2",
+      "gfx-webgpu",
       "meshopt",
       "particle",
       "primitive",
