@@ -10,7 +10,7 @@ const onAfterBuild = async function (options, result) {
         return;
     }
     try {
-        new cocos_main_1.default(Editor.App.version, result.dest);
+        new cocos_main_1.default(Editor.App.version, result.dest, null, options.name);
     }
     catch (error) {
         console.error(error);

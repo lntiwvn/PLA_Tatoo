@@ -36,20 +36,20 @@ class channel_handler {
     async run() {
         const s_out_dir = config_1.default.s_out_dir;
         const d_hot = config_1.default.d_hot;
-        // #### 资源 
+        // #### 资源
         //导入不带压缩的资源
         const s_res_body = `window.__res=${JSON.stringify(d_hot.d_res_cache)};`;
         // #### 带压缩的资源
         let s_zip_res_body = "";
         {
-            //导入带压缩的zip资源 
-            // 
+            //导入带压缩的zip资源
+            //
             if (d_hot.s_out_res_zip_base64) {
                 s_zip_res_body += `window.__zip = "${d_hot.s_out_res_zip_base64}";`;
                 //导入库
                 s_zip_res_body += this._get_zip_script();
             }
-            //导入常规资源 
+            //导入常规资源
             s_zip_res_body += `window.__res=${JSON.stringify(d_hot.d_out_res_no_zip)};`;
         }
         const inject_channel_adapter = config_1.default.inject_channel_adapter;
@@ -184,7 +184,7 @@ class channel_handler {
                 s_out_file_name = s_html_name;
                 out_data = s_html_content;
             }
-            let s_out_path = platform_1.default.join(s_out_dir, s_channel_name, s_out_file_name);
+            let s_out_path = platform_1.default.join(s_out_dir, s_out_file_name);
             platform_1.default.writeFileSync(s_out_path, out_data);
             utils_1.default.log(`[${s_channel_name}] [${utils_1.default.b_to_kb(out_data.length)}] \n${s_out_path}`);
         }
@@ -210,7 +210,7 @@ class channel_handler {
     _get_zip_script() {
         return utils_1.default.get_json(config_1.default.constants.inject_jszip_script);
     }
-    //获得通用脚本 
+    //获得通用脚本
     _get_common_script(s_channel_name) {
         const s_base = `window.super_html_channel = "${s_channel_name}";`;
         const s_pre_load_script = `window.super_pre_load_script = ${JSON.stringify(config_1.default.d_hot.l_pre_load_script)};`;
@@ -219,7 +219,7 @@ class channel_handler {
         const s_common = utils_1.default.get_json(config_1.default.constants.inject_common_script);
         return s_base + s_pre_load_script + s_version_adapter_body + s_common;
     }
-    //获得渠道脚本 
+    //获得渠道脚本
     _get_channel_script(s_channel_name, s_file_name) {
         // 有配置脚本
         let s_script_path = `channel/${s_channel_name}/${s_file_name}`;
