@@ -93,8 +93,8 @@
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "11-6-2024 15:04:55 build success in 17 s!",
-        "detailMessage": "super-html : \rengine version 3.8.4\r",
+        "message": "11-8-2024 14:15:05 build success in 1 min 1 s!",
+        "detailMessage": "builder:build-project-total (61272ms)\r",
         "options": {
           "name": "TA_PL44_customode",
           "server": "",
@@ -148,7 +148,7 @@
           "buildMode": "normal",
           "logDest": "project://temp/builder/log/web-mobile11-6-2024 14-59.log"
         },
-        "time": "11-6-2024 15:04:38",
+        "time": "11-8-2024 14:14:04",
         "dirty": false
       }
     }
