@@ -2284,130 +2284,8 @@
     "handTutorial": null,
     "textTutorial": null,
     "playMoreButton": null,
-    "samples": [
-      {
-        "__uuid__": "f1c85440-1f91-4b2b-96d0-a85985299c0a@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "30bd0368-fc1f-44ca-bc0a-388e88146f17@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "e1184298-eef6-4c72-b24d-cab818ed826b@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "3764d221-e9cc-4d6f-ad27-dbbe74fb51c2@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "4b1c1eda-f157-467e-8fc0-17a301592a6d@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "cbc73b87-fd19-442c-8d0c-5e07a4511c52@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "86aee729-d4a0-4595-937c-09358e3ab6a4@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "c0a1a03a-e353-4b17-83c4-84c6af105b53@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "4a8b3b50-d707-49cb-a4b5-37fc75910825@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "63ff9638-c2b7-49d1-b647-1fc830e4be7d@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      }
-    ],
-    "tattooItemPrefab": [
-      {
-        "__uuid__": "0d64c709-19ee-46c1-a005-8761cab1a17b",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "84e69d7d-344e-4be9-928c-fc06288207af",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "2df21f31-da05-47eb-9ac6-c82f85ad7d86",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "e79d2133-1913-44e6-8f53-4796364a8ae3",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "12fc1013-3820-4135-acbf-fcf52a27e4a2",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "4b171e11-e96d-4e5d-8c2b-feae01528799",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "acbcfc6b-be5b-47a3-8547-3a27bd512762",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "96200680-fecc-422a-b944-b4b811040285",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "1067f7d2-dbcc-4c66-b44b-71af206b141f",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "db7bc555-ba15-4143-a2b1-3604bf1234ae",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "738aefde-fd68-4a98-aa09-e94f47168c85",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "129cca96-e7a1-43dd-a080-5279023d6055",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "e0117c39-a766-4cc0-85cb-92194862494e",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "f352c39f-3dd4-4841-a365-3a28b5143593",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "a985c27d-5502-42ac-923d-b05b7233f487",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "7417f41a-9807-4de9-a22f-2045b43301c5",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "e3b0dd19-5647-4b83-9179-37fa0af0146e",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "cedfbcd1-8c0c-4b6c-b10b-7a1f1e5638e0",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "3bcfa470-25e8-411c-b25c-d49734430f70",
-        "__expectedType__": "cc.Prefab"
-      },
-      {
-        "__uuid__": "11e51226-3dc4-4be0-b8bc-af8b6fe04014",
-        "__expectedType__": "cc.Prefab"
-      }
-    ],
+    "samples": [],
+    "tattooItemPrefab": [],
     "tattooStickerLayer": null,
     "sampleSprite": null,
     "foarmContext": null,
@@ -2419,48 +2297,11 @@
     "confettiParticleRight": null,
     "confettiParticleTop": null,
     "textWowSpine": null,
-    "samples2": [
-      {
-        "__uuid__": "86c52b51-e407-4c4c-b13f-0699b3eff786@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "6d50cd87-4a07-463c-959f-21ab1827d2ed@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "07514ef0-8e01-4e3e-b154-ee81aed80c7c@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "8e1fa855-aada-4912-8a33-1bcec88f10d0@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "4fe6c8f2-0420-45e9-9450-39d8c578d627@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "66cc6bec-181f-42bd-87f1-7055ed284883@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "aecf0a8e-c5fb-47ec-bff0-516ecb18d976@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "3cfba9ea-aaf7-4edf-ac03-147e7cf85bc2@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "12da7676-6742-4afe-a405-e0168d9a38a5@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      },
-      {
-        "__uuid__": "7b9f5857-ce83-4cae-b625-94a5ac115eb6@f9941",
-        "__expectedType__": "cc.SpriteFrame"
-      }
-    ],
+    "fixedTattooPrefab": {
+      "__uuid__": "0d64c709-19ee-46c1-a005-8761cab1a17b",
+      "__expectedType__": "cc.Prefab"
+    },
+    "samples2": [],
     "sampleIconFront": {
       "__id__": 54
     },

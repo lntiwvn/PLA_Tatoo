@@ -1,13 +1,17 @@
-import { _decorator, Camera, Input, instantiate, Label, Material, Node, SkinnedMeshRenderer, Sprite, SpriteFrame, Tween, tween, UIOpacity } from 'cc';
+import { _decorator, Camera, Input, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, Tween, tween, UIOpacity } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
 import { SlideSticker } from '../SlideSticker';
 import { PatchSticker2 } from '../PatchSticker2';
+import { ConcreteAggregate } from '../Iterator/ConcreteAggregate';
 const { ccclass, property } = _decorator;
 
 @ccclass('TatooContext1')
 export class TatooContext1 extends TattoContext {
+    @property(Prefab)
+    fixedTattooPrefab: Prefab = null;
+
     @property([SpriteFrame])
     samples2: SpriteFrame[] = [];
 
@@ -48,31 +52,31 @@ export class TatooContext1 extends TattoContext {
     isFirstShowTextInk: boolean = true;
 
     isFirstStickerDone: boolean = false;
+    private hasStartedDrawing: boolean = false;
 
     start(): void {
-        // console.log(this.tattooItemPrefab[0].name.split('_')[1]);
-
-        this.slideStickerFront.onScrollEnded = this.onScrollMainEnded.bind(this);
-        this.slideStickerBack.onScrollEnded = this.onScrollSubEnded.bind(this);
-        this.stickerPreviewFront.spriteFrame = this.samples[0];
-        this.stickerPreviewBack.spriteFrame = this.samples2[0];
-        this.textTutorial.active = true;
+        this.hideTattooSelectorWheels();
+        this.textTutorial.active = false;
+        this.handTutorial.active = false;
         this.labelInk.node.active = false;
         this.labelColor.node.active = false;
     }
 
     onClickDoIt() {
+        if (this.hasStartedDrawing) {
+            return;
+        }
+
+        if (!this.fixedTattooPrefab) {
+            console.error('TatooContext1: fixedTattooPrefab is not assigned.');
+            return;
+        }
+
+        this.hasStartedDrawing = true;
         this.handTutorial.active = false;
         this.textTutorial.active = false;
 
-        // console.log('main', this.slideStickerMain.currentSlideIndex);
-        // console.log('sub', this.slideStickerSub.currentSlideIndex);
-
         this.selectTattOpacity.node.active = false;
-
-        this.sampleIconFront.spriteFrame = this.samples[this.slideStickerFront.currentSlideIndex];
-        this.sampleSprite.spriteFrame = this.samples2[this.slideStickerBack.currentSlideIndex];
-
         this.modelNode.active = false;
 
         tween(this.backgroundContextOpacity).to(0.5, {
@@ -112,26 +116,36 @@ export class TatooContext1 extends TattoContext {
     }
 
     onPlay(): void {
-        let stickerFrontName = this.stickerPreviewFront.spriteFrame.name.split('_')[1];
-        let stickerBackName = this.stickerPreviewBack.spriteFrame.name.split('_')[1];
-        let stickerFrontIndex = this.getPrefabIndexFromName(stickerFrontName);
-        let stickerBackIndex = this.getPrefabIndexFromName(stickerBackName);
-
-        console.log('stickerFrontName', stickerFrontName);
-        console.log('stickerBackName', stickerBackName);
-        console.log('stickerFrontIndex', stickerFrontIndex);
-        console.log('stickerBackIndex', stickerBackIndex);
-
-        this.loadAllStickerPlay([stickerBackIndex, stickerFrontIndex]);
+        this.tattooStickers.length = 0;
+        this.stickerTattoIndex = -1;
+        this.loadTattooSticker(this.fixedTattooPrefab);
+        this.stickerAggregate = new ConcreteAggregate<TattooSticker>();
+        this.stickerAggregate.addItem(this.tattooStickers);
+        this.stickerIterator = this.stickerAggregate.createIterator();
         this.playNextSticker();
     }
 
-    getPrefabIndexFromName(name: string): number {
-        return this.tattooItemPrefab.findIndex((prefab) => prefab.name.split('_')[1] === name);
+    private hideTattooSelectorWheels() {
+        const selectorNode = this.selectTattOpacity?.node;
+        if (!selectorNode) {
+            return;
+        }
+
+        const hideWheelNodes = (node: Node) => {
+            node.children.forEach((child) => {
+                if (child.name.indexOf('TattooSlider') !== -1) {
+                    child.active = false;
+                    return;
+                }
+                hideWheelNodes(child);
+            });
+        };
+
+        hideWheelNodes(selectorNode);
     }
 
-    loadTattooSticker(itemIndex: number) {
-        let tattooNode = instantiate(this.tattooItemPrefab[itemIndex]);
+    loadTattooSticker(prefab: Prefab) {
+        let tattooNode = instantiate(prefab);
         tattooNode.parent = this.tattooStickerLayer;
         let tattooSticker = tattooNode.getComponent(TattooSticker);
         let tattooLineSticker = tattooNode.getComponent(TattooLineSticker);
