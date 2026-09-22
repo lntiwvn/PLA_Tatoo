@@ -82,9 +82,11 @@ Gameplay truth is the context phase and sticker iterator. Preview images, wheel 
 | File | Current responsibility | Required change | Dependencies / impact |
 |---|---|---|---|
 | `assets/scripts/src/context/TattooContext1.ts` | Owns `Ads_1` selector transition, preview state, and two-sticker selection/loading | Add serialized `fixedTattooPrefab`; add one-shot start/phase guard; make the start handler hide selector presentation and initialize drawing; make `onPlay()` load exactly one fixed prefab; remove slider-index and front/back name derivation from the active path; ensure one-sticker completion does not advance to a second item | Depends on existing `TattoContext`, `TattooSticker`/`TattooLineSticker`, iterator, and foam callbacks; runtime allocations remain one prefab instance plus existing patch objects |
-| `assets/Scene/Ads_1.scene` | Serializes the scene instance, context property assignments, selector hierarchy, and button click event | Assign the fixed prefab UUID, deactivate slider/wheel nodes and selector blocking nodes, keep the start button event targeting the context, and remove/clear obsolete front/back component references if the edited component no longer exposes them | Cocos scene serialization must be saved/validated in Creator 3.8.7; only this scene instance changes |
+| `assets/Scene/Ads_1.scene` | Serializes the scene instance, context property assignments, selector hierarchy, and button click event | Assign the fixed prefab UUID, remove obsolete selector property references, keep the start button event targeting the context, and retain only the lightweight start-button container | Cocos scene serialization must be saved/validated in Creator 3.8.7; only this scene instance changes |
+| `assets/TattooAssets/prefab/UI/SelectTattoo.prefab` | Provides the selector/start-button UI | Remove the nested slider instances while retaining the start button, reducing the scene dependency graph | This prefab is only referenced by `Ads_1.scene` in the repository |
+| `assets/TattooAssets/prefab/UI/TattooSlider.prefab` and `.meta` | Defines the removed wheel UI | Delete because no remaining scene or prefab reference uses it | Removes the wheel prefab and its serialized asset metadata from the project |
 
-The reusable `SelectTattoo.prefab` and `TattooSlider.prefab` are intentionally not modified in this plan so other scenes can continue using them.
+`SelectTattoo.prefab` is modified because repository search found it is only used by `Ads_1.scene`; `TattooSlider.prefab` is removed after its last dependency is detached.
 
 ## APIs and Ownership
 

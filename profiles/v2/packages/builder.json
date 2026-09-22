@@ -1,5 +1,5 @@
 {
-  "__version__": "1.3.8",
+  "__version__": "1.3.9",
   "log": {
     "level": 4
   },
@@ -82,7 +82,8 @@
             "includes": [],
             "replaceOnly": [],
             "handleTemplateMd5Link": true
-          }
+          },
+          "buildMode": "normal"
         },
         "time": "11-6-2024 15:04:18",
         "dirty": false
