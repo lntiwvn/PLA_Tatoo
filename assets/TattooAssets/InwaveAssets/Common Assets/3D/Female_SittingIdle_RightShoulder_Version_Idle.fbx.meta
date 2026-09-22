@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "fdf34680-4aa0-4c74-b171-d274db76f961",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "30076": {
@@ -227,7 +227,7 @@
       "name": "Char01_Rig:Char01_Rig:body_character1:Gums.mesh",
       "userData": {
         "gltfIndex": 4,
-        "triangleCount": 1084
+        "triangleCount": 1086
       },
       "ver": "1.1.1",
       "imported": true,
@@ -659,7 +659,7 @@
       "name": "Char01_Rig:Char01_Rig:quan_ao_brown:giay-brown.mesh",
       "userData": {
         "gltfIndex": 30,
-        "triangleCount": 4714
+        "triangleCount": 4722
       },
       "ver": "1.1.1",
       "imported": true,
@@ -749,7 +749,7 @@
       "name": "Char01_Rig:base:giay-brown.001.mesh",
       "userData": {
         "gltfIndex": 35,
-        "triangleCount": 4714
+        "triangleCount": 4722
       },
       "ver": "1.1.1",
       "imported": true,
@@ -767,7 +767,7 @@
       "name": "Char01_Rig:base:khuyen tai-brown.mesh",
       "userData": {
         "gltfIndex": 36,
-        "triangleCount": 13094
+        "triangleCount": 13116
       },
       "ver": "1.1.1",
       "imported": true,
@@ -785,7 +785,7 @@
       "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:gang tay.mesh",
       "userData": {
         "gltfIndex": 37,
-        "triangleCount": 1902
+        "triangleCount": 1904
       },
       "ver": "1.1.1",
       "imported": true,
@@ -857,7 +857,7 @@
       "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:quan-vip-1.mesh",
       "userData": {
         "gltfIndex": 41,
-        "triangleCount": 1470
+        "triangleCount": 1472
       },
       "ver": "1.1.1",
       "imported": true,
@@ -911,7 +911,7 @@
       "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:giay-brown.mesh",
       "userData": {
         "gltfIndex": 44,
-        "triangleCount": 4714
+        "triangleCount": 4722
       },
       "ver": "1.1.1",
       "imported": true,
@@ -929,7 +929,7 @@
       "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:hair-vip.mesh",
       "userData": {
         "gltfIndex": 45,
-        "triangleCount": 11629
+        "triangleCount": 11649
       },
       "ver": "1.1.1",
       "imported": true,
@@ -955,10 +955,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },

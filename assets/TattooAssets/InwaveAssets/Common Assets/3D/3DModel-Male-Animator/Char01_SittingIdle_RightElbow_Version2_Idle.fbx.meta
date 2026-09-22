@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "fd4c8deb-d2bf-4c22-9997-16b599da72e1",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "27263": {
@@ -139,7 +139,7 @@
       "name": "Char01_Rig:GumsMale-2.mesh",
       "userData": {
         "gltfIndex": 2,
-        "triangleCount": 1084
+        "triangleCount": 1086
       },
       "ver": "1.1.1",
       "imported": true,
@@ -525,10 +525,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },

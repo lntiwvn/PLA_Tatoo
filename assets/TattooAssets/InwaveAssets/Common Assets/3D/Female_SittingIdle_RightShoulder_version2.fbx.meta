@@ -1,10 +1,10 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "b416b029-7b80-4177-b110-38d4d6ba7f07",
   "files": [
-    "__original-animation-0.cconb"
+    "__original-animation-0.bin"
   ],
   "subMetas": {
     "13517": {
@@ -190,7 +190,7 @@
       "name": "Char01_Rig:body_character1:Gums.mesh",
       "userData": {
         "gltfIndex": 4,
-        "triangleCount": 1084
+        "triangleCount": 1086
       },
       "ver": "1.1.1",
       "imported": true,
@@ -604,7 +604,7 @@
       "name": "trang_phuc_nhan_vat_vip_3:gang tay.mesh",
       "userData": {
         "gltfIndex": 28,
-        "triangleCount": 1902
+        "triangleCount": 1904
       },
       "ver": "1.1.1",
       "imported": true,
@@ -658,7 +658,7 @@
       "name": "trang_phuc_nhan_vat_vip_3:quan-vip-1.mesh",
       "userData": {
         "gltfIndex": 32,
-        "triangleCount": 1470
+        "triangleCount": 1472
       },
       "ver": "1.1.1",
       "imported": true,
@@ -712,7 +712,7 @@
       "name": "trang_phuc_nhan_vat_vip_3:giay-brown.mesh",
       "userData": {
         "gltfIndex": 35,
-        "triangleCount": 4714
+        "triangleCount": 4722
       },
       "ver": "1.1.1",
       "imported": true,
@@ -730,7 +730,7 @@
       "name": "trang_phuc_nhan_vat_vip_3:hair-vip.mesh",
       "userData": {
         "gltfIndex": 36,
-        "triangleCount": 11629
+        "triangleCount": 11649
       },
       "ver": "1.1.1",
       "imported": true,
@@ -756,10 +756,10 @@
         },
         "events": []
       },
-      "ver": "1.0.17",
+      "ver": "1.0.18",
       "imported": true,
       "files": [
-        ".cconb"
+        ".bin"
       ],
       "subMetas": {}
     },

@@ -1,5 +1,5 @@
 {
-  "ver": "2.3.13",
+  "ver": "2.3.14",
   "importer": "fbx",
   "imported": true,
   "uuid": "bab6dc64-fe7c-4ae9-9359-004365068643",
@@ -499,46 +499,6 @@
       ],
       "subMetas": {}
     },
-    "fd73d": {
-      "importer": "gltf-embeded-image",
-      "uuid": "bab6dc64-fe7c-4ae9-9359-004365068643@fd73d",
-      "displayName": "",
-      "id": "fd73d",
-      "name": "DiffuseColor_Texture.image",
-      "userData": {
-        "gltfIndex": 0,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
-    "ca721": {
-      "importer": "gltf-embeded-image",
-      "uuid": "bab6dc64-fe7c-4ae9-9359-004365068643@ca721",
-      "displayName": "",
-      "id": "ca721",
-      "name": "DiffuseColor_Texture_1.image",
-      "userData": {
-        "gltfIndex": 1,
-        "fixAlphaTransparencyArtifacts": true,
-        "hasAlpha": true,
-        "type": "texture"
-      },
-      "ver": "1.0.3",
-      "imported": true,
-      "files": [
-        ".json",
-        ".png"
-      ],
-      "subMetas": {}
-    },
     "b0ccd": {
       "importer": "gltf-embeded-image",
       "uuid": "bab6dc64-fe7c-4ae9-9359-004365068643@b0ccd",
@@ -572,8 +532,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "bab6dc64-fe7c-4ae9-9359-004365068643@fd73d"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/TattooAssets/models/character/photo_2023-04-25_13-56-08.jpg"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -595,8 +555,8 @@
         "magfilter": "linear",
         "mipfilter": "none",
         "anisotropy": 0,
-        "isUuid": true,
-        "imageUuidOrDatabaseUri": "bab6dc64-fe7c-4ae9-9359-004365068643@ca721"
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/TattooAssets/models/character/photo_2023-04-25_13-52-11.jpg"
       },
       "ver": "1.0.22",
       "imported": true,
@@ -658,11 +618,11 @@
     "imageMetas": [
       {
         "name": "DiffuseColor_Texture",
-        "uri": "bab6dc64-fe7c-4ae9-9359-004365068643@fd73d"
+        "uri": "db://assets/TattooAssets/models/character/photo_2023-04-25_13-56-08.jpg"
       },
       {
         "name": "DiffuseColor_Texture_1",
-        "uri": "bab6dc64-fe7c-4ae9-9359-004365068643@ca721"
+        "uri": "db://assets/TattooAssets/models/character/photo_2023-04-25_13-52-11.jpg"
       },
       {
         "name": "DiffuseColor_Texture_2",
