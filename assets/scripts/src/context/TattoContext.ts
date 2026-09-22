@@ -217,6 +217,10 @@ export class TattoContext extends Component {
 
     onShowNextPatchDone(patchIndex: number) { }
 
+    shouldSkipColorPatchPhase(): boolean {
+        return false;
+    }
+
     onFirstTouch() {
         this.isFirstTouch = false
         this.handTutorial.active = false;

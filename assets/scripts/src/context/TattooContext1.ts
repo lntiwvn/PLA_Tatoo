@@ -1,10 +1,12 @@
-import { _decorator, Camera, Input, instantiate, Label, Node, Prefab, Sprite, SpriteFrame, Tween, tween, UIOpacity } from 'cc';
+import { _decorator, Camera, CCFloat, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3 } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
-import { SlideSticker } from '../SlideSticker';
 import { PatchSticker2 } from '../PatchSticker2';
+import { PatchLineSticker } from '../PatchLineSticker';
 import { ConcreteAggregate } from '../Iterator/ConcreteAggregate';
+import { ColorSelectionController } from '../ColorSelectionController';
+import gameEndHandler from '../../../PLAGameFoundation/gameControl/utilities/handler/gameEndHandler';
 const { ccclass, property } = _decorator;
 
 @ccclass('TatooContext1')
@@ -12,27 +14,10 @@ export class TatooContext1 extends TattoContext {
     @property(Prefab)
     fixedTattooPrefab: Prefab = null;
 
-    @property([SpriteFrame])
-    samples2: SpriteFrame[] = [];
-
-    @property(Sprite)
-    sampleIconFront: Sprite;
-    @property(SlideSticker)
-    slideStickerFront: SlideSticker = null;
-    @property(SlideSticker)
-    slideStickerBack: SlideSticker = null;
-
-    @property(Sprite)
-    stickerPreviewBack: Sprite = null;
-    @property(Sprite)
-    stickerPreviewFront: Sprite = null;
-
     @property(UIOpacity)
     selectTattOpacity: UIOpacity = null;
     @property(UIOpacity)
     backgroundContextOpacity: UIOpacity = null;
-    @property(UIOpacity)
-    samepleSpriteOpacity: UIOpacity = null;
 
     @property(Node)
     modelNode: Node = null;
@@ -47,19 +32,44 @@ export class TatooContext1 extends TattoContext {
     @property(Label)
     labelColor: Label = null;
 
+    @property(Node)
+    colorNode: Node = null;
+    @property(Node)
+    colorBeginNode: Node = null;
+    @property(Node)
+    colorTargetNode: Node = null;
+    @property(CCFloat)
+    colorEntryDuration = 0.5;
+
+    @property(ColorSelectionController)
+    colorSelectionController: ColorSelectionController = null;
+
     labelInkTween: Tween<UIOpacity>;
     labelColorTween: Tween<UIOpacity>;
     isFirstShowTextInk: boolean = true;
 
     isFirstStickerDone: boolean = false;
     private hasStartedDrawing: boolean = false;
+    private colorEntryStarted = false;
+    private tattooMachineStarted = false;
+    private colorSelected = false;
+    private machineInputReady = false;
+    private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
+    private readonly machineInputRegistrationDelay = 150;
 
     start(): void {
-        this.hideTattooSelectorWheels();
         this.textTutorial.active = false;
         this.handTutorial.active = false;
         this.labelInk.node.active = false;
         this.labelColor.node.active = false;
+        this.colorEntryStarted = false;
+        this.tattooMachineStarted = false;
+        this.colorSelected = false;
+        this.colorSelectionController?.prepare();
+        if (this.colorNode && this.colorBeginNode) {
+            this.colorNode.setParent(this.colorBeginNode);
+            this.colorNode.setPosition(Vec3.ZERO);
+        }
     }
 
     onClickDoIt() {
@@ -82,9 +92,6 @@ export class TatooContext1 extends TattoContext {
         tween(this.backgroundContextOpacity).to(0.5, {
             opacity: 255
         }).start();
-        tween(this.samepleSpriteOpacity).to(0.5, {
-            opacity: 255
-        }).start();
         tween(this.selectTattOpacity).to(0.5, {
             opacity: 0
         }).call(() => {
@@ -99,52 +106,22 @@ export class TatooContext1 extends TattoContext {
         this.onIntro();
     }
 
-    onScrollMainEnded(currentIndex: number) {
-        this.textTutorial.active = false;
-        // console.log('slide main: ', currentIndex, this.samples[currentIndex].texture);
-        this.stickerPreviewFront.spriteFrame = this.samples[currentIndex];
-
-        this.handTutorial.active = true;
-    }
-
-    onScrollSubEnded(currentIndex: number) {
-        this.textTutorial.active = false;
-        // console.log('slide sub: ', currentIndex, this.samples2[currentIndex].texture);
-        // this.modelTattooSkinnedMeshRenderer.materials[0].setProperty("mainTexture2", this.samples2[currentIndex].texture)
-        this.stickerPreviewBack.spriteFrame = this.samples2[currentIndex];
-        this.handTutorial.active = true;
-    }
-
     onPlay(): void {
         this.tattooStickers.length = 0;
         this.stickerTattoIndex = -1;
-        this.loadTattooSticker(this.fixedTattooPrefab);
+        this.loadTattooSticker(0);
         this.stickerAggregate = new ConcreteAggregate<TattooSticker>();
         this.stickerAggregate.addItem(this.tattooStickers);
         this.stickerIterator = this.stickerAggregate.createIterator();
         this.playNextSticker();
     }
 
-    private hideTattooSelectorWheels() {
-        const selectorNode = this.selectTattOpacity?.node;
-        if (!selectorNode) {
+    loadTattooSticker(_itemIndex: number) {
+        const prefab = this.fixedTattooPrefab;
+        if (!prefab) {
+            console.error('TatooContext1: fixedTattooPrefab is not assigned.');
             return;
         }
-
-        const hideWheelNodes = (node: Node) => {
-            node.children.forEach((child) => {
-                if (child.name.indexOf('TattooSlider') !== -1) {
-                    child.active = false;
-                    return;
-                }
-                hideWheelNodes(child);
-            });
-        };
-
-        hideWheelNodes(selectorNode);
-    }
-
-    loadTattooSticker(prefab: Prefab) {
         let tattooNode = instantiate(prefab);
         tattooNode.parent = this.tattooStickerLayer;
         let tattooSticker = tattooNode.getComponent(TattooSticker);
@@ -166,20 +143,116 @@ export class TatooContext1 extends TattoContext {
         this.playNextSticker();
     }
 
-    enableTextInkEffect() {
-        this.labelInk.node.active = true;
-        this.labelInkTween = tween(this.labelInk.getComponent(UIOpacity))
-            .to(0.5, { opacity: 100 })
-            .to(0.5, { opacity: 255 })
-            .union()
-            .repeatForever()
+    onCurrentStickerDone() {
+        if (this.colorEntryStarted || this.tattooMachineStarted) {
+            return;
+        }
+        this.colorEntryStarted = true;
+
+        this.startColorEntry();
+    }
+
+    private startColorEntry(): void {
+
+        if (!this.colorNode || !this.colorBeginNode || !this.colorTargetNode) {
+            console.error('TatooContext1: Color entry references are not assigned.');
+            return;
+        }
+
+        Tween.stopAllByTarget(this.colorNode);
+        this.colorNode.active = true;
+        this.colorNode.setParent(this.colorTargetNode, true);
+        tween(this.colorNode)
+            .to(this.colorEntryDuration, { position: Vec3.ZERO })
+            .call(() => {
+                console.log('Color node entry completed');
+                this.beginTattooMachinePhase();
+            })
             .start();
     }
 
-    stopTextInkEffect() {
-        this.labelInkTween.stop();
-        this.labelInk.getComponent(UIOpacity).opacity = 255;
-        this.labelInk.node.active = false;
+    private beginTattooMachinePhase(): void {
+        if (this.tattooMachineStarted) return;
+        const sticker = this.tattooStickers[0] as TattooLineSticker;
+        const firstPatch = sticker?.patchs?.find((patch) => !(patch instanceof PatchLineSticker));
+        if (!firstPatch) {
+            console.error('TatooContext1: first PatchSticker is not assigned.');
+            return;
+        }
+        this.tattooMachineStarted = true;
+        this.colorSelected = false;
+        this.machineInputReady = false;
+        sticker.patchs.forEach((patch) => {
+            if (patch === firstPatch) patch.showMachinePatch();
+            else patch.hideMachinePatch();
+        });
+        // showFinalImageOnly() may have hidden this child at the line-complete
+        // boundary. Keep the selected machine patch visible for color selection.
+        firstPatch.node.active = true;
+        if (this.tattoMachineOpacity) {
+            this.tattoMachineOpacity.opacity = 255;
+        } else {
+            console.error('TatooContext1: tattoo machine opacity reference is not assigned.');
+        }
+        if (this.tattoMachine) {
+            this.tattoMachine.active = true;
+        } else {
+            console.error('TatooContext1: tattoo machine reference is not assigned.');
+        }
+        if (!this.colorSelectionController) {
+            console.error('TatooContext1: Color selection controller is not assigned; store input remains disabled.');
+            return;
+        }
+        this.colorSelectionController.beginSelection(() => {
+            this.colorSelected = true;
+            this.enableTextColorEffect();
+            this.enableMachineStoreInput();
+        });
+    }
+
+    private enableMachineStoreInput(): void {
+        if (this.machineInputRegistrationTimer !== null || this.machineInputReady || !this.tattooMachineStarted) {
+            return;
+        }
+        this.machineInputRegistrationTimer = setTimeout(() => {
+            this.machineInputRegistrationTimer = null;
+            if (!this.tattooMachineStarted || !this.colorSelected) return;
+            this.machineInputReady = true;
+            this.node.on(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
+        }, this.machineInputRegistrationDelay);
+    }
+
+    private onTattooMachineTouch(): void {
+        if (!this.tattooMachineStarted || !this.colorSelected || !this.machineInputReady) return;
+        // Keep the tattoo-machine presentation visible while the Store transition
+        // is triggered. Only remove the input listeners; do not hide PatchSticker2.
+        this.stopTattooMachinePhase(false);
+        gameEndHandler.StoreGameChangingNoCondition();
+    }
+
+    private stopTattooMachinePhase(hideVisuals = true): void {
+        if (this.machineInputRegistrationTimer !== null) {
+            clearTimeout(this.machineInputRegistrationTimer);
+            this.machineInputRegistrationTimer = null;
+        }
+        // this.machineInputReady = false;
+        // this.colorSelected = false;
+        // this.node.off(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
+        // this.node.off(Input.EventType.MOUSE_DOWN, this.onTattooMachineTouch, this);
+        if (hideVisuals) {
+            const sticker = this.tattooStickers[0] as TattooLineSticker;
+            sticker?.patchs?.forEach((patch) => patch.hideMachinePatch());
+        }
+        // this.tattooMachineStarted = false;
+    }
+
+    onDestroy(): void {
+        this.stopTattooMachinePhase();
+        this.node.off(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
+    }
+
+    shouldSkipColorPatchPhase(): boolean {
+        return true;
     }
 
     enableTextColorEffect() {
@@ -193,8 +266,28 @@ export class TatooContext1 extends TattoContext {
             .start();
     }
 
+    enableTextInkEffect() {
+        this.labelInk.node.active = true;
+        this.labelInkTween = tween(this.labelInk.getComponent(UIOpacity))
+            .to(0.5, { opacity: 100 })
+            .to(0.5, { opacity: 255 })
+            .union()
+            .repeatForever()
+            .start();
+    }
+
+    stopTextInkEffect() {
+        if(this.labelInkTween) {
+            this.labelInkTween.stop();
+        }
+        this.labelInk.getComponent(UIOpacity).opacity = 255;
+        this.labelInk.node.active = false;
+    }
+
     stopTextColorEffect() {
-        this.labelColorTween.stop();
+        if(this.labelColorTween) {
+            this.labelColorTween.stop();
+        }
         this.labelColor.getComponent(UIOpacity).opacity = 255;
         this.labelColor.node.active = false;
     }

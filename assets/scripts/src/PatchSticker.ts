@@ -1,4 +1,4 @@
-import { _decorator, Color, Component, GradientRange, Material, MeshRenderer, Node, tween, UIOpacity } from 'cc';
+import { _decorator, CCFloat, Color, Component, GradientRange, Material, MeshRenderer, Node, Tween, tween, UIOpacity } from 'cc';
 import { SprayPaintWithFade } from './SprayPaintWithFade';
 const { ccclass, property } = _decorator;
 
@@ -18,6 +18,14 @@ export class PatchSticker extends Component {
     @property(Color)
     sprayColor: Color = new Color(255, 255, 255);
 
+    @property(CCFloat)
+    minOpacity = 80;
+    @property(CCFloat)
+    maxOpacity = 255;
+    @property(CCFloat)
+    flashDuration = 0.5;
+    private flashTween: Tween<UIOpacity> = null;
+
     init() {
         this.sprayComp.sprayColor = this.sprayColor;
         this.dotsNodeOpacity = this.dotsNode.getComponent(UIOpacity);
@@ -26,6 +34,33 @@ export class PatchSticker extends Component {
 
         this.patchNodeMaterial.setProperty('mainColor', new Color(255, 255, 255, 0));
         this.patchNodeMaterial.setProperty('angle', 120);
+    }
+
+    showMachinePatch(): void {
+        this.node.active = true;
+        if (this.patchNode) this.patchNode.active = true;
+        if (this.dotsNode) this.dotsNode.active = true;
+        if (!this.dotsNodeOpacity) {
+            console.error('PatchSticker: dotsNodeOpacity is missing. Assign dotsNode and UIOpacity.');
+            return;
+        }
+        this.flashTween?.stop();
+        const duration = Math.max(0.01, this.flashDuration);
+        this.flashTween = tween(this.dotsNodeOpacity)
+            .set({ opacity: this.minOpacity })
+            .to(duration, { opacity: this.maxOpacity })
+            .to(duration, { opacity: this.minOpacity })
+            .union()
+            .repeatForever()
+            .start();
+    }
+
+    hideMachinePatch(): void {
+        this.flashTween?.stop();
+        this.flashTween = null;
+        if (this.dotsNodeOpacity) this.dotsNodeOpacity.opacity = 0;
+        if (this.patchNode) this.patchNode.active = false;
+        if (this.dotsNode) this.dotsNode.active = false;
     }
 
     showPatch(onPatchShowDone: () => void) {

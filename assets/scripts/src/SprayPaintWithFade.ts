@@ -20,6 +20,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass('SprayPaintWithFade')
 export class SprayPaintWithFade extends Component {
+    @property
+    drawSpeed = 160;
     @property(Graphics)
     graphics: Graphics = null;
     @property(CCFloat)
@@ -41,6 +43,9 @@ export class SprayPaintWithFade extends Component {
 
     isTouchDown: boolean = false;
     isComplete: boolean = false;
+    patchCompleted: boolean = false;
+    autoDrawing = false;
+    autoDrawIndex = 0;
 
     isFirstMove: boolean = true;
 
@@ -68,6 +73,9 @@ export class SprayPaintWithFade extends Component {
 
     registerTouchEvent() {
         this.isComplete = false;
+        this.patchCompleted = false;
+        this.autoDrawing = false;
+        this.autoDrawIndex = 0;
         window.tattoContext.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
         window.tattoContext.node.on(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
         window.tattoContext.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
@@ -145,9 +153,12 @@ export class SprayPaintWithFade extends Component {
     }
 
     onTouchStart(event: EventTouch) {
-        if (!this.isCanPray) {
+        if (!this.isCanPray || this.patchCompleted) {
             return;
         }
+
+        this.patchCompleted = true;
+        this.autoDrawing = true;
 
         //@ts-ignore
         if (window.tattoContext.labelInk) {
@@ -164,10 +175,12 @@ export class SprayPaintWithFade extends Component {
         let newPos = new Vec3(x, y + 24);
         let converToLocal = window.tattoContext.node.getComponent(UITransform).convertToNodeSpaceAR(newPos);
         window.tattoContext.setTattooMachinePos(converToLocal);
+
+        this.schedule(this.autoDraw, 0.01);
     }
 
     onTouchMove(event: EventTouch) {
-        if (!this.isCanPray) {
+        if (!this.isCanPray || this.patchCompleted) {
             return;
         }
 
@@ -219,6 +232,28 @@ export class SprayPaintWithFade extends Component {
         }
     }
 
+    autoDraw() {
+        if (!this.autoDrawing || !this.isCanPray || !this.maskNode) {
+            return;
+        }
+        const width = this.maskNode.getComponent(UITransform).width;
+        const height = this.maskNode.getComponent(UITransform).height;
+        const step = Math.max(1, this.drawSpeed * 0.01);
+        const total = Math.ceil(width * height / step);
+        const index = this.autoDrawIndex++ % total;
+        const x = (index * step) % width - width / 2;
+        const y = height / 2 - Math.floor((index * step) / width) - 1;
+        this.fillCircle(new Vec3(x, y));
+        const covered = this.checkMaskFullyCovered(this.maskBufffer, this.filledBuffer, width, height).isMaskFullyCovered;
+        if (covered) {
+            this.autoDrawing = false;
+            this.isComplete = true;
+            this.unschedule(this.autoDraw);
+            this.unRegisterTouchEvent();
+            window.tattoContext.currentSticker.onPrayComplete();
+        }
+    }
+
     fillCircle(pos: Vec3) {
         this.graphics.fillColor = this.sprayColor;
         this.graphics.circle(pos.x, pos.y, this.sparyRadius);
@@ -231,7 +266,7 @@ export class SprayPaintWithFade extends Component {
     }
 
     onTouchEnd(isStopMusic: boolean = true) {
-        if (this.isComplete) {
+        if (this.isComplete || this.patchCompleted) {
             return;
         }
 

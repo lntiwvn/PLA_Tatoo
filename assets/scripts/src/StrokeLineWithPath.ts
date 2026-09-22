@@ -6,6 +6,8 @@ const { ccclass, property } = _decorator;
 
 @ccclass('StrokeLineWithPath')
 export class StrokeLineWithPath extends Component {
+    @property
+    drawSpeed = 400;
     @property(Graphics)
     graphics: Graphics = null;
 
@@ -15,6 +17,7 @@ export class StrokeLineWithPath extends Component {
     isCanDraw: boolean = false;
 
     isMoving = false;
+    patchCompleted = false;
     currentPathIndex = 0;
     moveSpeed = 400; // Tốc độ di chuyển
     paths: Vec3[] = [];
@@ -29,6 +32,7 @@ export class StrokeLineWithPath extends Component {
     }
 
     registerTouchEvent() {
+        this.patchCompleted = false;
         window.tattoContext.node.on(Node.EventType.TOUCH_START, this.onTouchStart, this);
         window.tattoContext.node.on(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         window.tattoContext.node.on(Node.EventType.TOUCH_CANCEL, this.onTouchEnd, this);
@@ -79,6 +83,10 @@ export class StrokeLineWithPath extends Component {
                 this.currentPathIndex++;
                 if (this.currentPathIndex >= this.paths.length) {
                     this.isMoving = false;
+                    this.unschedule(this.drawLine);
+                    this.unRegisterTouchEvent();
+                    window.tattoContext.audioManager.stopAll();
+                    window.tattoContext.currentSticker.onPrayComplete();
                 }
             }
         }
@@ -86,6 +94,10 @@ export class StrokeLineWithPath extends Component {
 
     onTouchStart(event: EventTouch) {
         // console.log('touch down', this.isCanDraw);
+        if (!this.isCanDraw || this.patchCompleted) {
+            return;
+        }
+
         const context = window.tattoContext as TatooContext1;
 
         if (context.isFirstStickerDone) {
@@ -93,27 +105,23 @@ export class StrokeLineWithPath extends Component {
             gameEndHandler.StoreGameChangingNoCondition();
         }
 
-        if (!this.isCanDraw) {
-            return;
-        }
+        this.patchCompleted = true;
 
-        if (this.currentPathIndex >= this.paths.length) {
-            return;
-        }
-
-        if (this.currentPathIndex === 0) {
+        this.moveSpeed = this.drawSpeed;
+        window.tattoContext.audioManager.playMusic(Constant.EFFECT_NAME.TATTOO_MACHINE_LINE, true);
+        if (this.currentPathIndex === 0 && this.paths.length > 0) {
             this.graphics.moveTo(this.paths[0].x, this.paths[0].y);
             window.tattoContext.tattoLineMachine.setPosition(this.paths[0]);
-            this.currentPathIndex++;
+            this.currentPathIndex = 1;
         }
-
-        window.tattoContext.audioManager.playMusic(Constant.EFFECT_NAME.TATTOO_MACHINE_LINE, true);
-
         this.schedule(this.drawLine, 0.01);
         this.isMoving = true;
     }
 
     onTouchEnd(event: EventTouch) {
+        if (this.patchCompleted) {
+            return;
+        }
         window.tattoContext.audioManager.stopAll();
         this.isMoving = false;
         this.unschedule(this.drawLine);
