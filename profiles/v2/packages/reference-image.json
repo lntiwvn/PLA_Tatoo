@@ -8,7 +8,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 117
+        "opacity": 117,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_137\\Level_137.png",
@@ -16,7 +17,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_138\\Level_138.png",
@@ -24,7 +26,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_139\\Level_139.png",
@@ -32,7 +35,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_140\\Level_140.png",
@@ -40,7 +44,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_141\\Level_141.png",
@@ -48,7 +53,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_142\\Level_142.png",
@@ -56,7 +62,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_143\\Level_143.png",
@@ -64,7 +71,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_144\\Level_144.png",
@@ -72,7 +80,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_145\\Level_145.png",
@@ -80,7 +89,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_146\\Level_146.png",
@@ -88,7 +98,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_147\\Level_147.png",
@@ -96,7 +107,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_148\\Level_148.png",
@@ -104,7 +116,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_149\\Level_149.png",
@@ -112,7 +125,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_149\\Level_149.png",
@@ -120,7 +134,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_139\\Level_139.png",
@@ -128,7 +143,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_131\\Level_131.png",
@@ -136,7 +152,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_132\\Level_132.png",
@@ -144,7 +161,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_133\\Level_133.png",
@@ -152,7 +170,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_134\\Level_134.png",
@@ -160,7 +179,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png",
@@ -168,7 +188,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_137\\Level_137.png",
@@ -176,7 +197,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_138\\Level_138.png",
@@ -184,7 +206,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_140\\Level_140.png",
@@ -192,7 +215,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_141\\Level_141.png",
@@ -200,7 +224,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_142\\Level_142.png",
@@ -208,7 +233,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_143\\Level_143.png",
@@ -216,7 +242,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_144\\Level_144.png",
@@ -224,7 +251,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_145\\Level_145.png",
@@ -232,7 +260,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_146\\Level_146.png",
@@ -240,7 +269,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_147\\Level_147.png",
@@ -248,7 +278,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Workspace\\CocosCreator\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_148\\Level_148.png",
@@ -256,7 +287,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\Project\\The1\\TattooShopsPLA\\CocosTattooShopsPLA\\assets\\TattooAssets\\textures\\stickers\\sticker_135\\Level_135.png",
@@ -264,7 +296,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       },
       {
         "path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png",
@@ -272,7 +305,8 @@
         "y": 0,
         "sx": 1,
         "sy": 1,
-        "opacity": 50
+        "opacity": 50,
+        "missing": true
       }
     ],
     "sceneUUID": {
@@ -337,7 +371,7 @@
         "path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136\\Level_136.png"
       }
     },
-    "scene": "376a32c4-74a2-43d3-9c40-51c3fab8e134"
+    "scene": "cc84ae57-d85b-4a4b-b848-00320af6ac43"
   },
   "show": false,
   "root-path": "D:\\1_Project\\TattooASMR_PLA\\assets\\TattooAssets\\textures\\stickers\\sticker_136",

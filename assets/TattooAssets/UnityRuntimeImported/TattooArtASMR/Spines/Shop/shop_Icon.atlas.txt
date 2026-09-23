@@ -1,0 +1,26 @@
+shop_Icon.png
+size:1560,520
+filter:Linear,Linear
+pma:true
+Group 3
+bounds:2,3,620,512
+Group 4
+bounds:1138,396,119,362
+rotate:90
+Group 4 copy
+bounds:1138,276,118,352
+rotate:90
+glow (1)
+bounds:624,3,512,512
+home_btn_shop_01
+bounds:1333,106,224,168
+sale
+bounds:1333,2,187,102
+shadow
+bounds:1502,308,161,50
+rotate:90
+shop_gun1a
+bounds:1138,30,193,244
+star
+bounds:1502,471,44,51
+rotate:90

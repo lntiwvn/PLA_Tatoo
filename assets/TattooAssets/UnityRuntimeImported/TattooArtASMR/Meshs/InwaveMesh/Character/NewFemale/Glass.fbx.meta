@@ -1,0 +1,146 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1",
+  "files": [],
+  "subMetas": {
+    "99a4a": {
+      "importer": "gltf-mesh",
+      "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@99a4a",
+      "displayName": "",
+      "id": "99a4a",
+      "name": "Glasses.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 684
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1a8ce": {
+      "importer": "gltf-embeded-image",
+      "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@1a8ce",
+      "displayName": "",
+      "id": "1a8ce",
+      "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:base_color_texture.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "7c79f": {
+      "importer": "texture",
+      "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@7c79f",
+      "displayName": "",
+      "id": "7c79f",
+      "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@1a8ce"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "22c79": {
+      "importer": "gltf-material",
+      "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@22c79",
+      "displayName": "",
+      "id": "22c79",
+      "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:quan ao.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b88d2": {
+      "importer": "gltf-scene",
+      "uuid": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@b88d2",
+      "displayName": "",
+      "id": "b88d2",
+      "name": "Glass.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Char01_Rig:trang_phuc_nhan_vat_vip_1:base_color_texture",
+        "uri": "f948ce0b-0c10-4579-87a5-8ecc88f790e1@1a8ce"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "f948ce0b-0c10-4579-87a5-8ecc88f790e1@99a4a"
+      ],
+      "skeletons": [],
+      "textures": [
+        "f948ce0b-0c10-4579-87a5-8ecc88f790e1@7c79f"
+      ],
+      "materials": [
+        "f948ce0b-0c10-4579-87a5-8ecc88f790e1@22c79"
+      ],
+      "scenes": [
+        "f948ce0b-0c10-4579-87a5-8ecc88f790e1@b88d2"
+      ]
+    }
+  }
+}

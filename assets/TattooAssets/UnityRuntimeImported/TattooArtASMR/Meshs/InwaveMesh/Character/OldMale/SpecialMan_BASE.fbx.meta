@@ -1,0 +1,277 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a",
+  "files": [
+    "__original-animation-0.bin"
+  ],
+  "subMetas": {
+    "30732": {
+      "importer": "gltf-skeleton",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@30732",
+      "displayName": "",
+      "id": "30732",
+      "name": "UnnamedSkeleton-0.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 58
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "82921": {
+      "importer": "gltf-material",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@82921",
+      "displayName": "",
+      "id": "82921",
+      "name": "Char01_Rig:T_SpecialMan.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6d4d9": {
+      "importer": "gltf-mesh",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@6d4d9",
+      "displayName": "",
+      "id": "6d4d9",
+      "name": "Char01_Rig:Char.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 5030
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "df74c": {
+      "importer": "gltf-mesh",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@df74c",
+      "displayName": "",
+      "id": "df74c",
+      "name": "Char01_Rig:x1.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 26
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "86f94": {
+      "importer": "gltf-mesh",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@86f94",
+      "displayName": "",
+      "id": "86f94",
+      "name": "Char01_Rig:x2.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 26
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "73b7f": {
+      "importer": "gltf-animation",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@73b7f",
+      "displayName": "",
+      "id": "73b7f",
+      "name": "Take 001.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 4.958333492279053
+        },
+        "events": []
+      },
+      "ver": "1.0.18",
+      "imported": true,
+      "files": [
+        ".bin"
+      ],
+      "subMetas": {}
+    },
+    "f1394": {
+      "importer": "gltf-skeleton",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@f1394",
+      "displayName": "",
+      "id": "f1394",
+      "name": "UnnamedSkeleton-1.skeleton",
+      "userData": {
+        "gltfIndex": 1,
+        "jointsLength": 8
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "75ee4": {
+      "importer": "gltf-skeleton",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@75ee4",
+      "displayName": "",
+      "id": "75ee4",
+      "name": "UnnamedSkeleton-2.skeleton",
+      "userData": {
+        "gltfIndex": 2,
+        "jointsLength": 8
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6a16c": {
+      "importer": "texture",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@6a16c",
+      "displayName": "",
+      "id": "6a16c",
+      "name": "Char01_Rig:file27.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/TattooAssets/UnityRuntimeImported/TattooArtASMR/Meshs/InwaveMesh/Character/OldMale/TextureAndMaterials/Textures/T_SpecialMan_Tattoo.jpg"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "27d10": {
+      "importer": "gltf-material",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@27d10",
+      "displayName": "",
+      "id": "27d10",
+      "name": "Char01_Rig:lambert9.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1b5d9": {
+      "importer": "gltf-scene",
+      "uuid": "f0998271-b07d-4fca-847e-8ba65e69799a@1b5d9",
+      "displayName": "",
+      "id": "1b5d9",
+      "name": "SpecialMan_BASE.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "Char01_Rig:file27",
+        "uri": "db://assets/TattooAssets/UnityRuntimeImported/TattooArtASMR/Meshs/InwaveMesh/Character/OldMale/TextureAndMaterials/Textures/T_SpecialMan_Tattoo.jpg"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "animationImportSettings": [
+      {
+        "name": "Take 001",
+        "duration": 4.958333492279053,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Take 001",
+            "from": 0,
+            "to": 4.958333492279053,
+            "wrapMode": 2,
+            "previousId": "73b7f"
+          }
+        ]
+      }
+    ],
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "f0998271-b07d-4fca-847e-8ba65e69799a@6d4d9",
+        "f0998271-b07d-4fca-847e-8ba65e69799a@df74c",
+        "f0998271-b07d-4fca-847e-8ba65e69799a@86f94"
+      ],
+      "skeletons": [
+        "f0998271-b07d-4fca-847e-8ba65e69799a@30732",
+        "f0998271-b07d-4fca-847e-8ba65e69799a@f1394",
+        "f0998271-b07d-4fca-847e-8ba65e69799a@75ee4"
+      ],
+      "textures": [
+        "f0998271-b07d-4fca-847e-8ba65e69799a@6a16c"
+      ],
+      "materials": [
+        "f0998271-b07d-4fca-847e-8ba65e69799a@82921",
+        "f0998271-b07d-4fca-847e-8ba65e69799a@27d10"
+      ],
+      "scenes": [
+        "f0998271-b07d-4fca-847e-8ba65e69799a@1b5d9"
+      ]
+    }
+  }
+}

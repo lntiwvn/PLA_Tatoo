@@ -1,0 +1,182 @@
+[
+  {
+    "idLevel": 1,
+    "levelName": "Duck",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 2,
+    "levelName": "Alpha",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 3,
+    "levelName": "Blue",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 4,
+    "levelName": "Huggy",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 5,
+    "levelName": "Horse",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 6,
+    "levelName": "Fox",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 7,
+    "levelName": "Mario",
+    "isAvailable": false
+  },
+  {
+    "idLevel": 8,
+    "levelName": "Wednesday",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 9,
+    "levelName": "RobloxFace",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 10,
+    "levelName": "CatFeet",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 11,
+    "levelName": "AmongUs",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 12,
+    "levelName": "Green",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 13,
+    "levelName": "NoelTree",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 14,
+    "levelName": "Skull",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 15,
+    "levelName": "F",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 16,
+    "levelName": "DogFace",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 17,
+    "levelName": "HarryPoster",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 18,
+    "levelName": "GamePad",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 19,
+    "levelName": "Hulk",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 20,
+    "levelName": "Ball",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 21,
+    "levelName": "Smile",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 22,
+    "levelName": "Ladybug",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 23,
+    "levelName": "Lion",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 24,
+    "levelName": "Peacock",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 25,
+    "levelName": "Dolphin",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 26,
+    "levelName": "Owl",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 27,
+    "levelName": "Butterfly",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 28,
+    "levelName": "Jumbo",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 29,
+    "levelName": "Banban",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 30,
+    "levelName": "Flynn",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 31,
+    "levelName": "Opila",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 32,
+    "levelName": "Chamelon",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 33,
+    "levelName": "Flamingo",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 34,
+    "levelName": "Donut",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 35,
+    "levelName": "Candy",
+    "isAvailable": true
+  },
+  {
+    "idLevel": 36,
+    "levelName": "Cat",
+    "isAvailable": true
+  }
+]

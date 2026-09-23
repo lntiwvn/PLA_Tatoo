@@ -1,0 +1,34 @@
+[
+  {
+    "id": 105,
+    "indexPrefab": 4,
+    "price": 500,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0,
+    "shopItemType": 2
+  },
+  {
+    "id": 106,
+    "indexPrefab": 5,
+    "price": 500,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0,
+    "shopItemType": 2
+  },
+  {
+    "id": 107,
+    "indexPrefab": 6,
+    "price": 500,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0,
+    "shopItemType": 2
+  },
+  {
+    "id": 108,
+    "indexPrefab": 7,
+    "price": 500,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0,
+    "shopItemType": 2
+  }
+]

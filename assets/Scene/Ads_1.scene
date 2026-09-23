@@ -2265,7 +2265,7 @@
     "confettiParticleTop": null,
     "textWowSpine": null,
     "fixedTattooPrefab": {
-      "__uuid__": "2a65de41-246f-4f83-a744-f554edfc7346",
+      "__uuid__": "30a1514f-d936-44eb-826c-180c8b160d61",
       "__expectedType__": "cc.Prefab"
     },
     "selectTattOpacity": {
@@ -2967,7 +2967,7 @@
     "value": {
       "__type__": "cc.Vec3",
       "x": 0,
-      "y": 52.48999999999997,
+      "y": 613.29,
       "z": 0
     }
   },
@@ -4985,7 +4985,7 @@
     "_envmapLDR": null,
     "_diffuseMapHDR": null,
     "_diffuseMapLDR": null,
-    "_enabled": false,
+    "_enabled": true,
     "_useHDR": true,
     "_editableMaterial": null,
     "_reflectionHDR": null,
@@ -4994,7 +4994,7 @@
   },
   {
     "__type__": "cc.FogInfo",
-    "_type": 0,
+    "_type": 3,
     "_fogColor": {
       "__type__": "cc.Color",
       "r": 200,

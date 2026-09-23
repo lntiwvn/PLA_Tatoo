@@ -49,6 +49,12 @@ export class SprayPaintWithFade extends Component {
 
     isFirstMove: boolean = true;
 
+    // Khi vẽ nhiều phần cùng lúc: chỉ phần leader mới điều khiển máy xăm,
+    // âm thanh và text hướng dẫn. Các phần còn lại tự tô không cần chạm.
+    isLeader: boolean = true;
+    onDrawStarted: () => void = null;
+    onDrawComplete: () => void = null;
+
     protected onLoad(): void {
         this.filledBuffer = new Uint8Array(512 * 512 * 4);
         for (let i = 0; i < this.filledBuffer.length; i += 4) {
@@ -88,6 +94,27 @@ export class SprayPaintWithFade extends Component {
         window.tattoContext.node.off(Node.EventType.TOUCH_MOVE, this.onTouchMove, this);
         window.tattoContext.node.off(Node.EventType.TOUCH_END, this.onTouchEnd, this);
         window.tattoContext.node.off(Node.EventType.TOUCH_CANCEL, this.onTouchEnd, this);
+    }
+
+    /** Bắt đầu tô mà không cần chạm - dùng cho các phần chạy kèm trong cùng một lượt. */
+    startAutoDraw() {
+        if (this.patchCompleted || !this.isCanPray) {
+            return;
+        }
+
+        this.isComplete = false;
+        this.patchCompleted = true;
+        this.autoDrawing = true;
+        this.autoDrawIndex = 0;
+        this.schedule(this.autoDraw, 0.01);
+    }
+
+    private notifyDrawComplete() {
+        if (this.onDrawComplete) {
+            this.onDrawComplete();
+            return;
+        }
+        window.tattoContext.currentSticker.onPrayComplete();
     }
 
     getPixels(sp: Sprite, rect?: Rect) {
@@ -161,22 +188,26 @@ export class SprayPaintWithFade extends Component {
         this.autoDrawing = true;
 
         //@ts-ignore
-        if (window.tattoContext.labelInk) {
+        if (this.isLeader && window.tattoContext.labelInk) {
             //@ts-ignore
             window.tattoContext.stopTextColorEffect();
         }
 
-        window.tattoContext.audioManager.stopAll();
-        window.tattoContext.audioManager.playMusic(Constant.EFFECT_NAME.TATTOO_MACHINE_LINE, true);
+        if (this.isLeader) {
+            window.tattoContext.audioManager.stopAll();
+            window.tattoContext.audioManager.playMusic(Constant.EFFECT_NAME.TATTOO_MACHINE_LINE, true);
 
-        let { x, y } = event.getUILocation();
-        // const currentMousePosition = new Vec3(event.getDeltaX(), event.getDeltaY(), 0);
-        // let newPos = new Vec3(currentMousePosition.x + x, currentMousePosition.y + y + 50);
-        let newPos = new Vec3(x, y + 24);
-        let converToLocal = window.tattoContext.node.getComponent(UITransform).convertToNodeSpaceAR(newPos);
-        window.tattoContext.setTattooMachinePos(converToLocal);
+            let { x, y } = event.getUILocation();
+            // const currentMousePosition = new Vec3(event.getDeltaX(), event.getDeltaY(), 0);
+            // let newPos = new Vec3(currentMousePosition.x + x, currentMousePosition.y + y + 50);
+            let newPos = new Vec3(x, y + 24);
+            let converToLocal = window.tattoContext.node.getComponent(UITransform).convertToNodeSpaceAR(newPos);
+            window.tattoContext.setTattooMachinePos(converToLocal);
+        }
 
         this.schedule(this.autoDraw, 0.01);
+
+        this.onDrawStarted && this.onDrawStarted();
     }
 
     onTouchMove(event: EventTouch) {
@@ -222,7 +253,9 @@ export class SprayPaintWithFade extends Component {
             // console.log('distance', distance);
         }
 
-        window.tattoContext.setTattooMachinePos(newPos);
+        if (this.isLeader) {
+            window.tattoContext.setTattooMachinePos(newPos);
+        }
 
         let { width, height } = this.maskNode.getComponent(UITransform);
         let { isMaskFullyCovered } = this.checkMaskFullyCovered(this.maskBufffer, this.filledBuffer, width, height);
@@ -250,7 +283,7 @@ export class SprayPaintWithFade extends Component {
             this.isComplete = true;
             this.unschedule(this.autoDraw);
             this.unRegisterTouchEvent();
-            window.tattoContext.currentSticker.onPrayComplete();
+            this.notifyDrawComplete();
         }
     }
 
@@ -270,7 +303,7 @@ export class SprayPaintWithFade extends Component {
             return;
         }
 
-        if (isStopMusic) {
+        if (isStopMusic && this.isLeader) {
             window.tattoContext.audioManager.stopAll();
         }
 
@@ -284,7 +317,7 @@ export class SprayPaintWithFade extends Component {
             // console.log('isPrayFull true');
             this.graphics.circle(0, 0, 512);
             this.graphics.fill();
-            window.tattoContext.currentSticker.onPrayComplete();
+            this.notifyDrawComplete();
         }
     }
 

@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "indexPrefab": 0,
+    "price": 0,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 2,
+    "indexPrefab": 1,
+    "price": 0,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 1
+  },
+  {
+    "id": 3,
+    "indexPrefab": 2,
+    "price": 500,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 4,
+    "indexPrefab": 3,
+    "price": 0,
+    "unlockAtLevel": 0,
+    "whereToUnlock": 1
+  },
+  {
+    "id": 5,
+    "indexPrefab": 4,
+    "price": 1000,
+    "unlockAtLevel": 6,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 6,
+    "indexPrefab": 5,
+    "price": 1500,
+    "unlockAtLevel": 8,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 7,
+    "indexPrefab": 6,
+    "price": 1500,
+    "unlockAtLevel": 10,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 8,
+    "indexPrefab": 7,
+    "price": 2000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 9,
+    "indexPrefab": 8,
+    "price": 2500,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 10,
+    "indexPrefab": 9,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 11,
+    "indexPrefab": 10,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 12,
+    "indexPrefab": 11,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 13,
+    "indexPrefab": 12,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 14,
+    "indexPrefab": 13,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 15,
+    "indexPrefab": 14,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 16,
+    "indexPrefab": 15,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 17,
+    "indexPrefab": 16,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 18,
+    "indexPrefab": 17,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 19,
+    "indexPrefab": 18,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  },
+  {
+    "id": 20,
+    "indexPrefab": 19,
+    "price": 3000,
+    "unlockAtLevel": 100000,
+    "whereToUnlock": 0
+  }
+]

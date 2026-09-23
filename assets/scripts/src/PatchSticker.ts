@@ -2,6 +2,19 @@ import { _decorator, CCFloat, Color, Component, GradientRange, Material, MeshRen
 import { SprayPaintWithFade } from './SprayPaintWithFade';
 const { ccclass, property } = _decorator;
 
+/**
+ * Giao diện chung cho các component vẽ của một patch (tô màu hoặc đi line).
+ * TattooLineSticker dùng nó để điều phối nhiều patch vẽ cùng một lượt.
+ */
+export interface IPatchDrawComp {
+    isLeader: boolean;
+    onDrawStarted: () => void;
+    onDrawComplete: () => void;
+    registerTouchEvent(): void;
+    unRegisterTouchEvent(): void;
+    startAutoDraw(): void;
+}
+
 @ccclass('PatchSticker')
 export class PatchSticker extends Component {
     @property(Node)
@@ -121,5 +134,9 @@ export class PatchSticker extends Component {
 
     setCanSpray(value: boolean) {
         this.sprayComp.isCanPray = value;
+    }
+
+    get drawComp(): IPatchDrawComp {
+        return this.sprayComp;
     }
 }

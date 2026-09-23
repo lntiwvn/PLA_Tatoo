@@ -1,0 +1,146 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c",
+  "files": [],
+  "subMetas": {
+    "30162": {
+      "importer": "gltf-material",
+      "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@30162",
+      "displayName": "",
+      "id": "30162",
+      "name": "ButXam1_Rig:SungXam_T.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "01a55": {
+      "importer": "gltf-mesh",
+      "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@01a55",
+      "displayName": "",
+      "id": "01a55",
+      "name": "polySurface1.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 48
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "22ab1": {
+      "importer": "gltf-embeded-image",
+      "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@22ab1",
+      "displayName": "",
+      "id": "22ab1",
+      "name": "ButXam1_Rig:file1.image",
+      "userData": {
+        "gltfIndex": 0,
+        "fixAlphaTransparencyArtifacts": true,
+        "hasAlpha": true,
+        "type": "texture"
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".json",
+        ".png"
+      ],
+      "subMetas": {}
+    },
+    "9e028": {
+      "importer": "texture",
+      "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@9e028",
+      "displayName": "",
+      "id": "9e028",
+      "name": "ButXam1_Rig:file1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@22ab1"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "08d44": {
+      "importer": "gltf-scene",
+      "uuid": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@08d44",
+      "displayName": "",
+      "id": "08d44",
+      "name": "HopMau.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "ButXam1_Rig:file1",
+        "uri": "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@22ab1"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@01a55"
+      ],
+      "skeletons": [],
+      "textures": [
+        "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@9e028"
+      ],
+      "materials": [
+        "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@30162"
+      ],
+      "scenes": [
+        "a3ce585a-5c2c-4b2a-98cb-73dbfc95168c@08d44"
+      ]
+    }
+  }
+}

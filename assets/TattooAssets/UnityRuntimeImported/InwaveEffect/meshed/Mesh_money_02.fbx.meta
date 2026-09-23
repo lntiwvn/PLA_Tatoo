@@ -1,0 +1,78 @@
+{
+  "ver": "2.3.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f0e04b44-1ee7-443b-bb66-bf6dcc1ba020",
+  "files": [],
+  "subMetas": {
+    "15160": {
+      "importer": "gltf-scene",
+      "uuid": "f0e04b44-1ee7-443b-bb66-bf6dcc1ba020@15160",
+      "displayName": "",
+      "id": "15160",
+      "name": "Mesh_money_02.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5db17": {
+      "importer": "gltf-mesh",
+      "uuid": "f0e04b44-1ee7-443b-bb66-bf6dcc1ba020@5db17",
+      "displayName": "",
+      "id": "5db17",
+      "name": "MOMEY.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 16
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "f0e04b44-1ee7-443b-bb66-bf6dcc1ba020@5db17"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "f0e04b44-1ee7-443b-bb66-bf6dcc1ba020@15160"
+      ]
+    }
+  }
+}

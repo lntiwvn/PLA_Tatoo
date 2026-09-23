@@ -1,0 +1,3658 @@
+{
+  "generatedAtUtc": "2026-09-17T10:08:51.2752923Z",
+  "sourceProject": "D:\\Rinna\\tattoo-art-asrm",
+  "buildScenes": [
+    "Assets/TattooArtASMR/Scenes/InitScene.unity",
+    "Assets/TattooArtASMR/Scenes/GamePlay.unity"
+  ],
+  "destination": "D:\\Rinna\\TattooASMR_PLA\\assets\\TattooAssets\\UnityRuntimeImported",
+  "fileCount": 603,
+  "totalBytes": 510038506,
+  "categories": [
+    {
+      "name": "audio",
+      "count": 43,
+      "bytes": 4674188
+    },
+    {
+      "name": "data",
+      "count": 9,
+      "bytes": 114257
+    },
+    {
+      "name": "font",
+      "count": 3,
+      "bytes": 600132
+    },
+    {
+      "name": "image",
+      "count": 367,
+      "bytes": 22260115
+    },
+    {
+      "name": "model",
+      "count": 181,
+      "bytes": 482389814
+    }
+  ],
+  "files": [
+    {
+      "relativePath": "Images\\hand_tap.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10070
+    },
+    {
+      "relativePath": "InwaveEffect\\meshed\\Mesh_money_02.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 12172
+    },
+    {
+      "relativePath": "InwaveEffect\\meshed\\Thoi.obj",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2624
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\2_light_11.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28739
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\bubble_02(1).png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 17781
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\bubble.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 93630
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\butterfly_02.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 29370
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\butterfly.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 47054
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\cash-HD.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8469
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\circle.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6212
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\glow_ring_03.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21104
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\glow.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12574
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\line_loop_02.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 30705
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\line_loop.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 53755
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\ring_01.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22106
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\splat02_flat_3x3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 42427
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\star_blink2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14740
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\star.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5597
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\trail_wind.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12452
+    },
+    {
+      "relativePath": "InwaveEffect\\Textures\\txt_score.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 119916
+    },
+    {
+      "relativePath": "Plugins\\CW\\PaintIn3D\\Examples\\InGame\\Decals\\Dot.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21152
+    },
+    {
+      "relativePath": "Plugins\\CW\\PaintIn3D\\Examples\\InGame\\Meshes\\Window.DAE",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 79925
+    },
+    {
+      "relativePath": "TattooArtASMR\\Datas\\LevelSortData\\NewLevelSortData_v1.0.11.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 3011
+    },
+    {
+      "relativePath": "TattooArtASMR\\Datas\\TattooGunInShopDatas\\DefaultCleanPadData.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 571
+    },
+    {
+      "relativePath": "TattooArtASMR\\Datas\\TattooGunInShopDatas\\DefaultGunData.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 2420
+    },
+    {
+      "relativePath": "TattooArtASMR\\Datas\\TattooGunInShopDatas\\DefaultSprayBottleData.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 569
+    },
+    {
+      "relativePath": "TattooArtASMR\\Datas\\TattooGunInShopDatas\\DefaultTrailFxData.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 573
+    },
+    {
+      "relativePath": "TattooArtASMR\\Font\\Rubik-Bold.ttf",
+      "category": "font",
+      "reason": "build-scene dependency",
+      "bytes": 124900
+    },
+    {
+      "relativePath": "TattooArtASMR\\Font\\Rubik-Regular.ttf",
+      "category": "font",
+      "reason": "build-scene dependency",
+      "bytes": 125032
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Accessories\\BotBien.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 35600
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Accessories\\KhanLau02.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 94352
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Accessories\\PhunSuong_01.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 34800
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Chairs\\Chair.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 30096
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Chairs\\T_Chair_Tattoo.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 52258
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_Power.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4416912
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_Sit To Stand.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4404064
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_LeftElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 9001008
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_LeftElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4817792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_LeftShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8892496
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_LeftShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4817792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_RightElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8674592
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_RightElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4818176
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_RightShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8457040
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIdle_RightShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4817808
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_SittingIDle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658320
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_Stand to sit.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4186496
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_1\\Female_Victory.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4428256
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_Power_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658720
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_Sit To Stand_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4379872
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_LeftElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8239840
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_LeftElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4719328
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_LeftShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348752
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_LeftShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4719344
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_RightElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348624
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_RightElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4718944
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_RightShoulder_Version_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348640
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\AnimSet_2\\Female_SittingIdle_RightShoulder_version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4719344
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Angry_ThrowCHair.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4638448
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_AngryYell.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4367728
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Belly.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4295440
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Chest.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4416720
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Happy_MoneyGun.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4637696
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4307168
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_LeftFoot_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8130976
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_LeftFoot.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658704
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Lost.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4818112
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_NewStyle_RIg.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 6077376
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_RightFoot_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348720
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_RightFoot.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658704
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_shoulderLeft.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658912
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_shoulderRight.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658336
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowChestBelly.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4779424
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowLeftFoot.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4537632
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowRightFoot.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4295088
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348720
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowShoulder_V3_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 8348736
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_ShowShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4658528
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Walk_Turn Front to Right.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3707840
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Walk_Turn Right to Front.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3610976
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Walk_Ver2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3626880
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Female_Walk.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3554448
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Glass.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 44864
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_1\\body-character-brown.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 954828
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_1\\hair-brown.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 123831
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_1\\quan-ao-brown.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 30144
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_2\\body-character-white.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1090143
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_2\\hair-white.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 208151
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_2\\quan-ao-white.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8747
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_3\\giay.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 67230
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_3\\hair.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 15660
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_3\\quan-ao-vip-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1114397
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_3\\quan-ao-vip-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 117807
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_4\\base.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 556392
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_4\\giay.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 41273
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_4\\quan ao nu vip 2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 33976
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewFemale\\Textures\\Skin_4\\toc nu vip 2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23215
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SitPower_ShowArm.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2358912
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_LeftElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2475824
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_LeftElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695168
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_LeftShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2514768
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_LeftShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695488
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_RightElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 5347904
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_RightElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695168
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_RightShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 5347920
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIdle_RightShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695200
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SittingIDle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695136
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_SitToStand.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2429328
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_1\\Char01_StandToSit.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2257712
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SitPower_ShowArm_Verson2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2592912
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittinggIdle_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2631568
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_LeftElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2242096
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_LeftElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2631520
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_LeftShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2281152
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_LeftShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2631920
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_RightElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 5231136
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_RightElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2631616
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_RightShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 5231136
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SittingIdle_RightShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2631920
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_SitToStand_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2413488
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\AnimSet_2\\Char01_StandToSit_Ver2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2156496
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Angry_ThrowChair_Character.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2827088
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Angry_Yell.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2405968
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Angry.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2514688
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Happy_MoneyGun_Character.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2834064
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Rig.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 4382304
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_SitLost.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2695424
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_StandingIdle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2366704
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Victory.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2444608
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Walk_Turn Front to Right.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2257712
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_Walk_Turn Right to Front.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2172048
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Char01_WalkSide.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2133072
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\Male_NewStyle_Walk_Version2_Side.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2234368
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\TexturesAndMaterials\\Textures\\Skin_1\\photo_2023-04-25_13-56-08.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 50158
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\TexturesAndMaterials\\Textures\\Skin_1\\photo_2023-04-25_13-56-11.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 93336
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\NewMale\\TexturesAndMaterials\\Textures\\Skin_2\\photo_2023-04-25_13-52-11.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 92537
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_Power.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1407904
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_Sit To Stand.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1401936
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_LeftElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2732192
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_LeftElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606560
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_LeftShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2732208
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_LeftShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606576
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_RightElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2671600
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_RightElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606576
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_RightShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2671616
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIdle_RightShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606576
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_SittingIDle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606528
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_Stand to sit.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1294160
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_1\\Female_Victory.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1413888
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_Power_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1527696
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_Sit To Stand_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2973632
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_LeftElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2550432
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_LeftElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3143360
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_LeftShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2580752
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_LeftShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2853344
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_RightElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2580736
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_RightElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3143744
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_RightShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2580736
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIdle_RightShoulder_version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3143360
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_SittingIDle_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3139520
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\AnimSet_2\\Female_Stand to sit_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2749408
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Angry_ThrowCHair.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3012928
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_AngryYell.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2671840
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Chest_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2507696
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Happy_MoneyGun.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3022944
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Lost.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1606496
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Rig.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1513392
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Walk_Turn Front to Right.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1252272
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Walk_Turn Right to Front.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1204368
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Walk_Ver2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2495792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\Female_Walk.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 2453360
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\TextureAndMaterial\\Textures\\Body.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 645914
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldFemale\\TextureAndMaterial\\Textures\\Female_Improve.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 623669
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SitPower_ShowArm.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 741600
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_LeftElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 858912
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_LeftElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1011792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_LeftShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 842048
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_LeftShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1011808
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_RightElbow_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 797008
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_RightElbow.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1011792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_RightShoulder_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 797024
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIdle_RightShoulder.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1011808
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SittingIDle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 981296
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_SitToStand.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 791584
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_1\\Char01_StandToSit.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 908272
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SitPower_ShowArm_Verson2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1061472
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittinggIdle_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 965840
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_LeftElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 785776
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_LeftElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 965856
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_LeftShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 712624
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_LeftShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 965872
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_RightElbow_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 712624
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_RightElbow_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 966800
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_RightShoulder_Version2_Idle.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 712624
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SittingIdle_RightShoulder_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 965872
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_SitToStand_Version2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 815712
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\AnimSet_2\\Char01_StandToSit_Ver2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 600000
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Angry_ThrowChair_Character.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1121776
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Angry_Yell.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 802672
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Angry.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 934816
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Happy_MoneyGun_Character.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1131680
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Rig (9).fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 507040
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_SitLost.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 981408
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_SittingIdle_ArmLeft.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 1009200
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_SittingIdle_ArmRight.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 981328
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Victory.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 802688
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Walk_Turn Front to Right.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 813456
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_Walk_Turn Right to Front.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 634640
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\Char01_WalkSide.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 600896
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\SpecialMan_BASE.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 3620996
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\TextureAndMaterials\\Textures\\photo_2023-02-07_13-45-17.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 82938
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Character\\OldMale\\TextureAndMaterials\\Textures\\T_SpecialMan_Tattoo.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 343169
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\HopMau.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 31792
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\New\\Day.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 299227
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\New\\Improve_02_02.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 128096
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\New\\Improve_02_03.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 62240
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\New\\InkBaseColor.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 19883
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\New\\SungXam_01_01.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 109696
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Rooms\\phong xam.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 347884
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Rooms\\phong xam.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 135785
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\Rooms\\Shadow.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 33812
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\ButXam.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 147248
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_01_1.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 408302
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_01_2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 404450
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_02_1.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 530114
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_02_2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 536562
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_03_1.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 173314
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam_03_2.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 173081
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_01.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 219666
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_02.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 223935
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_03.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 409609
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_04.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 413547
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_05.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 596834
+    },
+    {
+      "relativePath": "TattooArtASMR\\Meshs\\InwaveMesh\\TattooGun\\SungXam03_06.fbx",
+      "category": "model",
+      "reason": "build-scene dependency",
+      "bytes": 617263
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\New\\HOME.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 1062948
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\New\\INGAME.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 1047298
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\New\\SFX_gun_new 2_01.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 162283
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\New\\SFX_gun_new_01.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 75943
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\New\\sfx_sponge_clear_skin_01.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 39906
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\sfx_tattoo_gun.wav",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 236388
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_angry_female 1.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 30674
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_angry_female 2.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 30674
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_angry_male 1.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 40716
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_angry_male 2.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 35496
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_button.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 5008
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_chose_color.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 11894
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_confetti.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 7219
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_done.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 30674
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_foam_loop hold 2.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 131817
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_foam_loop hold.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 69372
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_foam_start push.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 15650
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_hammer_gun_4x SFX_01.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 39536
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_female 1.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 18154
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_female 2.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 23788
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_female 3.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 31926
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_male 1.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 19836
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_male 2.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 22968
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ouch_male 3.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 29232
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_tattoo_machine_color 1.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 60302
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_tattoo_machine_color 2.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 182065
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_tattoo_machine_line 1.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 54424
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_tattoo_machine_line 2.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 60087
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_ button play.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 38186
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_ button_chose color done.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 33804
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_ button_object complete.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 23788
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_ line object complete.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 24414
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_intro SFX_01.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 138526
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_intro SFX_02.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 76406
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_outro SFX.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 131460
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_show button done.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 29422
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_show item oder.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 48202
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_star collect 1_.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 45072
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_star collect 2_.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 45698
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_ui_star collect 3_.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 46950
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_wipe_foam 1.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 63524
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_wipe_foam 2.ogg",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 300500
+    },
+    {
+      "relativePath": "TattooArtASMR\\Sounds\\SFXs\\TATTOO SFX\\sfx_wow.mp3",
+      "category": "audio",
+      "reason": "build-scene dependency",
+      "bytes": 51958
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Emoji\\emoji.atlas.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 603
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Emoji\\emoji.json",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 86516
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Emoji\\emoji.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 78085
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Shop\\shop_Icon.atlas.txt",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 409
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Shop\\shop_Icon.json",
+      "category": "data",
+      "reason": "build-scene dependency",
+      "bytes": 19585
+    },
+    {
+      "relativePath": "TattooArtASMR\\Spines\\Shop\\shop_Icon.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 358945
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\Accessories\\KhanLau02_T.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 573519
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\Accessories\\PhunBot02_T1.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 555039
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\Accessories\\PhunBot02_T2.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 486381
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\Accessories\\PhunBot02_T3.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 426812
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\AllGunTattooIcon\\TG__08.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 74397
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\AllGunTattooIcon\\TG__09.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 83648
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\AllGunTattooIcon\\TG__10.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 76383
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 811888
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 846931
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 722522
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\alert.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 241364
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\BonusText\\AMAZING.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22758
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\BonusText\\AWESOME.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18916
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\BonusText\\great.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18085
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\BonusText\\nice.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18219
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\BonusText\\wow.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16247
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\broken.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 332646
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\Clear.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 609
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\DotLine.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2791
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\FoarmBrush.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 472497
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\HighLight.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 13349
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\SupremeGun.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 35131
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\TargetDot.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2927
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\vocuc (2).png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 36815
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\GamePlay\\xDot.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1648
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\1_.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6261
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\1-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11640
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\1-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5841
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\1-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4651
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21810
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5091
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7710
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3761
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11555
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 26345
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\10t.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9038
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\11-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5707
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\11-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11773
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\11-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3107
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\11-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 20700
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\11.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7142
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\12-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16239
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\12-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7443
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\12-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4976
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\12-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28469
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\12.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9292
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\13-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10773
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\13-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5351
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\13-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 17378
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\13.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5548
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\14-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 15214
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\14-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10679
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\14-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3456
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\14-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28465
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\14.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9897
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9976
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8184
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3740
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3357
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23632
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\15.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8273
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14478
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5431
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3612
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2970
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11453
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 36528
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\16.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 46466
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\17-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5829
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\17-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10494
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\17-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 19529
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\17.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 24805
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\18-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3777
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\18-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5020
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\18-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 13824
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\18-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28972
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\18.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 35518
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\19-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6550
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\19-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7990
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\19-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 17292
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\19.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 20708
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5862
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4259
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4034
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9682
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 25775
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\20-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4281
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\20-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9651
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\20-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 17325
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\20-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 29166
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\20.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 34133
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\21-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7011
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\21-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7027
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\21-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14944
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\21-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 26710
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\21.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 36436
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\22-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10113
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\22-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 13411
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\22-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21909
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\22.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28758
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6417
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6050
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7879
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16034
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11865
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 31056
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\23.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 38676
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\24-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6733
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\24-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16029
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\24-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 17893
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\24-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 32377
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\24.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 40799
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\25-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6415
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\25-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9691
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\25-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16284
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\25-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 25616
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\25.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 29068
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\26-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5996
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\26-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7258
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\26-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12896
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\26-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23491
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\26.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 26194
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8089
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8258
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7271
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7946
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7425
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22099
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\27.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 30391
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\28-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8039
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\28-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7337
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\28-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16942
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\28-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 27067
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\28.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 35731
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\29-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6142
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\29-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8817
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\29-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14066
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\29-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 31938
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\29.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 37396
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\2t.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7650
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6600
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5115
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4664
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7508
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22460
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6466
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6740
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6849
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6048
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18150
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-6.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9967
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 33680
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\30.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 43698
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\31-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10292
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\31-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10326
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\31-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11958
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\31-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 26505
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\31.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 31767
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8144
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6055
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12107
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7027
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 15535
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 34112
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\32.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 45367
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6403
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8161
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6982
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 19487
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 30939
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\33.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 41142
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6511
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6372
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6645
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-6.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11867
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-7.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4378
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23913
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\34.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 26572
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6507
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9651
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6909
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35-5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 11147
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 27212
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\35.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 31781
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\36-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16824
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\36-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7088
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\36-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10657
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\36-l.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 36091
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\36.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 40389
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\3t.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6742
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\4_.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4998
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\4-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4051
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\4-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8379
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 20268
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\5_.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4607
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\5-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3575
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\5-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10095
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16071
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\6-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10239
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\6-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6254
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\6-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4730
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\6.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22653
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\6t.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6856
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\7_.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5807
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\7-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3871
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\7-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5510
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\7-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9280
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\7.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 19651
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\8-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5452
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\8-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7911
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\8-3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10630
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\8.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23655
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\8t.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7414
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\9_.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4668
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\9-1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3836
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\9-2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7409
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\LV-cut\\9.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 13966
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\TattooGun\\SungXam_02_T.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1040319
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\TattooGun\\SungXam_02.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 988655
+    },
+    {
+      "relativePath": "TattooArtASMR\\Textures\\TattooGun\\SungXam_03_T.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 415628
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Loading\\Textues\\dashline.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2896
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Loading\\Textues\\gun.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 19934
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Loading\\Textues\\line.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2514
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Loading\\Textues\\Loading-Screen-BG.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1180537
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Loading\\Textues\\logo.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 145660
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\5160c440-7877-46ce-aa2c-833863ce8f41.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1102
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\91b798f0-75fb-4236-a07b-bf283238195a.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16711
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_ef.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 55269
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_icon_money.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6213
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_icon_star0.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 23909
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_icon_star1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 35193
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_icon_star2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 47075
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\com_icon_star3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 53869
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Endgame\\Texture\\improve home-16.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1302
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Home\\home_btn_play_sub1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2035
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Home\\home_btn_setting.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7018
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Home\\home_icon_vip.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21838
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Home\\home_tab_money.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12080
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\emoji_bar_arrow.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1254
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\emoji_bar.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2708
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_bigpopup.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10037
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_btn_retry.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8136
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_choose_color1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4818
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_choose_color2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3698
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_picture_demo.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5947
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\ig_select_color3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6513
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Ingame\\mc_chatbox.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 16744
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Skins\\bg_skin1.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 67644
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Skins\\bg_skin2.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 68950
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Skins\\bg_skin3.jpg",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 167700
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\cut-03.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14511
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\cut-04.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 81280
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\cut-05.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12163
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\cut-07.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1364
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\cut-09.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3118
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_InGame\\Textures\\Vips\\improve home-11.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 727
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_exit.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10187
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_haptic1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 13309
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_haptic2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10825
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_music1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 12836
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_music2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10272
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_soundfx1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9684
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_btn_soundfx2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10019
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Setting\\Textures\\st_popup.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 21485
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_bg.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2009
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn_back.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3269
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn1a.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9129
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn1b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 7543
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn3a.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6882
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn3b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6589
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn4a.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6563
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn4b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6604
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn5a.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8452
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_btn5b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8440
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_ef.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 110328
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_loading1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1209
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_loading2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1287
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_popup.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3660
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_popup2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2753
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_tab_item1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3243
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_tab_item2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3231
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_tab_item3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6304
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_tab_item4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4327
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_Shop\\Textures\\shop_tab_item5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4315
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\UI_UnlockItem\\Textures\\newitem_ef.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 53391
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 61656
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 43606
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 50252
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 34768
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\btn_gray.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 4924
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\btn_green.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5141
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\btn_icon_ads.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2189
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\btn_red.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5225
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\btn_yellow.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 5281
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\home_btn_play_sub2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 3124
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\icon_ads.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 6497
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\improve home-13.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 1535
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun1b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10135
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun2b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10580
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun3b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9678
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun4b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 10315
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun5b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8703
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun6b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 8850
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_gun7b.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 9275
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_binh1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 22161
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_binh3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 29053
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_binh4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 43599
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_binh5.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 31039
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_bot1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 30641
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_bot2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 28240
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_bot3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 34249
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_bot4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 35699
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_trail1.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14940
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_trail2.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18127
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_trail3.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 18789
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\shop_item_trail4.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 14698
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\TG__10.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 59160
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\TG__11.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 59714
+    },
+    {
+      "relativePath": "TattooArtASMR\\UIFeature\\Universal_Texture\\TG_04.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 55047
+    },
+    {
+      "relativePath": "TextMesh Pro\\Fonts\\LiberationSans.ttf",
+      "category": "font",
+      "reason": "build-scene dependency",
+      "bytes": 350200
+    },
+    {
+      "relativePath": "ThirdPartyAssets\\StompyRobot\\SRDebugger\\UI\\Sprites\\Default\\loading@2x.png",
+      "category": "image",
+      "reason": "build-scene dependency",
+      "bytes": 2252
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { _decorator, CCFloat, Color, Component, Graphics, Node, Vec3 } from 'cc';
 import { StrokeLineWithPath } from './StrokeLineWithPath';
-import { PatchSticker } from './PatchSticker';
+import { IPatchDrawComp, PatchSticker } from './PatchSticker';
 const { ccclass, property } = _decorator;
 
 @ccclass('PatchLineSticker')
@@ -64,6 +64,10 @@ export class PatchLineSticker extends PatchSticker {
 
     setCanSpray(value: boolean) {
         this.sprayDotComp.isCanDraw = value;
+    }
+
+    get drawComp(): IPatchDrawComp {
+        return this.sprayDotComp;
     }
 
 }

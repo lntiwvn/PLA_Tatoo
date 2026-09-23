@@ -25,6 +25,14 @@ export class StrokeLineWithPath extends Component {
 
     lastPost: Vec3 = new Vec3();
 
+    // Khi vẽ nhiều phần cùng lúc: chỉ phần leader mới điều khiển máy xăm,
+    // âm thanh và text hướng dẫn. Các phần còn lại tự vẽ bằng con trỏ riêng.
+    isLeader: boolean = true;
+    onDrawStarted: () => void = null;
+    onDrawComplete: () => void = null;
+
+    private cursor: Vec3 = new Vec3();
+
     onLoad() {
         this.pathsLine = [];
         this.pathsLine = this.node.children;
@@ -48,9 +56,45 @@ export class StrokeLineWithPath extends Component {
         this.paths = paths.map((node) => node.getPosition());
     }
 
+    /** Bắt đầu vẽ mà không cần chạm - dùng cho các phần chạy kèm trong cùng một lượt. */
+    startAutoDraw() {
+        if (this.patchCompleted || !this.isCanDraw) {
+            return;
+        }
+
+        this.patchCompleted = true;
+        this.moveSpeed = this.drawSpeed;
+        this.beginPath();
+        this.schedule(this.drawLine, 0.01);
+        this.isMoving = true;
+    }
+
+    private beginPath() {
+        if (this.currentPathIndex === 0 && this.paths.length > 0) {
+            this.graphics.moveTo(this.paths[0].x, this.paths[0].y);
+            this.setCursor(this.paths[0]);
+            this.currentPathIndex = 1;
+        }
+    }
+
+    private setCursor(pos: Vec3) {
+        this.cursor.set(pos);
+        if (this.isLeader) {
+            window.tattoContext.setTattooLineMachinePos(pos);
+        }
+    }
+
+    private notifyDrawComplete() {
+        if (this.onDrawComplete) {
+            this.onDrawComplete();
+            return;
+        }
+        window.tattoContext.currentSticker.onPrayComplete();
+    }
+
     drawLine() {
         //@ts-ignore
-        if (window.tattoContext.labelInk) {
+        if (this.isLeader && window.tattoContext.labelInk) {
             //@ts-ignore
             window.tattoContext.stopTextInkEffect();
         }
@@ -59,15 +103,15 @@ export class StrokeLineWithPath extends Component {
         if (this.isMoving && this.paths.length > 0 && this.isCanDraw) {
             let target = this.paths[this.currentPathIndex];
 
-            let { x: lineMachineX, y: lineMachineY } = window.tattoContext.tattoLineMachine.position;
+            let { x: lineMachineX, y: lineMachineY } = this.cursor;
             let { x: targetX, y: targetY } = target;
             let direction = new Vec3(targetX - lineMachineX, targetY - lineMachineY).normalize();
-            let distance = Vec3.distance(window.tattoContext.tattoLineMachine.position, target);
+            let distance = Vec3.distance(this.cursor, target);
             if (distance > this.moveSpeed * 0.01) {
-                let newPos = new Vec3(window.tattoContext.tattoLineMachine.position.x, window.tattoContext.tattoLineMachine.position.y).add(
+                let newPos = new Vec3(this.cursor.x, this.cursor.y).add(
                     direction.multiply(new Vec3(this.moveSpeed * 0.01, this.moveSpeed * 0.01, this.moveSpeed * 0.01))
                 );
-                window.tattoContext.setTattooLineMachinePos(newPos);
+                this.setCursor(newPos);
 
                 // console.log('Vec3.distance(this.lastPost, newPos)', Vec3.distance(this.lastPost, newPos));
 
@@ -78,15 +122,17 @@ export class StrokeLineWithPath extends Component {
                 }
 
             } else {
-                window.tattoContext.setTattooLineMachinePos(target);
+                this.setCursor(target);
                 this.drawLineGraphic(target);
                 this.currentPathIndex++;
                 if (this.currentPathIndex >= this.paths.length) {
                     this.isMoving = false;
                     this.unschedule(this.drawLine);
                     this.unRegisterTouchEvent();
-                    window.tattoContext.audioManager.stopAll();
-                    window.tattoContext.currentSticker.onPrayComplete();
+                    if (this.isLeader) {
+                        window.tattoContext.audioManager.stopAll();
+                    }
+                    this.notifyDrawComplete();
                 }
             }
         }
@@ -109,13 +155,11 @@ export class StrokeLineWithPath extends Component {
 
         this.moveSpeed = this.drawSpeed;
         window.tattoContext.audioManager.playMusic(Constant.EFFECT_NAME.TATTOO_MACHINE_LINE, true);
-        if (this.currentPathIndex === 0 && this.paths.length > 0) {
-            this.graphics.moveTo(this.paths[0].x, this.paths[0].y);
-            window.tattoContext.tattoLineMachine.setPosition(this.paths[0]);
-            this.currentPathIndex = 1;
-        }
+        this.beginPath();
         this.schedule(this.drawLine, 0.01);
         this.isMoving = true;
+
+        this.onDrawStarted && this.onDrawStarted();
     }
 
     onTouchEnd(event: EventTouch) {
@@ -127,12 +171,12 @@ export class StrokeLineWithPath extends Component {
         this.unschedule(this.drawLine);
 
         if (this.currentPathIndex >= this.paths.length) {
-            window.tattoContext.currentSticker.onPrayComplete();
+            this.notifyDrawComplete();
         }
     }
 
     drawLineGraphic(target: Vec3) {
-        this.graphics.circle(target.x, target.y, 5);
+        this.graphics.circle(target.x, target.y, 2.3);
         this.graphics.fill();
     }
 }
