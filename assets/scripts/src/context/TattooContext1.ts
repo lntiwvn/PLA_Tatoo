@@ -1,4 +1,4 @@
-import { _decorator, Camera, CCFloat, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3 } from 'cc';
+import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3, VideoPlayer } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
@@ -11,6 +11,12 @@ const { ccclass, property } = _decorator;
 
 @ccclass('TatooContext1')
 export class TatooContext1 extends TattoContext {
+    @property(VideoPlayer)
+    introVideo: VideoPlayer = null;
+
+    @property(Node)
+    endFrame: Node = null;
+
     @property(Prefab)
     fixedTattooPrefab: Prefab = null;
 
@@ -56,6 +62,8 @@ export class TatooContext1 extends TattoContext {
     private machineInputReady = false;
     private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
     private readonly machineInputRegistrationDelay = 150;
+    private isWaitingForIntroTap = false;
+    private isIntroInputRegistered = false;
 
     start(): void {
         this.textTutorial.active = false;
@@ -69,6 +77,84 @@ export class TatooContext1 extends TattoContext {
         if (this.colorNode && this.colorBeginNode) {
             this.colorNode.setParent(this.colorBeginNode);
             this.colorNode.setPosition(Vec3.ZERO);
+        }
+
+        // The old entry UI/button is no longer part of the start flow.
+        this.selectTattOpacity.node.active = false;
+        this.playIntroVideo();
+    }
+
+    private playIntroVideo(): void {
+        this.isWaitingForIntroTap = true;
+        this.registerIntroInput();
+
+        if (this.endFrame) {
+            this.endFrame.active = false;
+        } else {
+            console.error('TatooContext1: endFrame is not assigned.');
+        }
+
+        if (!this.introVideo) {
+            console.error('TatooContext1: introVideo is not assigned.');
+            this.showEndFrameAndWaitForTap();
+            return;
+        }
+
+        this.introVideo.node.active = true;
+        this.introVideo.node.once(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
+        this.introVideo.node.on(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
+        this.introVideo.play();
+    }
+
+    private onIntroVideoCompleted(): void {
+        if (this.introVideo) {
+            this.introVideo.node.active = false;
+        }
+        this.showEndFrameAndWaitForTap();
+    }
+
+    private showEndFrameAndWaitForTap(): void {
+        if (this.endFrame) {
+            this.endFrame.active = true;
+        }
+
+        this.registerIntroInput();
+    }
+
+    private registerIntroInput(): void {
+        if (this.isIntroInputRegistered) {
+            return;
+        }
+
+        this.isIntroInputRegistered = true;
+        input.on(Input.EventType.TOUCH_START, this.onIntroTap, this);
+        input.on(Input.EventType.MOUSE_DOWN, this.onIntroTap, this);
+    }
+
+    private onIntroTap(): void {
+        if (!this.isWaitingForIntroTap) {
+            return;
+        }
+
+        this.isWaitingForIntroTap = false;
+        this.unregisterIntroInput();
+        if (this.introVideo) {
+            this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
+            this.introVideo.stop();
+            this.introVideo.node.active = false;
+        }
+        if (this.endFrame) {
+            this.endFrame.active = false;
+        }
+        this.onClickDoIt();
+    }
+
+    private unregisterIntroInput(): void {
+        this.isIntroInputRegistered = false;
+        input.off(Input.EventType.TOUCH_START, this.onIntroTap, this);
+        input.off(Input.EventType.MOUSE_DOWN, this.onIntroTap, this);
+        if (this.introVideo) {
+            this.introVideo.node.off(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
         }
     }
 
@@ -247,6 +333,10 @@ export class TatooContext1 extends TattoContext {
     }
 
     onDestroy(): void {
+        this.unregisterIntroInput();
+        if (this.introVideo) {
+            this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
+        }
         this.stopTattooMachinePhase();
         this.node.off(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
     }

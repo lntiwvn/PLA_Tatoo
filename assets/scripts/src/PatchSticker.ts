@@ -136,6 +136,16 @@ export class PatchSticker extends Component {
         this.sprayComp.isCanPray = value;
     }
 
+    /**
+     * Hiện nét đứt hướng dẫn của patch. Gọi được nhiều lần; dùng cho lượt tự
+     * chạy để nét đứt kịp hiện trước khi bút vẽ tới.
+     */
+    showGuide(): void {
+        this.node.active = true;
+        if (this.dotsNode) this.dotsNode.active = true;
+        if (this.dotsNodeOpacity) this.dotsNodeOpacity.opacity = 255;
+    }
+
     get drawComp(): IPatchDrawComp {
         return this.sprayComp;
     }

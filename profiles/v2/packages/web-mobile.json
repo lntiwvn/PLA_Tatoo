@@ -11,14 +11,18 @@
       "platform": "web-mobile",
       "scenes": [
         {
-          "url": "db://assets/Scene/Ads_3.scene",
-          "uuid": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c"
+          "url": "db://assets/Scene/Ads_1.scene",
+          "uuid": "cc84ae57-d85b-4a4b-b848-00320af6ac43"
         }
       ],
       "nativeCodeBundleMode": "asmjs",
       "startScene": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c",
       "useSplashScreen": false,
-      "name": "TA_PL44_customode"
+      "name": "TA_PL44_customode",
+      "binGroupConfig": {
+        "threshold": 16,
+        "enable": false
+      }
     },
     "options": {
       "web-mobile": {
@@ -40,8 +44,14 @@
         "orientation": "auto",
         "embedWebDebugger": false,
         "__version__": "1.0.1"
+      },
+      "1790585989426": {
+        "useWebGPU": false,
+        "orientation": "auto",
+        "embedWebDebugger": false,
+        "__version__": "1.0.1"
       }
     },
-    "__version__": "1.3.8"
+    "__version__": "1.3.9"
   }
 }

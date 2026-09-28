@@ -66,6 +66,13 @@ export class PatchLineSticker extends PatchSticker {
         this.sprayDotComp.isCanDraw = value;
     }
 
+    showGuide(): void {
+        this.node.active = true;
+        if (this.lineNode) {
+            this.lineNode.active = true;
+        }
+    }
+
     get drawComp(): IPatchDrawComp {
         return this.sprayDotComp;
     }
