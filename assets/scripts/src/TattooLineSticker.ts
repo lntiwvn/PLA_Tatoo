@@ -47,6 +47,12 @@ export class TattooLineSticker extends Component {
     finalImage: Node = null;
 
     @property({
+        type: Node,
+        tooltip: 'Node base shown briefly before gameplay starts. Assign it inside the fixed tattoo prefab.',
+    })
+    basePreview: Node = null;
+
+    @property({
         type: [DrawGroup],
         tooltip: 'Cấu hình từng lượt vẽ. Để trống = mỗi patch một lượt như trước.',
     })
@@ -268,7 +274,10 @@ export class TattooLineSticker extends Component {
         if (leader instanceof PatchLineSticker) {
             leader.sprayDotComp.registerTouchEvent();
             window.tattoContext.tattoLineMachineOpacity.opacity = 255;
-            window.tattoContext.tattoLineMachine.setPosition(leader.sprayDotComp.paths[0]);
+            window.tattoContext.setTattooLineMachinePos(
+                leader.sprayDotComp.paths[0],
+                leader.sprayDotComp.node,
+            );
         } else {
             leader.sprayComp.registerTouchEvent();
             window.tattoContext.tattoMachineOpacity.opacity = 255;
@@ -307,9 +316,7 @@ export class TattooLineSticker extends Component {
             }
         }
 
-        const target = nextIsLine
-            ? (nextLeader as PatchLineSticker).sprayDotComp.paths[0]
-            : this.getFillStartPos(nextLeader);
+        const target = this.getMachineStartPos(nextLeader, machine);
 
         // Đổi loại máy thì máy mới hiện ngay tại đích, không trượt ngang màn.
         const slideFromLastPos = this.lastMachineIsLine === nextIsLine;
@@ -347,13 +354,23 @@ export class TattooLineSticker extends Component {
      * Điểm autoDraw() của phần tô màu bắt đầu quét: góc trên-trái vùng mask,
      * quy về hệ toạ độ của máy xăm.
      */
-    private getFillStartPos(patch: PatchSticker): Vec3 {
-        const pos = patch.node.getPosition();
-        const mask = patch.sprayComp?.maskNode?.getComponent(UITransform);
-        if (!mask) {
-            return pos;
+    private getMachineStartPos(patch: PatchSticker, machine: Node): Vec3 {
+        const ctx = window.tattoContext;
+
+        if (patch instanceof PatchLineSticker) {
+            const stroke = patch.sprayDotComp;
+            const firstPoint = stroke.paths[0] ?? Vec3.ZERO;
+            return ctx.convertPositionToTargetParent(firstPoint, stroke.node, machine);
         }
-        return new Vec3(pos.x - mask.width / 2, pos.y + mask.height / 2, pos.z);
+
+        const maskNode = patch.sprayComp?.maskNode;
+        const mask = maskNode?.getComponent(UITransform);
+        if (!maskNode || !mask) {
+            return ctx.convertPositionToTargetParent(Vec3.ZERO, patch.node, machine);
+        }
+
+        const maskTopLeft = new Vec3(-mask.width / 2, mask.height / 2, 0);
+        return ctx.convertPositionToTargetParent(maskTopLeft, maskNode, machine);
     }
 
     /** Chạy lượt vẽ mà không cần người chơi chạm. */

@@ -202,7 +202,7 @@ export class SprayPaintWithFade extends Component {
             // let newPos = new Vec3(currentMousePosition.x + x, currentMousePosition.y + y + 50);
             let newPos = new Vec3(x, y + 24);
             let converToLocal = window.tattoContext.node.getComponent(UITransform).convertToNodeSpaceAR(newPos);
-            window.tattoContext.setTattooMachinePos(converToLocal);
+            window.tattoContext.setTattooMachinePos(converToLocal, window.tattoContext.node);
         }
 
         this.schedule(this.autoDraw, 0.01);
@@ -242,19 +242,24 @@ export class SprayPaintWithFade extends Component {
         // let { x, y } = window.tattoContext.tattoMachine.getPosition();
         let { x, y } = event.getUILocation();
         let newPos = window.tattoContext.node.getComponent(UITransform).convertToNodeSpaceAR(new Vec3(x, y + 50));
+        const drawPos = window.tattoContext.convertPositionBetweenNodes(
+            newPos,
+            window.tattoContext.node,
+            this.graphics.node,
+        );
 
         // console.log('a', Vec3.distance(this.lastMousePosition, newPos));
-        let distance = Vec3.distance(this.lastMousePosition, newPos);
+        let distance = Vec3.distance(this.lastMousePosition, drawPos);
         if (distance >= 2.5) {
             // this.graphics.lineTo(newPos.x, newPos.y)
             // this.graphics.stroke();
-            this.fillCircle(newPos)
-            this.lastMousePosition = newPos;
+            this.fillCircle(drawPos)
+            this.lastMousePosition = drawPos;
             // console.log('distance', distance);
         }
 
         if (this.isLeader) {
-            window.tattoContext.setTattooMachinePos(newPos);
+            window.tattoContext.setTattooMachinePos(newPos, window.tattoContext.node);
         }
 
         let { width, height } = this.maskNode.getComponent(UITransform);

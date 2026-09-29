@@ -80,7 +80,7 @@ export class StrokeLineWithPath extends Component {
     private setCursor(pos: Vec3) {
         this.cursor.set(pos);
         if (this.isLeader) {
-            window.tattoContext.setTattooLineMachinePos(pos);
+            window.tattoContext.setTattooLineMachinePos(pos, this.node);
         }
     }
 

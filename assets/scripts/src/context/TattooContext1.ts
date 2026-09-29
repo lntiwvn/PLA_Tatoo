@@ -1,4 +1,4 @@
-import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3, VideoPlayer } from 'cc';
+import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
@@ -19,6 +19,48 @@ export class TatooContext1 extends TattoContext {
 
     @property(Prefab)
     fixedTattooPrefab: Prefab = null;
+
+    @property({
+        type: Node,
+        group: 'Orientation room',
+        tooltip: 'Node roomscene_port, displayed when the screen is portrait.',
+    })
+    roomScenePort: Node = null;
+
+    @property({
+        type: Node,
+        group: 'Orientation room',
+        tooltip: 'The tat_pos node inside roomscene_port.',
+    })
+    tatPosPort: Node = null;
+
+    @property({
+        type: CCFloat,
+        group: 'Orientation room',
+        tooltip: 'Uniform scale applied to the fixed tattoo prefab on a portrait screen.',
+    })
+    tattooScalePort = 1;
+
+    @property({
+        type: Node,
+        group: 'Orientation room',
+        tooltip: 'Node roomscene_land, displayed when the screen is landscape.',
+    })
+    roomSceneLand: Node = null;
+
+    @property({
+        type: Node,
+        group: 'Orientation room',
+        tooltip: 'The tat_pos node inside roomscene_land.',
+    })
+    tatPosLand: Node = null;
+
+    @property({
+        type: CCFloat,
+        group: 'Orientation room',
+        tooltip: 'Uniform scale applied to the fixed tattoo prefab on a landscape screen.',
+    })
+    tattooScaleLand = 1;
 
     @property(UIOpacity)
     selectTattOpacity: UIOpacity = null;
@@ -64,6 +106,10 @@ export class TatooContext1 extends TattoContext {
     private readonly machineInputRegistrationDelay = 150;
     private isWaitingForIntroTap = false;
     private isIntroInputRegistered = false;
+    private activeTattooParent: Node = null;
+    private activeTattooScale = 1;
+    private preparedTattooNode: Node = null;
+    private readonly baseBlinkHalfDuration = 0.25;
 
     start(): void {
         this.textTutorial.active = false;
@@ -81,6 +127,8 @@ export class TatooContext1 extends TattoContext {
 
         // The old entry UI/button is no longer part of the start flow.
         this.selectTattOpacity.node.active = false;
+        if (this.roomScenePort) this.roomScenePort.active = false;
+        if (this.roomSceneLand) this.roomSceneLand.active = false;
         this.playIntroVideo();
     }
 
@@ -168,12 +216,21 @@ export class TatooContext1 extends TattoContext {
             return;
         }
 
+        if (!this.applyRoomForCurrentOrientation()) {
+            return;
+        }
+
         this.hasStartedDrawing = true;
         this.handTutorial.active = false;
         this.textTutorial.active = false;
 
         this.selectTattOpacity.node.active = false;
         this.modelNode.active = false;
+
+        this.prepareTattooBasePreview(() => this.startGameplayFlow());
+    }
+
+    private startGameplayFlow(): void {
 
         tween(this.backgroundContextOpacity).to(0.5, {
             opacity: 255
@@ -192,6 +249,72 @@ export class TatooContext1 extends TattoContext {
         this.onIntro();
     }
 
+    private prepareTattooBasePreview(onComplete: () => void): void {
+        const tattooNode = instantiate(this.fixedTattooPrefab);
+        tattooNode.parent = this.activeTattooParent;
+        tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
+        this.preparedTattooNode = tattooNode;
+
+        const tattooLineSticker = tattooNode.getComponent(TattooLineSticker);
+        const baseNode = tattooLineSticker?.basePreview;
+        const baseOpacity = baseNode?.getComponent(UIOpacity);
+
+        if (!baseNode || !baseOpacity) {
+            console.error(
+                'TatooContext1: assign the base node with a UIOpacity component to TattooLineSticker.basePreview.',
+            );
+            onComplete();
+            return;
+        }
+
+        const childActiveStates = tattooNode.children.map((child) => ({
+            child,
+            active: child.active,
+        }));
+
+        childActiveStates.forEach(({ child }) => {
+            child.active = child === baseNode;
+        });
+        baseNode.active = true;
+        baseOpacity.opacity = 255;
+        Tween.stopAllByTarget(baseOpacity);
+
+        tween(baseOpacity)
+            .to(this.baseBlinkHalfDuration, { opacity: 0 })
+            .to(this.baseBlinkHalfDuration, { opacity: 255 })
+            .union()
+            .repeat(3)
+            .call(() => {
+                baseNode.active = false;
+                childActiveStates.forEach(({ child, active }) => {
+                    if (child !== baseNode) child.active = active;
+                });
+                onComplete();
+            })
+            .start();
+    }
+
+    private applyRoomForCurrentOrientation(): boolean {
+        const visibleSize = view.getVisibleSize();
+        const width = Math.max(1, visibleSize.width);
+        const height = Math.max(1, visibleSize.height);
+        const usePortrait = height >= width;
+        const activeTatPos = usePortrait ? this.tatPosPort : this.tatPosLand;
+
+        if (!this.roomScenePort || !this.tatPosPort || !this.roomSceneLand || !this.tatPosLand) {
+            console.error(
+                'TatooContext1: roomScenePort, tatPosPort, roomSceneLand and tatPosLand must be assigned.',
+            );
+            return false;
+        }
+
+        this.roomScenePort.active = usePortrait;
+        this.roomSceneLand.active = !usePortrait;
+        this.activeTattooParent = activeTatPos;
+        this.activeTattooScale = usePortrait ? this.tattooScalePort : this.tattooScaleLand;
+        return true;
+    }
+
     onPlay(): void {
         this.tattooStickers.length = 0;
         this.stickerTattoIndex = -1;
@@ -208,8 +331,13 @@ export class TatooContext1 extends TattoContext {
             console.error('TatooContext1: fixedTattooPrefab is not assigned.');
             return;
         }
-        let tattooNode = instantiate(prefab);
-        tattooNode.parent = this.tattooStickerLayer;
+        let tattooNode = this.preparedTattooNode;
+        this.preparedTattooNode = null;
+        if (!tattooNode) {
+            tattooNode = instantiate(prefab);
+            tattooNode.parent = this.activeTattooParent;
+            tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
+        }
         let tattooSticker = tattooNode.getComponent(TattooSticker);
         let tattooLineSticker = tattooNode.getComponent(TattooLineSticker);
         if (tattooSticker) {

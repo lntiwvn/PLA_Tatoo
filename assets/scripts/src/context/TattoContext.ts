@@ -171,12 +171,39 @@ export class TattoContext extends Component {
 
     onOutro() { }
 
-    setTattooMachinePos(newPos: Vec3) {
-        this.tattoMachine.setPosition(newPos);
+    setTattooMachinePos(newPos: Vec3, sourceNode: Node = null) {
+        const position = sourceNode
+            ? this.convertPositionToTargetParent(newPos, sourceNode, this.tattoMachine)
+            : newPos;
+        this.tattoMachine.setPosition(position);
     }
 
-    setTattooLineMachinePos(newPos: Vec3) {
-        this.tattoLineMachine.setPosition(newPos);
+    setTattooLineMachinePos(newPos: Vec3, sourceNode: Node = null) {
+        const position = sourceNode
+            ? this.convertPositionToTargetParent(newPos, sourceNode, this.tattoLineMachine)
+            : newPos;
+        this.tattoLineMachine.setPosition(position);
+    }
+
+    convertPositionToTargetParent(localPosition: Vec3, sourceNode: Node, targetNode: Node): Vec3 {
+        if (!sourceNode || !targetNode?.parent) {
+            return localPosition.clone();
+        }
+
+        return this.convertPositionBetweenNodes(localPosition, sourceNode, targetNode.parent);
+    }
+
+    convertPositionBetweenNodes(localPosition: Vec3, sourceNode: Node, targetSpaceNode: Node): Vec3 {
+        if (!sourceNode || !targetSpaceNode) {
+            return localPosition.clone();
+        }
+
+        const worldPosition = new Vec3();
+        Vec3.transformMat4(worldPosition, localPosition, sourceNode.worldMatrix);
+
+        const targetLocalPosition = new Vec3();
+        targetSpaceNode.inverseTransformPoint(targetLocalPosition, worldPosition);
+        return targetLocalPosition;
     }
 
     showTextWow() {
