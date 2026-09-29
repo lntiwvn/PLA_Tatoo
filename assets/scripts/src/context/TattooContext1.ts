@@ -1,4 +1,4 @@
-import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, Tween, tween, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
+import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, ResolutionPolicy, screen, Tween, tween, UITransform, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
@@ -62,6 +62,55 @@ export class TatooContext1 extends TattoContext {
     })
     tattooScaleLand = 1;
 
+    @property({
+        type: Node,
+        group: 'Gameplay zoom',
+        tooltip: 'Optional zoom root. Leave empty to create GameplayZoomRoot automatically at runtime.',
+    })
+    gameplayZoomRoot: Node = null;
+
+    @property({
+        type: CCFloat,
+        group: 'Gameplay zoom',
+        tooltip: 'Gameplay zoom scale on a portrait screen.',
+    })
+    zoomScalePort = 1.35;
+
+    @property({
+        type: CCFloat,
+        group: 'Gameplay zoom',
+        tooltip: 'Gameplay zoom scale on a landscape screen.',
+    })
+    zoomScaleLand = 1.35;
+
+    @property({
+        type: CCFloat,
+        group: 'Gameplay zoom',
+        tooltip: 'Duration of the zoom animation in seconds.',
+    })
+    zoomDuration = 0.5;
+
+    @property({
+        type: CCFloat,
+        group: 'Gameplay zoom',
+        tooltip: 'Delay before the gameplay zoom starts, in seconds.',
+    })
+    zoomDelay = 0.5;
+
+    @property({
+        type: CCFloat,
+        group: 'Responsive',
+        tooltip: 'Canvas design width used by the responsive resolution policy.',
+    })
+    responsiveDesignWidth = 720;
+
+    @property({
+        type: CCFloat,
+        group: 'Responsive',
+        tooltip: 'Canvas design height used by the responsive resolution policy.',
+    })
+    responsiveDesignHeight = 1280;
+
     @property(UIOpacity)
     selectTattOpacity: UIOpacity = null;
     @property(UIOpacity)
@@ -104,14 +153,39 @@ export class TatooContext1 extends TattoContext {
     private machineInputReady = false;
     private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
     private readonly machineInputRegistrationDelay = 150;
+    private isIntroVideoPlaying = false;
+    private hasEnabledIntroAudio = false;
     private isWaitingForIntroTap = false;
     private isIntroInputRegistered = false;
     private activeTattooParent: Node = null;
     private activeTattooScale = 1;
+    private activeZoomScale = 1;
     private preparedTattooNode: Node = null;
+    private activeTattooNode: Node = null;
+    private isApplyingResponsiveResolution = false;
+    private isGameplayZoomComplete = false;
+    private isGameplayPenVisible = false;
+    private isGameplayTextVisible = false;
     private readonly baseBlinkHalfDuration = 0.25;
 
+    protected onLoad(): void {
+        super.onLoad();
+        if (this.sampleSprite) {
+            this.sampleSprite.node.active = false;
+        }
+        this.applyResponsiveLayout(false);
+    }
+
+    protected onEnable(): void {
+        (view as any).on?.('canvas-resize', this.onCanvasResize, this);
+    }
+
+    protected onDisable(): void {
+        (view as any).off?.('canvas-resize', this.onCanvasResize, this);
+    }
+
     start(): void {
+        this.applyResponsiveLayout(false);
         this.textTutorial.active = false;
         this.handTutorial.active = false;
         this.labelInk.node.active = false;
@@ -133,8 +207,10 @@ export class TatooContext1 extends TattoContext {
     }
 
     private playIntroVideo(): void {
-        this.isWaitingForIntroTap = true;
-        this.registerIntroInput();
+        this.isIntroVideoPlaying = false;
+        this.hasEnabledIntroAudio = false;
+        this.isWaitingForIntroTap = false;
+        this.unregisterIntroInput();
 
         if (this.endFrame) {
             this.endFrame.active = false;
@@ -148,6 +224,9 @@ export class TatooContext1 extends TattoContext {
             return;
         }
 
+        this.isIntroVideoPlaying = true;
+        this.registerIntroInput();
+        this.introVideo.mute = true;
         this.introVideo.node.active = true;
         this.introVideo.node.once(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
         this.introVideo.node.on(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
@@ -155,7 +234,9 @@ export class TatooContext1 extends TattoContext {
     }
 
     private onIntroVideoCompleted(): void {
+        this.isIntroVideoPlaying = false;
         if (this.introVideo) {
+            this.introVideo.node.off(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
             this.introVideo.node.active = false;
         }
         this.showEndFrameAndWaitForTap();
@@ -166,6 +247,7 @@ export class TatooContext1 extends TattoContext {
             this.endFrame.active = true;
         }
 
+        this.isWaitingForIntroTap = true;
         this.registerIntroInput();
     }
 
@@ -180,6 +262,15 @@ export class TatooContext1 extends TattoContext {
     }
 
     private onIntroTap(): void {
+        if (this.isIntroVideoPlaying) {
+            if (!this.hasEnabledIntroAudio && this.introVideo) {
+                this.hasEnabledIntroAudio = true;
+                this.introVideo.mute = false;
+                this.introVideo.play();
+            }
+            return;
+        }
+
         if (!this.isWaitingForIntroTap) {
             return;
         }
@@ -221,6 +312,12 @@ export class TatooContext1 extends TattoContext {
         }
 
         this.hasStartedDrawing = true;
+        this.isGameplayZoomComplete = false;
+        this.isGameplayPenVisible = false;
+        this.isGameplayTextVisible = false;
+        if (this.sampleSprite) {
+            this.sampleSprite.node.active = false;
+        }
         this.handTutorial.active = false;
         this.textTutorial.active = false;
 
@@ -231,6 +328,8 @@ export class TatooContext1 extends TattoContext {
     }
 
     private startGameplayFlow(): void {
+        this.isGameplayZoomComplete = true;
+        this.tryShowGameplaySample();
 
         tween(this.backgroundContextOpacity).to(0.5, {
             opacity: 255
@@ -250,10 +349,13 @@ export class TatooContext1 extends TattoContext {
     }
 
     private prepareTattooBasePreview(onComplete: () => void): void {
+        this.ensureGameplayZoomHierarchy();
+
         const tattooNode = instantiate(this.fixedTattooPrefab);
         tattooNode.parent = this.activeTattooParent;
         tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
         this.preparedTattooNode = tattooNode;
+        this.activeTattooNode = tattooNode;
 
         const tattooLineSticker = tattooNode.getComponent(TattooLineSticker);
         const baseNode = tattooLineSticker?.basePreview;
@@ -263,7 +365,7 @@ export class TatooContext1 extends TattoContext {
             console.error(
                 'TatooContext1: assign the base node with a UIOpacity component to TattooLineSticker.basePreview.',
             );
-            onComplete();
+            this.playGameplayZoom(onComplete);
             return;
         }
 
@@ -279,19 +381,192 @@ export class TatooContext1 extends TattoContext {
         baseOpacity.opacity = 255;
         Tween.stopAllByTarget(baseOpacity);
 
-        tween(baseOpacity)
-            .to(this.baseBlinkHalfDuration, { opacity: 0 })
-            .to(this.baseBlinkHalfDuration, { opacity: 255 })
-            .union()
-            .repeat(3)
-            .call(() => {
-                baseNode.active = false;
-                childActiveStates.forEach(({ child, active }) => {
-                    if (child !== baseNode) child.active = active;
-                });
-                onComplete();
-            })
-            .start();
+        this.playGameplayZoom(() => {
+            tween(baseOpacity)
+                .to(this.baseBlinkHalfDuration, { opacity: 0 })
+                .to(this.baseBlinkHalfDuration, { opacity: 255 })
+                .union()
+                .repeat(3)
+                .call(() => {
+                    baseNode.active = false;
+                    childActiveStates.forEach(({ child, active }) => {
+                        if (child !== baseNode) child.active = active;
+                    });
+                    onComplete();
+                })
+                .start();
+        });
+    }
+
+    private ensureGameplayZoomHierarchy(): void {
+        if (!this.gameplayZoomRoot) {
+            const commonParent = this.roomScenePort?.parent;
+            if (!commonParent) {
+                console.error('TatooContext1: room scenes require a common parent to create GameplayZoomRoot.');
+                return;
+            }
+
+            const firstRoomIndex = Math.min(
+                this.roomScenePort.getSiblingIndex(),
+                this.roomSceneLand.getSiblingIndex(),
+            );
+            this.gameplayZoomRoot = new Node('GameplayZoomRoot');
+            this.gameplayZoomRoot.layer = this.roomScenePort.layer;
+            this.gameplayZoomRoot.setParent(commonParent);
+            this.gameplayZoomRoot.setPosition(Vec3.ZERO);
+            this.gameplayZoomRoot.setSiblingIndex(firstRoomIndex);
+        }
+
+        Tween.stopAllByTarget(this.gameplayZoomRoot);
+        this.gameplayZoomRoot.setPosition(Vec3.ZERO);
+        this.gameplayZoomRoot.setScale(Vec3.ONE);
+
+        this.moveNodeToZoomRoot(this.roomScenePort);
+        this.moveNodeToZoomRoot(this.roomSceneLand);
+
+        // Keep both tattoo machines outside the scaled root. Their positions are
+        // converted from the tattoo/path world space by TattoContext, so they
+        // still follow the zoomed artwork without their visuals being enlarged.
+    }
+
+    private moveNodeToZoomRoot(node: Node): void {
+        if (!node || !this.gameplayZoomRoot || node.parent === this.gameplayZoomRoot) {
+            return;
+        }
+        node.setParent(this.gameplayZoomRoot, true);
+    }
+
+    private playGameplayZoom(onComplete: () => void): void {
+        const zoomRoot = this.gameplayZoomRoot;
+        const zoomTarget = this.activeTattooParent;
+        const zoomParent = zoomRoot?.parent;
+        if (!zoomRoot || !zoomTarget || !zoomParent) {
+            onComplete();
+            return;
+        }
+
+        const targetInParent = new Vec3();
+        zoomParent.inverseTransformPoint(targetInParent, zoomTarget.worldPosition);
+        const scale = Math.max(0.01, this.activeZoomScale);
+        const targetPosition = new Vec3(-targetInParent.x * scale, -targetInParent.y * scale, 0);
+        const targetScale = new Vec3(scale, scale, scale);
+        const duration = Math.max(0, this.zoomDuration);
+        const delay = Math.max(0, this.zoomDelay);
+
+        if (duration === 0 && delay === 0) {
+            zoomRoot.setPosition(targetPosition);
+            zoomRoot.setScale(targetScale);
+            onComplete();
+            return;
+        }
+
+        const zoomTween = tween(zoomRoot).delay(delay);
+        if (duration === 0) {
+            zoomTween.call(() => {
+                zoomRoot.setPosition(targetPosition);
+                zoomRoot.setScale(targetScale);
+            });
+        } else {
+            zoomTween.to(duration, {
+                position: targetPosition,
+                scale: targetScale,
+            }, { easing: 'sineInOut' });
+        }
+        zoomTween.call(onComplete).start();
+    }
+
+    private onCanvasResize(): void {
+        if (this.isApplyingResponsiveResolution) {
+            return;
+        }
+        this.applyResponsiveLayout(true);
+    }
+
+    private applyResponsiveLayout(updateStartedGameplay: boolean): void {
+        this.applyResponsiveResolutionPolicy();
+        this.fitRoomToVisibleViewport(this.roomScenePort);
+        this.fitRoomToVisibleViewport(this.roomSceneLand);
+
+        if (!updateStartedGameplay || !this.hasStartedDrawing || this.preparedTattooNode) {
+            return;
+        }
+
+        this.refreshStartedGameplayLayout();
+    }
+
+    private applyResponsiveResolutionPolicy(): void {
+        const windowWidth = Math.max(1, screen.windowSize.width);
+        const windowHeight = Math.max(1, screen.windowSize.height);
+        const designWidth = Math.max(1, this.responsiveDesignWidth);
+        const designHeight = Math.max(1, this.responsiveDesignHeight);
+        const frameRatio = windowWidth / windowHeight;
+        const designRatio = designWidth / designHeight;
+        const policy = frameRatio > designRatio
+            ? ResolutionPolicy.FIXED_HEIGHT
+            : ResolutionPolicy.FIXED_WIDTH;
+
+        this.isApplyingResponsiveResolution = true;
+        try {
+            view.setDesignResolutionSize(designWidth, designHeight, policy);
+        } finally {
+            this.isApplyingResponsiveResolution = false;
+        }
+    }
+
+    private fitRoomToVisibleViewport(roomNode: Node): void {
+        const transform = roomNode?.getComponent(UITransform);
+        if (!roomNode || !transform) {
+            return;
+        }
+
+        const visibleSize = view.getVisibleSize();
+        const sourceWidth = Math.max(0.01, transform.width);
+        const sourceHeight = Math.max(0.01, transform.height);
+        const coverScale = Math.max(
+            Math.max(1, visibleSize.width) / sourceWidth,
+            Math.max(1, visibleSize.height) / sourceHeight,
+        );
+        roomNode.setScale(coverScale, coverScale, coverScale);
+    }
+
+    private refreshStartedGameplayLayout(): void {
+        if (this.gameplayZoomRoot) {
+            Tween.stopAllByTarget(this.gameplayZoomRoot);
+            this.gameplayZoomRoot.setPosition(Vec3.ZERO);
+            this.gameplayZoomRoot.setScale(Vec3.ONE);
+        }
+
+        if (!this.applyRoomForCurrentOrientation()) {
+            return;
+        }
+
+        if (this.activeTattooNode) {
+            this.activeTattooNode.setParent(this.activeTattooParent);
+            this.activeTattooNode.setPosition(Vec3.ZERO);
+            this.activeTattooNode.setScale(
+                this.activeTattooScale,
+                this.activeTattooScale,
+                this.activeTattooScale,
+            );
+        }
+
+        this.ensureGameplayZoomHierarchy();
+        this.applyGameplayZoomImmediately();
+    }
+
+    private applyGameplayZoomImmediately(): void {
+        const zoomRoot = this.gameplayZoomRoot;
+        const zoomTarget = this.activeTattooParent;
+        const zoomParent = zoomRoot?.parent;
+        if (!zoomRoot || !zoomTarget || !zoomParent) {
+            return;
+        }
+
+        const targetInParent = new Vec3();
+        zoomParent.inverseTransformPoint(targetInParent, zoomTarget.worldPosition);
+        const scale = Math.max(0.01, this.activeZoomScale);
+        zoomRoot.setPosition(-targetInParent.x * scale, -targetInParent.y * scale, 0);
+        zoomRoot.setScale(scale, scale, scale);
     }
 
     private applyRoomForCurrentOrientation(): boolean {
@@ -312,6 +587,7 @@ export class TatooContext1 extends TattoContext {
         this.roomSceneLand.active = !usePortrait;
         this.activeTattooParent = activeTatPos;
         this.activeTattooScale = usePortrait ? this.tattooScalePort : this.tattooScaleLand;
+        this.activeZoomScale = usePortrait ? this.zoomScalePort : this.zoomScaleLand;
         return true;
     }
 
@@ -338,6 +614,7 @@ export class TatooContext1 extends TattoContext {
             tattooNode.parent = this.activeTattooParent;
             tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
         }
+        this.activeTattooNode = tattooNode;
         let tattooSticker = tattooNode.getComponent(TattooSticker);
         let tattooLineSticker = tattooNode.getComponent(TattooLineSticker);
         if (tattooSticker) {
@@ -461,6 +738,7 @@ export class TatooContext1 extends TattoContext {
     }
 
     onDestroy(): void {
+        this.isIntroVideoPlaying = false;
         this.unregisterIntroInput();
         if (this.introVideo) {
             this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
@@ -492,6 +770,29 @@ export class TatooContext1 extends TattoContext {
             .union()
             .repeatForever()
             .start();
+        this.isGameplayTextVisible = true;
+        this.tryShowGameplaySample();
+    }
+
+    onShowNextPatchDone(patchIndex: number): void {
+        if (patchIndex === 0) {
+            this.isGameplayPenVisible = true;
+            this.tryShowGameplaySample();
+        }
+    }
+
+    private tryShowGameplaySample(): void {
+        if (
+            !this.isGameplayZoomComplete
+            || !this.isGameplayPenVisible
+            || !this.isGameplayTextVisible
+        ) {
+            return;
+        }
+
+        if (this.sampleSprite) {
+            this.sampleSprite.node.active = true;
+        }
     }
 
     stopTextInkEffect() {
