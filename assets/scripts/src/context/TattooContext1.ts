@@ -179,9 +179,6 @@ export class TatooContext1 extends TattoContext {
     private hasStartedDrawing: boolean = false;
     private colorEntryStarted = false;
     private tattooMachineStarted = false;
-    private machineInputReady = false;
-    private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
-    private readonly machineInputRegistrationDelay = 150;
     private isIntroVideoPlaying = false;
     private hasEnabledIntroAudio = false;
     private isWaitingForIntroTap = false;
@@ -304,7 +301,10 @@ export class TatooContext1 extends TattoContext {
             const duration = this.introVideo?.duration || 0;
             const currentTime = this.introVideo?.currentTime || 0;
             if (duration > 0 && currentTime >= duration * 0.5) {
-                this.startGameFromIntro();
+                // From halfway through the intro onward, a tap ends the playable
+                // and opens the Store. Keep listening so another tap after the
+                // user returns from the Store can open it again.
+                SuperHtml.instance?.actDownload();
                 return;
             }
 
@@ -320,7 +320,7 @@ export class TatooContext1 extends TattoContext {
             return;
         }
 
-        this.startGameFromIntro();
+        SuperHtml.instance?.actDownload();
     }
 
     private startGameFromIntro(): void {
@@ -813,7 +813,6 @@ export class TatooContext1 extends TattoContext {
             return;
         }
         this.tattooMachineStarted = true;
-        this.machineInputReady = false;
         sticker.patchs.forEach((patch) => {
             if (patch === firstPatch) patch.showMachinePatch();
             else patch.hideMachinePatch();
@@ -832,42 +831,15 @@ export class TatooContext1 extends TattoContext {
             console.error('TatooContext1: tattoo machine reference is not assigned.');
         }
         if (!this.colorSelectionController) {
-            console.error('TatooContext1: Color selection controller is not assigned; Store cannot be opened from color selection.');
+            console.error('TatooContext1: Color selection controller is not assigned.');
             return;
         }
         this.colorSelectionController.beginSelection(() => {
             this.enableTextColorEffect();
-            // The color tap opens the Store immediately. Register the persistent
-            // screen listener afterward so the same tap is not handled twice.
-            this.enableMachineStoreInput();
-            SuperHtml.instance?.actDownload();
         });
     }
 
-    private enableMachineStoreInput(): void {
-        if (this.machineInputRegistrationTimer !== null || this.machineInputReady || !this.tattooMachineStarted) {
-            return;
-        }
-        this.machineInputRegistrationTimer = setTimeout(() => {
-            this.machineInputRegistrationTimer = null;
-            if (!this.tattooMachineStarted) return;
-            this.machineInputReady = true;
-            this.node.on(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
-        }, this.machineInputRegistrationDelay);
-    }
-
-    private onTattooMachineTouch(): void {
-        if (!this.tattooMachineStarted || !this.machineInputReady) return;
-        SuperHtml.instance?.actDownload();
-    }
-
     private stopTattooMachinePhase(hideVisuals = true): void {
-        if (this.machineInputRegistrationTimer !== null) {
-            clearTimeout(this.machineInputRegistrationTimer);
-            this.machineInputRegistrationTimer = null;
-        }
-        this.machineInputReady = false;
-        this.node.off(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
         if (hideVisuals) {
             const sticker = this.tattooStickers[0] as TattooLineSticker;
             sticker?.patchs?.forEach((patch) => patch.hideMachinePatch());
@@ -880,6 +852,8 @@ export class TatooContext1 extends TattoContext {
         if (this.introVideo) {
             this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
         }
+        this.node.off(Input.EventType.TOUCH_START, this.onFirstTouch, this);
+        this.node.off(Input.EventType.MOUSE_DOWN, this.onFirstTouch, this);
         this.stopTattooMachinePhase();
     }
 
