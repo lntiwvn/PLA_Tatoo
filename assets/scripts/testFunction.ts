@@ -12,13 +12,14 @@ import {
 } from "cc";
 import { Constant } from "../constant/constant";
 import { GameManager } from "../PLAGameFoundation/gameControl/core/manager/gameManager";
-import gameEndHandler from "../PLAGameFoundation/gameControl/utilities/handler/gameEndHandler";
+import { SuperHtml } from "./utils/SuperHtml";
 
 
 const {ccclass, property} = _decorator;
 
 @ccclass("testFunction")
 export class testFunction extends Component {
+    private hasTriggeredDownload = false;
 
     protected onLoad(): void {
         GameManager.instance.SetupManagerInit();
@@ -40,7 +41,13 @@ export class testFunction extends Component {
     }
 
     protected update(dt: number): void {
-        gameEndHandler.StoreGameChanging(this.IsChangeToLinkStore());
+        if (!this.hasTriggeredDownload && this.IsChangeToLinkStore()) {
+            const superHtml = SuperHtml.instance;
+            if (!superHtml) return;
+
+            this.hasTriggeredDownload = true;
+            superHtml.actDownload();
+        }
     }
 
     public IsChangeToLinkStore(): boolean {

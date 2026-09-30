@@ -71,8 +71,6 @@ export class ColorSelectionController extends Component {
         this.handTap.active = true;
         this.touchHandlers = this.colorTargets.map((target, index) => {
             const handler = () => {
-                // The machine Store listener is registered only after a short delay,
-                // so this selection event cannot also trigger the Store action.
                 this.selectColor(index);
             };
             target.on(Node.EventType.TOUCH_START, handler, this);

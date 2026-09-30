@@ -1,4 +1,4 @@
-import { _decorator, CCBoolean, CCFloat, CCString, Component, Node, Tween, tween, UITransform, Vec3 } from 'cc';
+import { _decorator, CCFloat, Component, Node, Tween, tween, UITransform, Vec3 } from 'cc';
 import { PatchSticker } from './PatchSticker';
 import { ConcreteAggregate } from './Iterator/ConcreteAggregate';
 import { Iterator } from './Iterator/Iterator';
@@ -14,14 +14,13 @@ const { ccclass, property } = _decorator;
  */
 @ccclass('DrawGroup')
 export class DrawGroup {
-    @property({ type: CCString, tooltip: 'Ghi chú cho dễ nhìn trong inspector' })
+    @property({ tooltip: 'Ghi chú cho dễ nhìn trong inspector' })
     note: string = '';
 
     @property({ type: [Node], tooltip: 'Các node patch vẽ cùng lượt. Node đầu tiên là phần dẫn đầu.' })
     patchNodes: Node[] = [];
 
     @property({
-        type: CCBoolean,
         tooltip: 'Bật: vẽ xong lượt này thì máy xăm tự nhấc bút sang vẽ tiếp lượt kế tiếp, không cần tap.',
     })
     autoStart: boolean = false;
@@ -173,6 +172,23 @@ export class TattooLineSticker extends Component {
     private getAutoStartDelay(groupIndex: number): number {
         const prevConfig = this.groupConfigs[groupIndex - 1];
         return prevConfig ? Math.max(0, prevConfig.autoStartDelay) : 0;
+    }
+
+    isWaitingForManualDrawInput(): boolean {
+        const leader = this.currentGroup[0];
+        if (!leader || this.groupDrawStarted || this.isAutoStartGroup(this.groupIndex)) {
+            return false;
+        }
+
+        if (
+            leader instanceof PatchSticker
+            && !(leader instanceof PatchLineSticker)
+            && window.tattoContext.shouldSkipColorPatchPhase()
+        ) {
+            return false;
+        }
+
+        return true;
     }
 
     /** Chuyển sang lượt vẽ kế tiếp. Giữ tên cũ vì context đang gọi hàm này. */

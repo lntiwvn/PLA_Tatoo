@@ -21,7 +21,7 @@
             "_value": false
           },
           "animation": {
-            "_value": false
+            "_value": true
           },
           "skeletal-animation": {
             "_value": false
@@ -39,7 +39,7 @@
             "_value": false
           },
           "rich-text": {
-            "_value": true
+            "_value": false
           },
           "mask": {
             "_value": true
@@ -104,7 +104,7 @@
             "_value": false
           },
           "primitive": {
-            "_value": true
+            "_value": false
           },
           "profiler": {
             "_value": false
@@ -171,7 +171,7 @@
             "_value": false
           },
           "marionette": {
-            "_value": true
+            "_value": false
           },
           "procedural-animation": {
             "_value": true
@@ -201,19 +201,18 @@
           "2d",
           "3d",
           "affine-transform",
+          "animation",
           "audio",
           "base",
           "custom-pipeline",
+          "custom-pipeline-post-process",
           "gfx-webgl",
           "gfx-webgl2",
           "graphics",
-          "marionette",
           "mask",
           "meshopt",
           "particle",
-          "primitive",
           "procedural-animation",
-          "rich-text",
           "spine-3.8",
           "tween",
           "ui",

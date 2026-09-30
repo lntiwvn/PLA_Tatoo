@@ -25,7 +25,7 @@ import { FoamContext } from '../FoamContext';
 import { ConcreteAggregate } from '../Iterator/ConcreteAggregate';
 import { TattooSticker } from '../TattooSticker';
 import { Iterator } from '../Iterator/Iterator';
-import gameEndHandler from '../../../PLAGameFoundation/gameControl/utilities/handler/gameEndHandler';
+import { SuperHtml } from '../../utils/SuperHtml';
 import { TrackingManager } from '../EventTracking/TrackingManager';
 
 const { ccclass, property } = _decorator;
@@ -255,6 +255,6 @@ export class TattoContext extends Component {
     }
 
     onClickPlayMore() {
-        gameEndHandler.StoreGameChangingNoCondition();
+        SuperHtml.instance?.actDownload();
     }
 }

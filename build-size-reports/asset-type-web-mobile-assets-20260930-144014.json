@@ -1,0 +1,753 @@
+{
+  "generatedAt": "2026-09-30T07:40:14.035Z",
+  "target": "web-mobile",
+  "scope": "assets",
+  "bundles": "all",
+  "totalFileCount": 72,
+  "totalSizeBytes": 5466704,
+  "totalSizeMB": 5.213,
+  "byCategory": [
+    {
+      "name": "Video",
+      "fileCount": 1,
+      "sizeBytes": 1864989,
+      "sizeKB": 1821.28,
+      "sizeMB": 1.779,
+      "percent": 34.12,
+      "largestFile": "main/native/ad/ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4",
+      "largestFileBytes": 1864989
+    },
+    {
+      "name": "JSON",
+      "fileCount": 39,
+      "sizeBytes": 1765840,
+      "sizeKB": 1724.45,
+      "sizeMB": 1.684,
+      "percent": 32.3,
+      "largestFile": "internal/import/03/0317f620e.json",
+      "largestFileBytes": 1615401
+    },
+    {
+      "name": "Image",
+      "fileCount": 20,
+      "sizeBytes": 749843,
+      "sizeKB": 732.27,
+      "sizeMB": 0.715,
+      "percent": 13.72,
+      "largestFile": "main/native/13/1337a2b4e.png",
+      "largestFileBytes": 188153
+    },
+    {
+      "name": "Font",
+      "fileCount": 3,
+      "sizeBytes": 474392,
+      "sizeKB": 463.27,
+      "sizeMB": 0.452,
+      "percent": 8.68,
+      "largestFile": "main/native/b5/b5475517-23b9-4873-bc1a-968d96616081/OpenSans-Bold.ttf",
+      "largestFileBytes": 224592
+    },
+    {
+      "name": "Audio",
+      "fileCount": 6,
+      "sizeBytes": 452019,
+      "sizeKB": 441.42,
+      "sizeMB": 0.431,
+      "percent": 8.27,
+      "largestFile": "resources/native/df/dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.mp3",
+      "largestFileBytes": 297260
+    },
+    {
+      "name": "JavaScript",
+      "fileCount": 3,
+      "sizeBytes": 159621,
+      "sizeKB": 155.88,
+      "sizeMB": 0.152,
+      "percent": 2.92,
+      "largestFile": "main/index.js",
+      "largestFileBytes": 158414
+    }
+  ],
+  "byExtension": [
+    {
+      "name": ".mp4",
+      "fileCount": 1,
+      "sizeBytes": 1864989,
+      "sizeKB": 1821.28,
+      "sizeMB": 1.779,
+      "percent": 34.12,
+      "largestFile": "main/native/ad/ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4",
+      "largestFileBytes": 1864989
+    },
+    {
+      "name": ".json",
+      "fileCount": 39,
+      "sizeBytes": 1765840,
+      "sizeKB": 1724.45,
+      "sizeMB": 1.684,
+      "percent": 32.3,
+      "largestFile": "internal/import/03/0317f620e.json",
+      "largestFileBytes": 1615401
+    },
+    {
+      "name": ".ttf",
+      "fileCount": 3,
+      "sizeBytes": 474392,
+      "sizeKB": 463.27,
+      "sizeMB": 0.452,
+      "percent": 8.68,
+      "largestFile": "main/native/b5/b5475517-23b9-4873-bc1a-968d96616081/OpenSans-Bold.ttf",
+      "largestFileBytes": 224592
+    },
+    {
+      "name": ".mp3",
+      "fileCount": 6,
+      "sizeBytes": 452019,
+      "sizeKB": 441.42,
+      "sizeMB": 0.431,
+      "percent": 8.27,
+      "largestFile": "resources/native/df/dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.mp3",
+      "largestFileBytes": 297260
+    },
+    {
+      "name": ".jpg",
+      "fileCount": 3,
+      "sizeBytes": 395856,
+      "sizeKB": 386.58,
+      "sizeMB": 0.378,
+      "percent": 7.24,
+      "largestFile": "main/native/67/670d6483-542d-41c2-a242-e9faefd45af4.jpg",
+      "largestFileBytes": 155957
+    },
+    {
+      "name": ".png",
+      "fileCount": 17,
+      "sizeBytes": 353987,
+      "sizeKB": 345.69,
+      "sizeMB": 0.338,
+      "percent": 6.48,
+      "largestFile": "main/native/13/1337a2b4e.png",
+      "largestFileBytes": 188153
+    },
+    {
+      "name": ".js",
+      "fileCount": 3,
+      "sizeBytes": 159621,
+      "sizeKB": 155.88,
+      "sizeMB": 0.152,
+      "percent": 2.92,
+      "largestFile": "main/index.js",
+      "largestFileBytes": 158414
+    }
+  ],
+  "byBundle": [
+    {
+      "name": "main",
+      "fileCount": 55,
+      "sizeBytes": 3392348,
+      "sizeKB": 3312.84,
+      "sizeMB": 3.235,
+      "percent": 62.05,
+      "largestFile": "main/native/ad/ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4",
+      "largestFileBytes": 1864989
+    },
+    {
+      "name": "internal",
+      "fileCount": 3,
+      "sizeBytes": 1620295,
+      "sizeKB": 1582.32,
+      "sizeMB": 1.545,
+      "percent": 29.64,
+      "largestFile": "internal/import/03/0317f620e.json",
+      "largestFileBytes": 1615401
+    },
+    {
+      "name": "resources",
+      "fileCount": 14,
+      "sizeBytes": 454061,
+      "sizeKB": 443.42,
+      "sizeMB": 0.433,
+      "percent": 8.31,
+      "largestFile": "resources/native/df/dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.mp3",
+      "largestFileBytes": 297260
+    }
+  ],
+  "files": [
+    {
+      "bundle": "main",
+      "category": "Video",
+      "extension": ".mp4",
+      "relativePath": "main/native/ad/ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\ad\\ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4",
+      "sizeBytes": 1864989
+    },
+    {
+      "bundle": "internal",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "internal/import/03/0317f620e.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\internal\\import\\03\\0317f620e.json",
+      "sizeBytes": 1615401
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/df/dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\df\\dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.mp3",
+      "sizeBytes": 297260
+    },
+    {
+      "bundle": "main",
+      "category": "Font",
+      "extension": ".ttf",
+      "relativePath": "main/native/b5/b5475517-23b9-4873-bc1a-968d96616081/OpenSans-Bold.ttf",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\b5\\b5475517-23b9-4873-bc1a-968d96616081\\OpenSans-Bold.ttf",
+      "sizeBytes": 224592
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/13/1337a2b4e.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\13\\1337a2b4e.png",
+      "sizeBytes": 188153
+    },
+    {
+      "bundle": "main",
+      "category": "JavaScript",
+      "extension": ".js",
+      "relativePath": "main/index.js",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\index.js",
+      "sizeBytes": 158414
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".jpg",
+      "relativePath": "main/native/67/670d6483-542d-41c2-a242-e9faefd45af4.jpg",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\67\\670d6483-542d-41c2-a242-e9faefd45af4.jpg",
+      "sizeBytes": 155957
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".jpg",
+      "relativePath": "main/native/db/db3eec1b-2f51-4fbd-b2e8-bdca85272ca1.jpg",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\db\\db3eec1b-2f51-4fbd-b2e8-bdca85272ca1.jpg",
+      "sizeBytes": 138873
+    },
+    {
+      "bundle": "main",
+      "category": "Font",
+      "extension": ".ttf",
+      "relativePath": "main/native/5f/5fab0048-1445-48a6-a72c-d7f66ec21c1b/Rubik-Bold.ttf",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\5f\\5fab0048-1445-48a6-a72c-d7f66ec21c1b\\Rubik-Bold.ttf",
+      "sizeBytes": 124900
+    },
+    {
+      "bundle": "main",
+      "category": "Font",
+      "extension": ".ttf",
+      "relativePath": "main/native/80/80637fa0-229a-4bfa-93ad-cbc1f039ac01/Rubik-Bold.ttf",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\80\\80637fa0-229a-4bfa-93ad-cbc1f039ac01\\Rubik-Bold.ttf",
+      "sizeBytes": 124900
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".jpg",
+      "relativePath": "main/native/ad/ad33ce22-e725-4c7e-b393-068b135721ea.jpg",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\ad\\ad33ce22-e725-4c7e-b393-068b135721ea.jpg",
+      "sizeBytes": 101026
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/01/01ef0c24a.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\01\\01ef0c24a.json",
+      "sizeBytes": 78126
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/41/4154368a-f1e5-46ff-9816-36a8116fd1ec.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\41\\4154368a-f1e5-46ff-9816-36a8116fd1ec.mp3",
+      "sizeBytes": 71151
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/0c/0c3750c86.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\0c\\0c3750c86.json",
+      "sizeBytes": 47273
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/bf/bf1d44fb-3583-4198-8a19-ec0d272125ad.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\bf\\bf1d44fb-3583-4198-8a19-ec0d272125ad.png",
+      "sizeBytes": 37873
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/f5/f55df7e6-a6d0-4b2a-b8e3-9dbce3b6677f.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\f5\\f55df7e6-a6d0-4b2a-b8e3-9dbce3b6677f.mp3",
+      "sizeBytes": 34009
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/6b/6bb7db9f-d571-4851-9cef-5cb5241ace09.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\6b\\6bb7db9f-d571-4851-9cef-5cb5241ace09.png",
+      "sizeBytes": 28776
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/d8/d83ab232-b02b-4909-ac96-27504bbcdce3.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\d8\\d83ab232-b02b-4909-ac96-27504bbcdce3.png",
+      "sizeBytes": 27997
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/59/59fa0a07-a415-4bff-8a63-abbd724f2763.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\59\\59fa0a07-a415-4bff-8a63-abbd724f2763.mp3",
+      "sizeBytes": 27464
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/90/9010dcb0-dc32-46b7-b70a-4b23029e3805.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\90\\9010dcb0-dc32-46b7-b70a-4b23029e3805.png",
+      "sizeBytes": 22695
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/6f/6f0cf0d2-ddfd-4296-b0fe-dd04eaf44df9.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\6f\\6f0cf0d2-ddfd-4296-b0fe-dd04eaf44df9.png",
+      "sizeBytes": 15843
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/81/8167427a-9ca6-45ce-9db4-39688190dbbd.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\81\\8167427a-9ca6-45ce-9db4-39688190dbbd.png",
+      "sizeBytes": 13779
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/12/1261a4f9-e351-408e-9a03-6bdedfa7b5bf.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\12\\1261a4f9-e351-408e-9a03-6bdedfa7b5bf.mp3",
+      "sizeBytes": 12791
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/1b/1bff535d-3767-4de4-a978-f636fad70c70.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\1b\\1bff535d-3767-4de4-a978-f636fad70c70.png",
+      "sizeBytes": 11017
+    },
+    {
+      "bundle": "resources",
+      "category": "Audio",
+      "extension": ".mp3",
+      "relativePath": "resources/native/06/06327d1f-8e89-418a-a57a-281434a82206.mp3",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\native\\06\\06327d1f-8e89-418a-a57a-281434a82206.mp3",
+      "sizeBytes": 9344
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/53/536eba78-445d-4f0a-9659-c456577ab976.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\53\\536eba78-445d-4f0a-9659-c456577ab976.png",
+      "sizeBytes": 4314
+    },
+    {
+      "bundle": "internal",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "internal/config.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\internal\\config.json",
+      "sizeBytes": 4292
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/05/05504109d.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\05\\05504109d.json",
+      "sizeBytes": 4223
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/03/0337a2b4e.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\03\\0337a2b4e.json",
+      "sizeBytes": 4122
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/06/06c78a0eb.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\06\\06c78a0eb.json",
+      "sizeBytes": 3597
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/config.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\config.json",
+      "sizeBytes": 3540
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/52/526bc8f6-94fa-4304-baee-f3fa27cd9a4f.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\52\\526bc8f6-94fa-4304-baee-f3fa27cd9a4f.png",
+      "sizeBytes": 1446
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/0c/0cd015438.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\0c\\0cd015438.json",
+      "sizeBytes": 880
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/c2/c265efe1-91c0-4000-b64d-432c810c0941.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\c2\\c265efe1-91c0-4000-b64d-432c810c0941.json",
+      "sizeBytes": 831
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/06/066544a9-f725-4c2a-b298-910baef57fbb.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\06\\066544a9-f725-4c2a-b298-910baef57fbb.png",
+      "sizeBytes": 766
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/config.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\config.json",
+      "sizeBytes": 667
+    },
+    {
+      "bundle": "resources",
+      "category": "JavaScript",
+      "extension": ".js",
+      "relativePath": "resources/index.js",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\index.js",
+      "sizeBytes": 605
+    },
+    {
+      "bundle": "internal",
+      "category": "JavaScript",
+      "extension": ".js",
+      "relativePath": "internal/index.js",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\internal\\index.js",
+      "sizeBytes": 602
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/fd/fd8ec536-a354-4a17-9c74-4f3883c378c8.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\fd\\fd8ec536-a354-4a17-9c74-4f3883c378c8.json",
+      "sizeBytes": 480
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/24/24c419ea-63a8-4ea1-a9d0-7fc469489bbc.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\24\\24c419ea-63a8-4ea1-a9d0-7fc469489bbc.png",
+      "sizeBytes": 456
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/95/951249e0-9f16-456d-8b85-a6ca954da16b.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\95\\951249e0-9f16-456d-8b85-a6ca954da16b.png",
+      "sizeBytes": 203
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/54/544e49d6-3f05-4fa8-9a9e-091f98fc2ce8.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\54\\544e49d6-3f05-4fa8-9a9e-091f98fc2ce8.png",
+      "sizeBytes": 202
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/ba/ba21476f-2866-4f81-9c4d-6e359316e448.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\ba\\ba21476f-2866-4f81-9c4d-6e359316e448.json",
+      "sizeBytes": 192
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/20/20835ba4-6145-4fbc-a58a-051ce700aa3e.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\20\\20835ba4-6145-4fbc-a58a-051ce700aa3e.png",
+      "sizeBytes": 187
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/8a/8ab4a0dd-e785-4ebc-9618-87bb1bd450ed.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\8a\\8ab4a0dd-e785-4ebc-9618-87bb1bd450ed.png",
+      "sizeBytes": 154
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/12/1261a4f9-e351-408e-9a03-6bdedfa7b5bf.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\12\\1261a4f9-e351-408e-9a03-6bdedfa7b5bf.json",
+      "sizeBytes": 141
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/f5/f55df7e6-a6d0-4b2a-b8e3-9dbce3b6677f.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\f5\\f55df7e6-a6d0-4b2a-b8e3-9dbce3b6677f.json",
+      "sizeBytes": 133
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/06/06327d1f-8e89-418a-a57a-281434a82206.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\06\\06327d1f-8e89-418a-a57a-281434a82206.json",
+      "sizeBytes": 131
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/41/4154368a-f1e5-46ff-9816-36a8116fd1ec.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\41\\4154368a-f1e5-46ff-9816-36a8116fd1ec.json",
+      "sizeBytes": 128
+    },
+    {
+      "bundle": "main",
+      "category": "Image",
+      "extension": ".png",
+      "relativePath": "main/native/44/44aeffe7-b41b-4aac-99c6-1565f380d948.png",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\native\\44\\44aeffe7-b41b-4aac-99c6-1565f380d948.png",
+      "sizeBytes": 126
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/59/59fa0a07-a415-4bff-8a63-abbd724f2763.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\59\\59fa0a07-a415-4bff-8a63-abbd724f2763.json",
+      "sizeBytes": 120
+    },
+    {
+      "bundle": "resources",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "resources/import/df/dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\resources\\import\\df\\dff557c5-3ba9-4ffc-bc35-b1a48a4eb839.json",
+      "sizeBytes": 117
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/13/1337a2b4e.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\13\\1337a2b4e.json",
+      "sizeBytes": 78
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/06/066544a9-f725-4c2a-b298-910baef57fbb.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\06\\066544a9-f725-4c2a-b298-910baef57fbb.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/1b/1bff535d-3767-4de4-a978-f636fad70c70.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\1b\\1bff535d-3767-4de4-a978-f636fad70c70.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/20/20835ba4-6145-4fbc-a58a-051ce700aa3e.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\20\\20835ba4-6145-4fbc-a58a-051ce700aa3e.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/24/24c419ea-63a8-4ea1-a9d0-7fc469489bbc.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\24\\24c419ea-63a8-4ea1-a9d0-7fc469489bbc.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/44/44aeffe7-b41b-4aac-99c6-1565f380d948.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\44\\44aeffe7-b41b-4aac-99c6-1565f380d948.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/52/526bc8f6-94fa-4304-baee-f3fa27cd9a4f.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\52\\526bc8f6-94fa-4304-baee-f3fa27cd9a4f.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/53/536eba78-445d-4f0a-9659-c456577ab976.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\53\\536eba78-445d-4f0a-9659-c456577ab976.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/54/544e49d6-3f05-4fa8-9a9e-091f98fc2ce8.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\54\\544e49d6-3f05-4fa8-9a9e-091f98fc2ce8.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/67/670d6483-542d-41c2-a242-e9faefd45af4.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\67\\670d6483-542d-41c2-a242-e9faefd45af4.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/6b/6bb7db9f-d571-4851-9cef-5cb5241ace09.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\6b\\6bb7db9f-d571-4851-9cef-5cb5241ace09.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/6f/6f0cf0d2-ddfd-4296-b0fe-dd04eaf44df9.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\6f\\6f0cf0d2-ddfd-4296-b0fe-dd04eaf44df9.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/81/8167427a-9ca6-45ce-9db4-39688190dbbd.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\81\\8167427a-9ca6-45ce-9db4-39688190dbbd.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/8a/8ab4a0dd-e785-4ebc-9618-87bb1bd450ed.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\8a\\8ab4a0dd-e785-4ebc-9618-87bb1bd450ed.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/90/9010dcb0-dc32-46b7-b70a-4b23029e3805.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\90\\9010dcb0-dc32-46b7-b70a-4b23029e3805.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/95/951249e0-9f16-456d-8b85-a6ca954da16b.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\95\\951249e0-9f16-456d-8b85-a6ca954da16b.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/ad/ad33ce22-e725-4c7e-b393-068b135721ea.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\ad\\ad33ce22-e725-4c7e-b393-068b135721ea.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/bf/bf1d44fb-3583-4198-8a19-ec0d272125ad.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\bf\\bf1d44fb-3583-4198-8a19-ec0d272125ad.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/d8/d83ab232-b02b-4909-ac96-27504bbcdce3.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\d8\\d83ab232-b02b-4909-ac96-27504bbcdce3.json",
+      "sizeBytes": 72
+    },
+    {
+      "bundle": "main",
+      "category": "JSON",
+      "extension": ".json",
+      "relativePath": "main/import/db/db3eec1b-2f51-4fbd-b2e8-bdca85272ca1.json",
+      "absolutePath": "D:\\Rinna\\TattooASMR_PLA\\build\\web-mobile\\assets\\main\\import\\db\\db3eec1b-2f51-4fbd-b2e8-bdca85272ca1.json",
+      "sizeBytes": 72
+    }
+  ]
+}

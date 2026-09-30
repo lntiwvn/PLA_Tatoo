@@ -3,5 +3,15 @@
   "uuid": "b030525c-0c5f-40e4-b15c-78376acd2feb",
   "creator": {
     "version": "3.8.7"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.0.5",
+    "papaparse": "^5.5.3",
+    "tsx": "^4.22.4"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "sharp": "^0.34.5"
   }
 }

@@ -8,6 +8,7 @@ const {ccclass, property} = _decorator;
 interface AudioData {
     source: AudioSource;
     isMusic: boolean;
+    keepPlayingOnStopAll?: boolean;
 }
 
 interface AudioDataMap {
@@ -57,13 +58,14 @@ export class AudioManager {
      * @param {String} name The music name can be obtained through Constant.AUDIO_MUSIC
      * @param {Boolean} loop Whether to loop
      */
-    playMusic(name: string, loop: boolean) {
+    playMusic(name: string, loop: boolean, keepPlayingOnStopAll: boolean = false) {
         let path = "audio/music/" + name;
         ResourceUtil.loadRes(path, AudioClip, (err: any, clip: any) => {
             let source = this._getAudioSource(clip);
             let tmp: AudioData = {
                 source,
                 isMusic: true,
+                keepPlayingOnStopAll,
             };
             this.audios[name] = tmp;
             source.volume = this.musicVolume;
@@ -119,6 +121,7 @@ export class AudioManager {
         for (const i in this.audios) {
             if (this.audios.hasOwnProperty(i)) {
                 let audio = this.audios[i];
+                if (audio.keepPlayingOnStopAll) continue;
                 audio.source.stop();
             }
         }

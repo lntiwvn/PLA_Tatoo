@@ -16,7 +16,6 @@ import {
 import { Constant } from '../../constant/constant';
 import { PatchSticker } from './PatchSticker';
 import { PatchLineSticker } from './PatchLineSticker';
-import gameEndHandler from '../../PLAGameFoundation/gameControl/utilities/handler/gameEndHandler';
 import { IsContext } from './Utils';
 const { ccclass, property } = _decorator;
 @ccclass('FoamContext')

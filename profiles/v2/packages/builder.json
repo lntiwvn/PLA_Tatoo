@@ -20,7 +20,7 @@
     "nativeCodeBundleMode": "asmjs",
     "startScene": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c",
     "useSplashScreen": false,
-    "name": "TA_PA001",
+    "name": "TattooASMR_PLA",
     "binGroupConfig": {
       "threshold": 16,
       "enable": false
@@ -28,20 +28,23 @@
   },
   "BuildTaskManager": {
     "taskMap": {
-      "1726732905977": {
+      "1790736298643": {
         "type": "build",
-        "id": "1726732905977",
+        "id": "1790736298643",
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "9-29-2026 17:27:20 build success in 20 s!",
+        "message": "9-30-2026 15:16:56 build success in 2 min 43 s!",
         "detailMessage": "// ---- build task cocos-service：onAfterBuild ----\r",
         "options": {
-          "name": "TA_PA001",
+          "name": "TattooASMR_PLA",
           "server": "",
+          "engineModulesConfigKey": "migrationsConfig",
           "platform": "web-mobile",
           "buildPath": "project://build",
           "debug": false,
+          "buildMode": "normal",
+          "mangleProperties": false,
           "md5Cache": false,
           "skipCompressTexture": false,
           "sourceMaps": false,
@@ -62,7 +65,14 @@
           "experimentalEraseModules": false,
           "startSceneAssetBundle": false,
           "bundleConfigs": [],
+          "inlineEnum": true,
           "useBuiltinServer": false,
+          "md5CacheOptions": {
+            "excludes": [],
+            "includes": [],
+            "replaceOnly": [],
+            "handleTemplateMd5Link": true
+          },
           "mainBundleIsRemote": false,
           "mainBundleCompressionType": "merge_dep",
           "useSplashScreen": false,
@@ -70,7 +80,7 @@
           "packAutoAtlas": true,
           "startScene": "cc84ae57-d85b-4a4b-b848-00320af6ac43",
           "outputName": "web-mobile",
-          "taskName": "TA_PA001",
+          "taskName": "web-mobile",
           "scenes": [
             {
               "url": "db://assets/Scene/Ads_1.scene",
@@ -78,96 +88,15 @@
             }
           ],
           "wasmCompressionMode": false,
-          "packages": {},
-          "__version__": "1.3.8",
-          "logDest": "project://temp/builder/log/web-mobile9-19-2024 15-01.log",
-          "md5CacheOptions": {
-            "excludes": [],
-            "includes": [],
-            "replaceOnly": [],
-            "handleTemplateMd5Link": true
-          },
-          "buildMode": "normal",
-          "engineModulesConfigKey": "migrationsConfig",
-          "mangleProperties": false,
-          "inlineEnum": true,
           "binGroupConfig": {
             "threshold": 16,
             "enable": false
-          }
-        },
-        "time": "9-29-2026 17:26:59",
-        "dirty": false
-      },
-      "1730879945930": {
-        "type": "build",
-        "id": "1730879945930",
-        "progress": 1,
-        "state": "success",
-        "stage": "build",
-        "message": "11-8-2024 14:15:05 build success in 1 min 1 s!",
-        "detailMessage": "builder:build-project-total (61272ms)\r",
-        "options": {
-          "name": "TA_PL44_customode",
-          "server": "",
-          "platform": "web-mobile",
-          "buildPath": "project://build",
-          "debug": false,
-          "md5Cache": false,
-          "skipCompressTexture": false,
-          "sourceMaps": false,
-          "overwriteProjectSettings": {
-            "includeModules": {
-              "gfx-webgl2": "on",
-              "physics": "inherit-project-setting",
-              "physics-2d": "inherit-project-setting"
-            },
-            "macroConfig": {
-              "cleanupImageCache": "inherit-project-setting"
-            }
           },
-          "nativeCodeBundleMode": "asmjs",
-          "polyfills": {
-            "asyncFunctions": true
-          },
-          "experimentalEraseModules": false,
-          "startSceneAssetBundle": false,
-          "bundleConfigs": [],
-          "useBuiltinServer": false,
-          "md5CacheOptions": {
-            "excludes": [],
-            "includes": [],
-            "replaceOnly": [],
-            "handleTemplateMd5Link": true
-          },
-          "mainBundleIsRemote": false,
-          "mainBundleCompressionType": "merge_dep",
-          "useSplashScreen": false,
-          "bundleCommonChunk": false,
-          "packAutoAtlas": true,
-          "startScene": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c",
-          "outputName": "web-mobile",
-          "taskName": "TA_PL44_customode",
-          "scenes": [
-            {
-              "url": "db://assets/Scene/Ads_3.scene",
-              "uuid": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c"
-            }
-          ],
-          "wasmCompressionMode": false,
           "packages": {},
-          "__version__": "1.3.8",
-          "buildMode": "normal",
-          "logDest": "project://temp/builder/log/web-mobile11-6-2024 14-59.log",
-          "engineModulesConfigKey": "migrationsConfig",
-          "mangleProperties": false,
-          "inlineEnum": true,
-          "binGroupConfig": {
-            "threshold": 16,
-            "enable": false
-          }
+          "__version__": "1.3.9",
+          "logDest": "project://temp/builder/log/web-mobile9-30-2026 09-44.log"
         },
-        "time": "11-8-2024 14:14:04",
+        "time": "9-30-2026 15:14:12",
         "dirty": false
       }
     }

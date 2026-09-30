@@ -18,7 +18,7 @@
       "nativeCodeBundleMode": "asmjs",
       "startScene": "8bdb32f8-7cfe-47e8-b271-a7b6f739a49c",
       "useSplashScreen": false,
-      "name": "TA_PA001",
+      "name": "TattooASMR_PLA",
       "binGroupConfig": {
         "threshold": 16,
         "enable": false
@@ -46,6 +46,12 @@
         "__version__": "1.0.1"
       },
       "1790585989426": {
+        "useWebGPU": false,
+        "orientation": "auto",
+        "embedWebDebugger": false,
+        "__version__": "1.0.1"
+      },
+      "1790736298643": {
         "useWebGPU": false,
         "orientation": "auto",
         "embedWebDebugger": false,

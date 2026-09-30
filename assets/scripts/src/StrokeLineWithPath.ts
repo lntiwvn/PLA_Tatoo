@@ -1,7 +1,7 @@
 import { _decorator, Color, Component, EventTouch, Graphics, Node, Vec3 } from 'cc';
 import { Constant } from '../../constant/constant';
+import { SuperHtml } from '../utils/SuperHtml';
 import { TatooContext1 } from './context/TattooContext1';
-import gameEndHandler from '../../PLAGameFoundation/gameControl/utilities/handler/gameEndHandler';
 const { ccclass, property } = _decorator;
 
 @ccclass('StrokeLineWithPath')
@@ -148,7 +148,7 @@ export class StrokeLineWithPath extends Component {
 
         if (context.isFirstStickerDone) {
             context.isFirstStickerDone = false;
-            gameEndHandler.StoreGameChangingNoCondition();
+            SuperHtml.instance?.actDownload();
         }
 
         this.patchCompleted = true;
@@ -176,7 +176,7 @@ export class StrokeLineWithPath extends Component {
     }
 
     drawLineGraphic(target: Vec3) {
-        this.graphics.circle(target.x, target.y, 2.3);
+        this.graphics.circle(target.x, target.y, 3);
         this.graphics.fill();
     }
 }

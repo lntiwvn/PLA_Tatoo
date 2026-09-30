@@ -5,6 +5,7 @@ export class Constant {
     };
 
     static AUDIO_NAME = {
+        BGM: 'BGM',
         MUSIC_TEST: 'music_ex',
         SOUND_TEST: 'sound_ex',
         DEFAULT: '',

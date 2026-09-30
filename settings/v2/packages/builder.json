@@ -33,7 +33,9 @@
   },
   "splash-setting": {
     "logo": {
-      "type": "none"
-    }
+      "type": "custom",
+      "image": "project://settings/icon.png"
+    },
+    "totalTime": 1000
   }
 }
