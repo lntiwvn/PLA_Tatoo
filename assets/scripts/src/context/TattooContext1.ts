@@ -177,6 +177,7 @@ export class TatooContext1 extends TattoContext {
 
     isFirstStickerDone: boolean = false;
     private hasStartedDrawing: boolean = false;
+    private hasStartedBgm = false;
     private colorEntryStarted = false;
     private tattooMachineStarted = false;
     private machineInputReady = false;
@@ -300,6 +301,8 @@ export class TatooContext1 extends TattoContext {
     }
 
     private onIntroTap(): void {
+        this.startBgmOnce();
+
         if (this.isIntroVideoPlaying) {
             const duration = this.introVideo?.duration || 0;
             const currentTime = this.introVideo?.currentTime || 0;
@@ -321,6 +324,16 @@ export class TatooContext1 extends TattoContext {
         }
 
         this.startGameFromIntro();
+    }
+
+    private startBgmOnce(): void {
+        if (this.hasStartedBgm) {
+            return;
+        }
+
+        this.hasStartedBgm = true;
+        this.audioManager.init();
+        this.audioManager.playMusic(Constant.AUDIO_NAME.BGM, true, true);
     }
 
     private startGameFromIntro(): void {
@@ -362,8 +375,7 @@ export class TatooContext1 extends TattoContext {
         }
 
         this.hasStartedDrawing = true;
-        this.audioManager.init();
-        this.audioManager.playMusic(Constant.AUDIO_NAME.BGM, true, true);
+        this.startBgmOnce();
         this.isGameplayZoomComplete = false;
         this.isGameplayPenVisible = false;
         this.isGameplayTextVisible = false;
