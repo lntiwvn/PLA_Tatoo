@@ -1,4 +1,4 @@
-import { _decorator, CCFloat, Component, Node, Tween, tween, UITransform, Vec2, Vec3 } from 'cc';
+import { _decorator, CCFloat, Color, Component, EventTouch, Node, Sprite, Tween, tween, UITransform, Vec2, Vec3 } from 'cc';
 
 const { ccclass, property } = _decorator;
 
@@ -19,6 +19,15 @@ export class ColorSelectionController extends Component {
     @property([Node])
     chosenIndicators: Node[] = [];
 
+    @property([Color])
+    paintColors: Color[] = [new Color(114, 206, 56), new Color(235, 118, 109), new Color(235, 163, 53)];
+
+    getPaintColor(index: number): Color {
+        const tint = this.colorTargets[index]?.getChildByName('inside')?.getComponent(Sprite)?.color;
+        return (tint && (tint.r !== 255 || tint.g !== 255 || tint.b !== 255)
+            ? tint : this.paintColors[index] || new Color(114, 206, 56)).clone();
+    }
+
     @property(Vec2)
     firstOffset: Vec2 = new Vec2(-20, 0);
 
@@ -30,9 +39,10 @@ export class ColorSelectionController extends Component {
 
     private hasSelected = false;
     private isGuidanceRunning = false;
+    private isSelectionEnabled = false;
     private targetIndex = 0;
     private handTween: Tween<Node> = null;
-    private touchHandlers: (() => void)[] = [];
+    private touchHandlers: ((event: EventTouch) => void)[] = [];
     private selectionCallback: ((index: number) => void) = null;
 
     prepare(): void {
@@ -66,11 +76,14 @@ export class ColorSelectionController extends Component {
         }
 
         this.isGuidanceRunning = true;
+        this.isSelectionEnabled = true;
         this.selectionCallback = onSelected || null;
         this.instructionText.active = true;
         this.handTap.active = true;
         this.touchHandlers = this.colorTargets.map((target, index) => {
-            const handler = () => {
+            const handler = (event: EventTouch) => {
+                // Selecting ink must not also paint beneath the palette.
+                event.propagationStopped = true;
                 this.selectColor(index);
             };
             target.on(Node.EventType.TOUCH_START, handler, this);
@@ -128,33 +141,36 @@ export class ColorSelectionController extends Component {
     }
 
     private selectColor(index: number): void {
-        if (this.hasSelected || !this.isGuidanceRunning || !this.chosenIndicators[index]) {
+        if (!this.isSelectionEnabled || !this.chosenIndicators[index]) {
             return;
         }
 
         this.hasSelected = true;
-        this.stopGuidance();
-        this.chosenIndicators[index].active = true;
-        const callback = this.selectionCallback;
-        this.selectionCallback = null;
-        callback?.(index);
+        this.stopGuidance(false);
+        this.chosenIndicators.forEach((indicator, indicatorIndex) => {
+            if (indicator) indicator.active = indicatorIndex === index;
+        });
+        this.selectionCallback?.(index);
     }
 
-    private stopGuidance(): void {
+    private stopGuidance(removeInput = true): void {
         this.isGuidanceRunning = false;
         if (this.handTween) {
             this.handTween.stop();
             this.handTween = null;
         }
-        this.colorTargets.forEach((target, index) => {
-            if (target) {
-                const handler = this.touchHandlers[index];
-                if (handler) {
-                    target.off(Node.EventType.TOUCH_START, handler, this);
+        if (removeInput) {
+            this.isSelectionEnabled = false;
+            this.colorTargets.forEach((target, index) => {
+                if (target) {
+                    const handler = this.touchHandlers[index];
+                    if (handler) {
+                        target.off(Node.EventType.TOUCH_START, handler, this);
+                    }
                 }
-            }
-        });
-        this.touchHandlers = [];
+            });
+            this.touchHandlers = [];
+        }
         if (this.instructionText) {
             this.instructionText.active = false;
         }

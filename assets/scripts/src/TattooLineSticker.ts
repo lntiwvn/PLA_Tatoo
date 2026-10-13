@@ -164,6 +164,9 @@ export class TattooLineSticker extends Component {
      */
     private isAutoStartGroup(groupIndex: number): boolean {
         if (groupIndex <= 0) return false;
+        // Wait for a fresh touch when entering coloring after color selection.
+        if (!(this.groups[groupIndex]?.[0] instanceof PatchLineSticker)
+            && this.groups[groupIndex - 1]?.[0] instanceof PatchLineSticker) return false;
         const prevConfig = this.groupConfigs[groupIndex - 1];
         return !!prevConfig && prevConfig.autoStart;
     }
@@ -189,6 +192,13 @@ export class TattooLineSticker extends Component {
         }
 
         return true;
+    }
+
+    /** Resume the color group after the context finishes color selection. */
+    resumeColorPhase() {
+        // The color group was already selected before showing the palette.
+        this.groupIndex--;
+        this.showNextPatch();
     }
 
     /** Chuyển sang lượt vẽ kế tiếp. Giữ tên cũ vì context đang gọi hàm này. */
@@ -230,10 +240,15 @@ export class TattooLineSticker extends Component {
         const reported = new Set<PatchSticker>();
 
         showOrder.forEach((patch) => {
-            // showFinalImageOnly() có thể đã tắt node này; bật lại để nét đứt
-            // hướng dẫn của patch hiện lên được.
+            // Activate the patch before showing its drawing guide.
             patch.node.active = true;
             patch.node.setSiblingIndex(this.patchs.length);
+            if (!(patch instanceof PatchLineSticker)) {
+                const lineIndex = Math.min(...this.patchs
+                    .filter((item) => item instanceof PatchLineSticker)
+                    .map((item) => item.node.getSiblingIndex()));
+                if (Number.isFinite(lineIndex)) patch.node.setSiblingIndex(lineIndex);
+            }
 
             const drawComp = patch.drawComp;
             drawComp.isLeader = patch === leader;
@@ -296,6 +311,7 @@ export class TattooLineSticker extends Component {
             );
         } else {
             leader.sprayComp.registerTouchEvent();
+            window.tattoContext.tattoMachine.active = true;
             window.tattoContext.tattoMachineOpacity.opacity = 255;
         }
 
@@ -471,7 +487,8 @@ export class TattooLineSticker extends Component {
 
         if (!nextGroup) {
             this.hideCurrentPatch(() => { });
-            this.showFinalImageOnly();
+            // Preserve the painted result and its selected color.
+            if (this.finalImage) this.finalImage.active = false;
             window.tattoContext.onCurrentStickerDone();
             return;
         }
@@ -480,10 +497,9 @@ export class TattooLineSticker extends Component {
 
         this.hideCurrentPatch(() => {
             const groupHasLine = currentGroup.some((patch) => patch instanceof PatchLineSticker);
-            const nextGroupIsColor = nextGroup[0] instanceof PatchSticker2;
+            const nextGroupIsColor = !(nextGroup[0] instanceof PatchLineSticker);
 
             if (groupHasLine && nextGroupIsColor) {
-                this.showFinalImageOnly();
                 window.tattoContext.showTextWow();
                 // Lượt tự chạy thì vào luôn, không chèn quãng nghỉ khen thưởng.
                 if (nextAutoStart) {
@@ -516,18 +532,6 @@ export class TattooLineSticker extends Component {
                 }
             });
         });
-    }
-
-    private showFinalImageOnly(): void {
-        if (!this.finalImage) {
-            console.error('TattooLineSticker: finalImage is not assigned.');
-            return;
-        }
-        this.node.children.forEach((child) => {
-            child.active = child === this.finalImage;
-        });
-        this.finalImage.active = true;
-        this.finalImage.setSiblingIndex(this.node.children.length - 1);
     }
 
     onPrayComplete() {

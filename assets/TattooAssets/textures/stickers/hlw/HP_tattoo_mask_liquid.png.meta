@@ -2,7 +2,7 @@
   "ver": "1.0.27",
   "importer": "image",
   "imported": true,
-  "uuid": "6bb7db9f-d571-4851-9cef-5cb5241ace09",
+  "uuid": "1724a08b-035f-40d8-a836-26e0f53252a3",
   "files": [
     ".json",
     ".png"
@@ -10,8 +10,8 @@
   "subMetas": {
     "6c48a": {
       "importer": "texture",
-      "uuid": "6bb7db9f-d571-4851-9cef-5cb5241ace09@6c48a",
-      "displayName": "model",
+      "uuid": "1724a08b-035f-40d8-a836-26e0f53252a3@6c48a",
+      "displayName": "HP_tattoo_mask_liquid",
       "id": "6c48a",
       "name": "texture",
       "userData": {
@@ -22,7 +22,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "6bb7db9f-d571-4851-9cef-5cb5241ace09",
+        "imageUuidOrDatabaseUri": "1724a08b-035f-40d8-a836-26e0f53252a3",
         "visible": false
       },
       "ver": "1.0.22",
@@ -34,22 +34,21 @@
     },
     "f9941": {
       "importer": "sprite-frame",
-      "uuid": "6bb7db9f-d571-4851-9cef-5cb5241ace09@f9941",
-      "displayName": "model",
+      "uuid": "1724a08b-035f-40d8-a836-26e0f53252a3@f9941",
+      "displayName": "HP_tattoo_mask_liquid",
       "id": "f9941",
       "name": "spriteFrame",
       "userData": {
-        "trimType": "auto",
         "trimThreshold": 1,
         "rotated": false,
-        "offsetX": -23.5,
-        "offsetY": 0,
-        "trimX": 31,
-        "trimY": 0,
-        "width": 321,
-        "height": 871,
-        "rawWidth": 430,
-        "rawHeight": 871,
+        "offsetX": 0,
+        "offsetY": -93.5,
+        "trimX": 139,
+        "trimY": 252,
+        "width": 234,
+        "height": 195,
+        "rawWidth": 512,
+        "rawHeight": 512,
         "borderTop": 0,
         "borderBottom": 0,
         "borderLeft": 0,
@@ -61,17 +60,17 @@
         "meshType": 0,
         "vertices": {
           "rawPosition": [
-            -160.5,
-            -435.5,
+            -117,
+            -97.5,
             0,
-            160.5,
-            -435.5,
+            117,
+            -97.5,
             0,
-            -160.5,
-            435.5,
+            -117,
+            97.5,
             0,
-            160.5,
-            435.5,
+            117,
+            97.5,
             0
           ],
           "indexes": [
@@ -83,39 +82,40 @@
             3
           ],
           "uv": [
-            31,
-            871,
-            352,
-            871,
-            31,
-            0,
-            352,
-            0
+            139,
+            260,
+            373,
+            260,
+            139,
+            65,
+            373,
+            65
           ],
           "nuv": [
-            0.07209302325581396,
-            0,
-            0.8186046511627907,
-            0,
-            0.07209302325581396,
-            1,
-            0.8186046511627907,
-            1
+            0.271484375,
+            0.126953125,
+            0.728515625,
+            0.126953125,
+            0.271484375,
+            0.5078125,
+            0.728515625,
+            0.5078125
           ],
           "minPos": [
-            -160.5,
-            -435.5,
+            -117,
+            -97.5,
             0
           ],
           "maxPos": [
-            160.5,
-            435.5,
+            117,
+            97.5,
             0
           ]
         },
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "6bb7db9f-d571-4851-9cef-5cb5241ace09@6c48a",
-        "atlasUuid": ""
+        "imageUuidOrDatabaseUri": "1724a08b-035f-40d8-a836-26e0f53252a3@6c48a",
+        "atlasUuid": "",
+        "trimType": "auto"
       },
       "ver": "1.0.12",
       "imported": true,
@@ -126,13 +126,9 @@
     }
   },
   "userData": {
-    "hasAlpha": true,
     "type": "sprite-frame",
+    "hasAlpha": true,
     "fixAlphaTransparencyArtifacts": false,
-    "redirect": "6bb7db9f-d571-4851-9cef-5cb5241ace09@6c48a",
-    "compressSettings": {
-      "useCompressTexture": true,
-      "presetId": "0attPE055Epbj98A/N6nu6"
-    }
+    "redirect": "1724a08b-035f-40d8-a836-26e0f53252a3@6c48a"
   }
 }

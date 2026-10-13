@@ -176,7 +176,7 @@ export class StrokeLineWithPath extends Component {
     }
 
     drawLineGraphic(target: Vec3) {
-        this.graphics.circle(target.x, target.y, 3);
+        this.graphics.circle(target.x, target.y, 5);
         this.graphics.fill();
     }
 }

@@ -1,4 +1,4 @@
-import { _decorator, Camera, CCFloat, input, Input, instantiate, Label, Node, Prefab, ResolutionPolicy, screen, Tween, tween, UITransform, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
+import { _decorator, Camera, CCFloat, GradientRange, input, Input, instantiate, Label, Node, Prefab, ResolutionPolicy, screen, Tween, tween, UITransform, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
@@ -6,7 +6,6 @@ import { PatchSticker2 } from '../PatchSticker2';
 import { PatchLineSticker } from '../PatchLineSticker';
 import { ConcreteAggregate } from '../Iterator/ConcreteAggregate';
 import { ColorSelectionController } from '../ColorSelectionController';
-import { SuperHtml } from '../../utils/SuperHtml';
 import { Constant } from '../../../constant/constant';
 const { ccclass, property } = _decorator;
 
@@ -20,6 +19,12 @@ export class TatooContext1 extends TattoContext {
 
     @property(Prefab)
     fixedTattooPrefab: Prefab = null;
+
+    @property({
+        type: CCFloat,
+        tooltip: 'Scale of TattooLineSticker while drawing in the center of the canvas.',
+    })
+    stickerDrawScale = 0.65;
 
     @property({
         type: Node,
@@ -180,12 +185,12 @@ export class TatooContext1 extends TattoContext {
     private hasStartedBgm = false;
     private colorEntryStarted = false;
     private tattooMachineStarted = false;
-    private machineInputReady = false;
+    private colorPhaseReady = false;
+    private coloringComplete = false;
     private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
     private readonly machineInputRegistrationDelay = 150;
     private isIntroVideoPlaying = false;
     private hasEnabledIntroAudio = false;
-    private isWaitingForIntroTap = false;
     private isIntroInputRegistered = false;
     private activeTattooParent: Node = null;
     private activeTattooScale = 1;
@@ -223,6 +228,8 @@ export class TatooContext1 extends TattoContext {
         this.labelColor.node.active = false;
         this.colorEntryStarted = false;
         this.tattooMachineStarted = false;
+        this.colorPhaseReady = false;
+        this.coloringComplete = false;
         this.colorSelectionController?.prepare();
         this.hideGameplayIdleTutorial();
         if (this.colorNode && this.colorBeginNode) {
@@ -245,18 +252,15 @@ export class TatooContext1 extends TattoContext {
 
         this.isIntroVideoPlaying = false;
         this.hasEnabledIntroAudio = false;
-        this.isWaitingForIntroTap = false;
         this.unregisterIntroInput();
 
         if (this.endFrame) {
             this.endFrame.active = false;
-        } else {
-            console.error('TatooContext1: endFrame is not assigned.');
         }
 
         if (!this.introVideo) {
             console.error('TatooContext1: introVideo is not assigned.');
-            this.showEndFrameAndWaitForTap();
+            this.startGameFromIntro();
             return;
         }
 
@@ -273,21 +277,7 @@ export class TatooContext1 extends TattoContext {
     }
 
     private onIntroVideoCompleted(): void {
-        this.isIntroVideoPlaying = false;
-        if (this.introVideo) {
-            this.introVideo.node.off(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
-            this.introVideo.node.active = false;
-        }
-        this.showEndFrameAndWaitForTap();
-    }
-
-    private showEndFrameAndWaitForTap(): void {
-        if (this.endFrame) {
-            this.endFrame.active = true;
-        }
-
-        this.isWaitingForIntroTap = true;
-        this.registerIntroInput();
+        this.startGameFromIntro();
     }
 
     private registerIntroInput(): void {
@@ -301,29 +291,20 @@ export class TatooContext1 extends TattoContext {
     }
 
     private onIntroTap(): void {
-        this.startBgmOnce();
+        if (!this.isIntroVideoPlaying) return;
 
-        if (this.isIntroVideoPlaying) {
-            const duration = this.introVideo?.duration || 0;
-            const currentTime = this.introVideo?.currentTime || 0;
-            if (duration > 0 && currentTime >= duration * 0.5) {
-                this.startGameFromIntro();
-                return;
-            }
-
-            if (!this.hasEnabledIntroAudio && this.introVideo) {
-                this.hasEnabledIntroAudio = true;
-                this.introVideo.mute = false;
-                this.introVideo.play();
-            }
+        const duration = this.introVideo?.duration || 0;
+        const currentTime = this.introVideo?.currentTime || 0;
+        if (duration > 0 && currentTime >= duration * 0.5) {
+            this.startGameFromIntro();
             return;
         }
 
-        if (!this.isWaitingForIntroTap) {
-            return;
+        if (!this.hasEnabledIntroAudio && this.introVideo) {
+            this.hasEnabledIntroAudio = true;
+            this.introVideo.mute = false;
+            this.introVideo.play();
         }
-
-        this.startGameFromIntro();
     }
 
     private startBgmOnce(): void {
@@ -337,8 +318,8 @@ export class TatooContext1 extends TattoContext {
     }
 
     private startGameFromIntro(): void {
+        if (this.hasStartedDrawing) return;
         this.isIntroVideoPlaying = false;
-        this.isWaitingForIntroTap = false;
         this.unregisterIntroInput();
         if (this.introVideo) {
             this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
@@ -375,7 +356,6 @@ export class TatooContext1 extends TattoContext {
         }
 
         this.hasStartedDrawing = true;
-        this.startBgmOnce();
         this.isGameplayZoomComplete = false;
         this.isGameplayPenVisible = false;
         this.isGameplayTextVisible = false;
@@ -408,7 +388,7 @@ export class TatooContext1 extends TattoContext {
         this.node.on(Input.EventType.TOUCH_START, this.onFirstTouch, this);
         this.node.on(Input.EventType.MOUSE_DOWN, this.onFirstTouch, this);
         this.scheduleGameplayIdleTutorial();
-        this.audioManager.init();
+        this.startBgmOnce();
         this.init();
         this.onIntro();
     }
@@ -475,10 +455,9 @@ export class TatooContext1 extends TattoContext {
     }
 
     private prepareTattooBasePreview(onComplete: () => void): void {
-        this.ensureGameplayZoomHierarchy();
-
         const tattooNode = instantiate(this.fixedTattooPrefab);
         tattooNode.parent = this.activeTattooParent;
+        this.placeStickerBelowGameplayUI(tattooNode);
         tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
         this.preparedTattooNode = tattooNode;
         this.activeTattooNode = tattooNode;
@@ -491,7 +470,7 @@ export class TatooContext1 extends TattoContext {
             console.error(
                 'TatooContext1: assign the base node with a UIOpacity component to TattooLineSticker.basePreview.',
             );
-            this.playGameplayZoom(onComplete);
+            onComplete();
             return;
         }
 
@@ -507,21 +486,31 @@ export class TatooContext1 extends TattoContext {
         baseOpacity.opacity = 255;
         Tween.stopAllByTarget(baseOpacity);
 
-        this.playGameplayZoom(() => {
-            tween(baseOpacity)
-                .to(this.baseBlinkHalfDuration, { opacity: 0 })
-                .to(this.baseBlinkHalfDuration, { opacity: 255 })
-                .union()
-                .repeat(3)
-                .call(() => {
-                    baseNode.active = false;
-                    childActiveStates.forEach(({ child, active }) => {
-                        if (child !== baseNode) child.active = active;
-                    });
-                    onComplete();
-                })
-                .start();
-        });
+        tween(baseOpacity)
+            .to(this.baseBlinkHalfDuration, { opacity: 0 })
+            .to(this.baseBlinkHalfDuration, { opacity: 255 })
+            .union()
+            .repeat(3)
+            .call(() => {
+                baseNode.active = false;
+                childActiveStates.forEach(({ child, active }) => {
+                    if (child !== baseNode) child.active = active;
+                });
+                onComplete();
+            })
+            .start();
+    }
+
+    private placeStickerBelowGameplayUI(tattooNode: Node): void {
+        // The sticker is drawn in the canvas, below the tutorial and CTA nodes.
+        // Keep it after the room images so its own artwork stays visible.
+        if (tattooNode.parent === this.roomScenePort?.parent) {
+            const roomIndex = Math.max(
+                this.roomScenePort.getSiblingIndex(),
+                this.roomSceneLand.getSiblingIndex(),
+            );
+            tattooNode.setSiblingIndex(roomIndex + 1);
+        }
     }
 
     private ensureGameplayZoomHierarchy(): void {
@@ -696,15 +685,13 @@ export class TatooContext1 extends TattoContext {
         if (this.activeTattooNode) {
             this.activeTattooNode.setParent(this.activeTattooParent);
             this.activeTattooNode.setPosition(Vec3.ZERO);
+            this.placeStickerBelowGameplayUI(this.activeTattooNode);
             this.activeTattooNode.setScale(
                 this.activeTattooScale,
                 this.activeTattooScale,
                 this.activeTattooScale,
             );
         }
-
-        this.ensureGameplayZoomHierarchy();
-        this.applyGameplayZoomImmediately();
     }
 
     private applyGameplayZoomImmediately(): void {
@@ -723,21 +710,18 @@ export class TatooContext1 extends TattoContext {
     }
 
     private applyRoomForCurrentOrientation(): boolean {
-        const usePortrait = this.isPortraitScreen();
-        const activeTatPos = usePortrait ? this.tatPosPort : this.tatPosLand;
-
-        if (!this.roomScenePort || !this.tatPosPort || !this.roomSceneLand || !this.tatPosLand) {
+        const canvas = this.node.parent;
+        if (!this.roomScenePort || !this.roomSceneLand || !canvas) {
             console.error(
-                'TatooContext1: roomScenePort, tatPosPort, roomSceneLand and tatPosLand must be assigned.',
+                'TatooContext1: room scenes and the canvas parent must be assigned.',
             );
             return false;
         }
 
-        this.roomScenePort.active = usePortrait;
-        this.roomSceneLand.active = !usePortrait;
-        this.activeTattooParent = activeTatPos;
-        this.activeTattooScale = usePortrait ? this.tattooScalePort : this.tattooScaleLand;
-        this.activeZoomScale = usePortrait ? this.zoomScalePort : this.zoomScaleLand;
+        this.roomScenePort.active = false;
+        this.roomSceneLand.active = false;
+        this.activeTattooParent = canvas;
+        this.activeTattooScale = this.stickerDrawScale;
         return true;
     }
 
@@ -762,6 +746,7 @@ export class TatooContext1 extends TattoContext {
         if (!tattooNode) {
             tattooNode = instantiate(prefab);
             tattooNode.parent = this.activeTattooParent;
+            this.placeStickerBelowGameplayUI(tattooNode);
             tattooNode.setScale(this.activeTattooScale, this.activeTattooScale, this.activeTattooScale);
         }
         this.activeTattooNode = tattooNode;
@@ -786,6 +771,16 @@ export class TatooContext1 extends TattoContext {
 
     onCurrentStickerDone() {
         this.hideGameplayIdleTutorial();
+        if (this.colorPhaseReady) {
+            if (this.coloringComplete) return;
+            this.coloringComplete = true;
+            this.stopTextColorEffect();
+            this.audioManager.stopAll();
+            if (this.colorNode) this.colorNode.active = false;
+            this.showConfetti();
+            this.playMoreButton.active = true;
+            return;
+        }
         if (this.colorEntryStarted || this.tattooMachineStarted) {
             return;
         }
@@ -825,13 +820,11 @@ export class TatooContext1 extends TattoContext {
             return;
         }
         this.tattooMachineStarted = true;
-        this.machineInputReady = false;
         sticker.patchs.forEach((patch) => {
             if (patch === firstPatch) patch.showMachinePatch();
             else patch.hideMachinePatch();
         });
-        // showFinalImageOnly() may have hidden this child at the line-complete
-        // boundary. Keep the selected machine patch visible for color selection.
+        // Keep the first color guide visible while selecting ink.
         firstPatch.node.active = true;
         if (this.tattoMachineOpacity) {
             this.tattoMachineOpacity.opacity = 255;
@@ -844,33 +837,33 @@ export class TatooContext1 extends TattoContext {
             console.error('TatooContext1: tattoo machine reference is not assigned.');
         }
         if (!this.colorSelectionController) {
-            console.error('TatooContext1: Color selection controller is not assigned; Store cannot be opened from color selection.');
+            console.error('TatooContext1: Color selection controller is not assigned.');
             return;
         }
-        this.colorSelectionController.beginSelection(() => {
-            this.enableTextColorEffect();
-            // The color tap opens the Store immediately. Register the persistent
-            // screen listener afterward so the same tap is not handled twice.
-            this.enableMachineStoreInput();
-            SuperHtml.instance?.actDownload();
+        this.colorSelectionController.beginSelection((index) => {
+            if (this.coloringComplete) return;
+            const color = this.colorSelectionController.getPaintColor(index);
+            sticker.patchs.forEach((patch) => {
+                if (!(patch instanceof PatchLineSticker)) {
+                    patch.sprayColor = color.clone();
+                    patch.sprayComp.sprayColor = color.clone();
+                }
+            });
+            if (this.drawVfxParticle) {
+                const gradient = new GradientRange();
+                gradient.color = color.clone();
+                this.drawVfxParticle.startColor = gradient;
+            }
+            // Further selections only update ink; keep the current patch and stroke.
+            if (this.colorPhaseReady || this.machineInputRegistrationTimer !== null) return;
+            // Finish the selection touch before registering painting input.
+            this.machineInputRegistrationTimer = setTimeout(() => {
+                this.machineInputRegistrationTimer = null;
+                firstPatch.hideMachinePatch();
+                this.colorPhaseReady = true;
+                sticker.resumeColorPhase();
+            }, this.machineInputRegistrationDelay);
         });
-    }
-
-    private enableMachineStoreInput(): void {
-        if (this.machineInputRegistrationTimer !== null || this.machineInputReady || !this.tattooMachineStarted) {
-            return;
-        }
-        this.machineInputRegistrationTimer = setTimeout(() => {
-            this.machineInputRegistrationTimer = null;
-            if (!this.tattooMachineStarted) return;
-            this.machineInputReady = true;
-            this.node.on(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
-        }, this.machineInputRegistrationDelay);
-    }
-
-    private onTattooMachineTouch(): void {
-        if (!this.tattooMachineStarted || !this.machineInputReady) return;
-        SuperHtml.instance?.actDownload();
     }
 
     private stopTattooMachinePhase(hideVisuals = true): void {
@@ -878,8 +871,6 @@ export class TatooContext1 extends TattoContext {
             clearTimeout(this.machineInputRegistrationTimer);
             this.machineInputRegistrationTimer = null;
         }
-        this.machineInputReady = false;
-        this.node.off(Input.EventType.TOUCH_START, this.onTattooMachineTouch, this);
         if (hideVisuals) {
             const sticker = this.tattooStickers[0] as TattooLineSticker;
             sticker?.patchs?.forEach((patch) => patch.hideMachinePatch());
@@ -896,7 +887,7 @@ export class TatooContext1 extends TattoContext {
     }
 
     shouldSkipColorPatchPhase(): boolean {
-        return true;
+        return !this.colorPhaseReady;
     }
 
     enableTextColorEffect() {

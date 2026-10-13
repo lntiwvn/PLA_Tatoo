@@ -218,13 +218,9 @@ export class TattoContext extends Component {
     }
 
     showConfetti() {
-        this.confettiParticleLeft.stop();
-        this.confettiParticleRight.stop();
-        this.confettiParticleTop.stop();
-
-        this.confettiParticleLeft.play();
-        this.confettiParticleRight.play();
-        this.confettiParticleTop.play();
+        const particles = [this.confettiParticleLeft, this.confettiParticleRight, this.confettiParticleTop];
+        particles.forEach((particle) => particle?.stop());
+        particles.forEach((particle) => particle?.play());
         this.audioManager.playMusic(Constant.EFFECT_NAME.WOW, false);
     }
 

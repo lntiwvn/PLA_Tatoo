@@ -16,12 +16,13 @@ export class PatchSticker2 extends PatchSticker {
     }
 
     showPatch(onPatchShowDone: () => void) {
+        this.showGuide();
         let gradient = new GradientRange();
         gradient.color = this.sprayColor;
         window.tattoContext.drawVfxParticle.startColor = gradient;
         this.dotsNodeOpacity.opacity = 255;
-        onPatchShowDone && onPatchShowDone();
         this.setCanSpray(true);
+        onPatchShowDone && onPatchShowDone();
     }
 
     hidePatch(onHideComplete: () => void) {
