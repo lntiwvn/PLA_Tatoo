@@ -6935,7 +6935,18 @@
       "y": 45
     },
     "handMoveDuration": 0.35,
-    "_id": ""
+    "_id": "",
+    "paintColorSprites": [
+      {
+        "__id__": 178
+      },
+      {
+        "__id__": 216
+      },
+      {
+        "__id__": 254
+      }
+    ]
   },
   {
     "__type__": "cc.CompPrefabInfo",

@@ -1,0 +1,8 @@
+﻿rank,name,file_count,size_bytes,size_kb,size_mb,percent,largest_file,largest_file_bytes
+1,.mp4,1,1886287,1842.08,1.799,34.61,main/native/ad/ad81ee9f-72a4-4385-93fc-7bc7a4eacad6.mp4,1886287
+2,.json,39,1850761,1807.38,1.765,33.96,internal/import/03/0317f620e.json,1615401
+3,.m4a,1,528117,515.74,0.504,9.69,resources/native/ca/ca087841-ca68-4cbf-9116-ef4779e2e3ee.m4a,528117
+4,.ttf,3,474392,463.27,0.452,8.7,main/native/b5/b5475517-23b9-4873-bc1a-968d96616081/OpenSans-Bold.ttf,224592
+5,.png,20,387833,378.74,0.37,7.12,main/native/15/15910e5da.png,218035
+6,.js,3,168468,164.52,0.161,3.09,main/index.js,167261
+7,.mp3,5,154759,151.13,0.148,2.84,resources/native/41/4154368a-f1e5-46ff-9816-36a8116fd1ec.mp3,71151

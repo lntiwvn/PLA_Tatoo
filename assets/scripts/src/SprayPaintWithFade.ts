@@ -27,6 +27,8 @@ export class SprayPaintWithFade extends Component {
     sparyRadius = 40;
     @property({ type: CCFloat, tooltip: 'Khoảng cách tối đa giữa các dấu tô màu, theo tọa độ local của nét vẽ.' })
     strokeSpacing = 4;
+    @property({ type: CCFloat, min: 1, max: 100, tooltip: 'Phần trăm vùng mask cần tô để hoàn thành patch khi người chơi nhấc tay.' })
+    completionPercent = 95;
     @property(Node)
     maskNode: Node = null;
 
@@ -266,13 +268,7 @@ export class SprayPaintWithFade extends Component {
             window.tattoContext.setTattooMachinePos(newPos, window.tattoContext.node);
         }
 
-        const width = this.maskWidth;
-        const height = this.maskHeight;
-        let { isMaskFullyCovered } = this.checkMaskFullyCovered(this.maskBufffer, this.filledBuffer, width, height);
-
-        if (!this.isComplete && isMaskFullyCovered) {
-            this.onTouchEnd();
-        }
+        // Manual painting completes only when the player releases the touch.
     }
 
     autoDraw() {
@@ -305,10 +301,18 @@ export class SprayPaintWithFade extends Component {
 
         const maskPos = window.tattoContext.convertPositionBetweenNodes(pos, this.graphics.node, this.maskNode);
         const transform = this.maskNode.getComponent(UITransform);
-        const scaleX = this.maskWidth / transform.width;
-        const scaleY = this.maskHeight / transform.height;
-        const xCanvas = (maskPos.x + transform.width * transform.anchorX) * scaleX;
-        const yCanvas = (transform.height * (1 - transform.anchorY) - maskPos.y) * scaleY;
+        const sprite = this.maskNode.getComponent(Sprite);
+        const frame = sprite.spriteFrame;
+        // With Trim disabled, the frame occupies its original image size.
+        // The coverage buffer contains only the trimmed rect read by getPixels.
+        const sourceWidth = sprite.trim ? this.maskWidth : frame.originalSize.width;
+        const sourceHeight = sprite.trim ? this.maskHeight : frame.originalSize.height;
+        const trimLeft = sprite.trim ? 0 : frame.trimmedBorder.x;
+        const trimTop = sprite.trim ? 0 : -frame.trimmedBorder.w;
+        const scaleX = sourceWidth / transform.width;
+        const scaleY = sourceHeight / transform.height;
+        const xCanvas = (maskPos.x + transform.width * transform.anchorX) * scaleX - trimLeft;
+        const yCanvas = (transform.height * (1 - transform.anchorY) - maskPos.y) * scaleY - trimTop;
         this.drawCircle(xCanvas, yCanvas, this.sparyRadius * scaleX, this.sprayColor, this.sparyRadius * scaleY);
     }
 
@@ -331,10 +335,7 @@ export class SprayPaintWithFade extends Component {
         if (isMaskFullyCovered) {
             this.isComplete = true;
             this.patchCompleted = true;
-            // console.log('isPrayFull true');
-            const transform = this.maskNode.getComponent(UITransform);
-            this.graphics.circle(0, 0, Math.hypot(transform.width, transform.height));
-            this.graphics.fill();
+            // Keep the exact strokes and colors already painted by the player.
             this.notifyDrawComplete();
         }
     }
@@ -355,7 +356,8 @@ export class SprayPaintWithFade extends Component {
         // console.log('percent Fill', percentFill);
 
         return {
-            isMaskFullyCovered: percentFill >= 90,
+            percentFill,
+            isMaskFullyCovered: percentFill >= Math.max(1, Math.min(100, this.completionPercent)),
         };
     }
 

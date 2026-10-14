@@ -34,8 +34,8 @@
         "progress": 1,
         "state": "success",
         "stage": "build",
-        "message": "10-1-2026 11:52:04 build success in 1 min 25 s!",
-        "detailMessage": "Asset DB is resume!\r",
+        "message": "10-14-2026 14:49:41 build success in 1 min 4 s!",
+        "detailMessage": "build task(web-mobile) in 62969!\r",
         "options": {
           "name": "TattooASMR_PLA",
           "server": "",
@@ -96,7 +96,7 @@
           "__version__": "1.3.9",
           "logDest": "project://temp/builder/log/web-mobile9-30-2026 09-44.log"
         },
-        "time": "10-1-2026 11:50:37",
+        "time": "10-14-2026 14:48:36",
         "dirty": false
       }
     }

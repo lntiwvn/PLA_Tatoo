@@ -244,6 +244,10 @@ export class TattoContext extends Component {
         return false;
     }
 
+    onColorPatchDrawStarted(): void { }
+
+    onColorPatchGroupDone(): void { }
+
     onFirstTouch() {
         this.isFirstTouch = false
         this.handTutorial.active = false;

@@ -77,9 +77,11 @@ export class PatchSticker extends Component {
     }
 
     showPatch(onPatchShowDone: () => void) {
-        let gradient = new GradientRange();
-        gradient.color = this.sprayColor;
-        window.tattoContext.drawVfxParticle.startColor = gradient;
+        if (window.tattoContext.drawVfxParticle) {
+            const gradient = new GradientRange();
+            gradient.color = this.sprayColor;
+            window.tattoContext.drawVfxParticle.startColor = gradient;
+        }
         this.patchNode.active = true;
         this.dotsNodeOpacity.opacity = 255;
 

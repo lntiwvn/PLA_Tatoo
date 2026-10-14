@@ -22,10 +22,12 @@ export class ColorSelectionController extends Component {
     @property([Color])
     paintColors: Color[] = [new Color(114, 206, 56), new Color(235, 118, 109), new Color(235, 163, 53)];
 
+    @property({ type: [Sprite], tooltip: 'Kéo Sprite của node inside từng lọ vào đây, cùng thứ tự với Color Targets. Màu tô lấy trực tiếp từ các Sprite này.' })
+    paintColorSprites: Sprite[] = [];
+
     getPaintColor(index: number): Color {
-        const tint = this.colorTargets[index]?.getChildByName('inside')?.getComponent(Sprite)?.color;
-        return (tint && (tint.r !== 255 || tint.g !== 255 || tint.b !== 255)
-            ? tint : this.paintColors[index] || new Color(114, 206, 56)).clone();
+        const tint = this.paintColorSprites[index]?.color;
+        return (tint || this.paintColors[index] || new Color(114, 206, 56)).clone();
     }
 
     @property(Vec2)
@@ -67,7 +69,7 @@ export class ColorSelectionController extends Component {
         });
     }
 
-    beginSelection(onSelected?: (index: number) => void): void {
+    beginSelection(onSelected?: (index: number) => void, hintIndex = 0): void {
         if (this.hasSelected || this.isGuidanceRunning) {
             return;
         }
@@ -77,6 +79,7 @@ export class ColorSelectionController extends Component {
 
         this.isGuidanceRunning = true;
         this.isSelectionEnabled = true;
+        this.targetIndex = Math.max(0, Math.min(this.colorTargets.length - 1, Math.floor(hintIndex)));
         this.selectionCallback = onSelected || null;
         this.instructionText.active = true;
         this.handTap.active = true;
@@ -93,12 +96,17 @@ export class ColorSelectionController extends Component {
     }
 
     private validateReferences(): boolean {
-        if (!this.instructionText || !this.handTap || this.colorTargets.length !== 3 || this.chosenIndicators.length !== 3) {
-            console.error('ColorSelectionController: expected text, handTap, and three target/indicator references.');
+        if (!this.instructionText || !this.handTap || this.colorTargets.length === 0
+            || this.chosenIndicators.length !== this.colorTargets.length) {
+            console.error('ColorSelectionController: assign text, handTap, and matching color target/indicator arrays.');
             return false;
         }
         if (this.colorTargets.some((target) => !target) || this.chosenIndicators.some((indicator) => !indicator)) {
             console.error('ColorSelectionController: color target or chosen indicator reference is missing.');
+            return false;
+        }
+        if (this.paintColorSprites.length !== this.colorTargets.length || this.paintColorSprites.some((sprite) => !sprite)) {
+            console.error('ColorSelectionController: assign each inside Sprite to Paint Color Sprites in the same order as Color Targets.');
             return false;
         }
         if (!this.handTap.parent || !this.handTap.parent.getComponent(UITransform)) {
@@ -134,7 +142,6 @@ export class ColorSelectionController extends Component {
                 if (!this.isGuidanceRunning || this.hasSelected) {
                     return;
                 }
-                this.targetIndex = (this.targetIndex + 1) % this.colorTargets.length;
                 this.playTargetHint();
             })
             .start();

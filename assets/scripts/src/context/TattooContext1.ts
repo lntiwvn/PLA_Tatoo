@@ -1,4 +1,4 @@
-import { _decorator, Camera, CCFloat, GradientRange, input, Input, instantiate, Label, Node, Prefab, ResolutionPolicy, screen, Tween, tween, UITransform, UIOpacity, Vec3, VideoPlayer, view } from 'cc';
+import { _decorator, AudioSource, Camera, CCFloat, CCInteger, GradientRange, input, Input, instantiate, Label, Node, Prefab, ResolutionPolicy, screen, Tween, tween, UITransform, UIOpacity, Vec3, VideoPlayer, view, Widget } from 'cc';
 import { TattoContext } from './TattoContext';
 import { TattooSticker } from '../TattooSticker';
 import { TattooLineSticker } from '../TattooLineSticker';
@@ -6,13 +6,15 @@ import { PatchSticker2 } from '../PatchSticker2';
 import { PatchLineSticker } from '../PatchLineSticker';
 import { ConcreteAggregate } from '../Iterator/ConcreteAggregate';
 import { ColorSelectionController } from '../ColorSelectionController';
-import { Constant } from '../../../constant/constant';
 const { ccclass, property } = _decorator;
 
 @ccclass('TatooContext1')
 export class TatooContext1 extends TattoContext {
     @property(VideoPlayer)
     introVideo: VideoPlayer = null;
+
+    @property({ type: AudioSource, tooltip: 'BGM chỉ phát khi vào game và đã có gesture. Nối từ vị trí video dừng nếu video đã phát âm thanh; nếu chưa thì phát từ đầu. Gán clip BGM và tắt Play On Awake.' })
+    bgmAudioSource: AudioSource = null;
 
     @property(Node)
     endFrame: Node = null;
@@ -170,11 +172,20 @@ export class TatooContext1 extends TattoContext {
     colorBeginNode: Node = null;
     @property(Node)
     colorTargetNode: Node = null;
+    @property({ type: Widget, tooltip: 'Widget trên BG. Tắt khi code điều khiển vị trí bảng màu để không ghi đè tween.' })
+    colorNodeWidget: Widget = null;
+    @property({ type: Widget, tooltip: 'Widget của basePos, cập nhật layout trước khi tính điểm bắt đầu.' })
+    colorBeginWidget: Widget = null;
+    @property({ type: Widget, tooltip: 'Widget của final, cập nhật layout trước khi tính điểm đích.' })
+    colorTargetWidget: Widget = null;
     @property(CCFloat)
     colorEntryDuration = 0.5;
 
     @property(ColorSelectionController)
     colorSelectionController: ColorSelectionController = null;
+
+    @property({ type: [CCInteger], tooltip: 'Số lọ được hint cho từng patch tô màu, tính từ 1 theo thứ tự Color Targets. Mỗi patch chỉ hint một lọ.' })
+    colorHintOrder: number[] = [1, 4, 2, 3, 1];
 
     labelInkTween: Tween<UIOpacity>;
     labelColorTween: Tween<UIOpacity>;
@@ -183,14 +194,20 @@ export class TatooContext1 extends TattoContext {
     isFirstStickerDone: boolean = false;
     private hasStartedDrawing: boolean = false;
     private hasStartedBgm = false;
+    private isBgmPlayRequested = false;
+    private hasReceivedAudioGesture = false;
+    private hasIntroAudioPlayed = false;
+    private isIntroAudioRequested = false;
+    private bgmStartTime = 0;
+    private isAudioInputRegistered = false;
     private colorEntryStarted = false;
     private tattooMachineStarted = false;
     private colorPhaseReady = false;
     private coloringComplete = false;
+    private colorHintPatchIndex = 0;
     private machineInputRegistrationTimer: ReturnType<typeof setTimeout> = null;
     private readonly machineInputRegistrationDelay = 150;
     private isIntroVideoPlaying = false;
-    private hasEnabledIntroAudio = false;
     private isIntroInputRegistered = false;
     private activeTattooParent: Node = null;
     private activeTattooScale = 1;
@@ -205,6 +222,7 @@ export class TatooContext1 extends TattoContext {
 
     protected onLoad(): void {
         super.onLoad();
+        this.resetColorEntry();
         if (this.sampleSprite) {
             this.sampleSprite.node.active = false;
         }
@@ -213,10 +231,13 @@ export class TatooContext1 extends TattoContext {
 
     protected onEnable(): void {
         (view as any).on?.('canvas-resize', this.onCanvasResize, this);
+        this.introVideo?.node.on(Node.EventType.SIZE_CHANGED, this.fitIntroVideoToVisibleViewport, this);
+        this.fitIntroVideoToVisibleViewport();
     }
 
     protected onDisable(): void {
         (view as any).off?.('canvas-resize', this.onCanvasResize, this);
+        this.introVideo?.node.off(Node.EventType.SIZE_CHANGED, this.fitIntroVideoToVisibleViewport, this);
         this.hideGameplayIdleTutorial();
     }
 
@@ -230,13 +251,10 @@ export class TatooContext1 extends TattoContext {
         this.tattooMachineStarted = false;
         this.colorPhaseReady = false;
         this.coloringComplete = false;
+        this.colorHintPatchIndex = 0;
         this.colorSelectionController?.prepare();
         this.hideGameplayIdleTutorial();
-        if (this.colorNode && this.colorBeginNode) {
-            this.colorNode.active = false;
-            this.colorNode.setParent(this.colorBeginNode);
-            this.colorNode.setPosition(Vec3.ZERO);
-        }
+        this.resetColorEntry();
 
         // The old entry UI/button is no longer part of the start flow.
         this.selectTattOpacity.node.active = false;
@@ -251,8 +269,11 @@ export class TatooContext1 extends TattoContext {
         this.updateCtaForCurrentOrientation();
 
         this.isIntroVideoPlaying = false;
-        this.hasEnabledIntroAudio = false;
+        this.hasIntroAudioPlayed = false;
+        this.isIntroAudioRequested = false;
+        this.bgmStartTime = 0;
         this.unregisterIntroInput();
+        this.registerAudioInput();
 
         if (this.endFrame) {
             this.endFrame.active = false;
@@ -267,17 +288,21 @@ export class TatooContext1 extends TattoContext {
         this.isIntroVideoPlaying = true;
         this.registerIntroInput();
         this.introVideo.mute = true;
+        this.introVideo.keepAspectRatio = true;
         // Keep the DOM video above the Cocos canvas so the CTA stays behind it.
         (this.introVideo as any).stayOnBottom = false;
         this.introVideo.node.active = true;
+        this.fitIntroVideoToVisibleViewport();
         this.updateCtaForCurrentOrientation();
         this.introVideo.node.once(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
+        this.introVideo.node.on(VideoPlayer.EventType.PLAYING, this.onIntroAudioPlaying, this);
         this.introVideo.node.on(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
         this.introVideo.play();
     }
 
     private onIntroVideoCompleted(): void {
-        this.startGameFromIntro();
+        // Some video backends reset currentTime when playback completes.
+        this.startGameFromIntro(this.introVideo?.duration || this.introVideo?.currentTime || 0);
     }
 
     private registerIntroInput(): void {
@@ -292,33 +317,108 @@ export class TatooContext1 extends TattoContext {
 
     private onIntroTap(): void {
         if (!this.isIntroVideoPlaying) return;
+        // DOM video clicks may not reach Cocos global touch input.
+        this.hasReceivedAudioGesture = true;
 
         const duration = this.introVideo?.duration || 0;
         const currentTime = this.introVideo?.currentTime || 0;
         if (duration > 0 && currentTime >= duration * 0.5) {
-            this.startGameFromIntro();
+            this.startGameFromIntro(currentTime);
             return;
         }
+        this.enableIntroAudio();
+    }
 
-        if (!this.hasEnabledIntroAudio && this.introVideo) {
-            this.hasEnabledIntroAudio = true;
-            this.introVideo.mute = false;
-            this.introVideo.play();
+    private enableIntroAudio(): void {
+        const video = this.introVideo;
+        if (!video || this.hasIntroAudioPlayed || this.isIntroAudioRequested) return;
+        this.isIntroAudioRequested = true;
+        video.mute = false;
+        const nativeVideo = video.nativeVideo;
+        if (nativeVideo) {
+            nativeVideo.play().then(() => {
+                this.isIntroAudioRequested = false;
+                this.onIntroAudioPlaying();
+            }).catch(() => {
+                this.isIntroAudioRequested = false;
+                if (this.isIntroVideoPlaying) video.mute = true;
+            });
+        } else {
+            video.play();
+            this.onIntroAudioPlaying();
         }
+    }
+
+    private onIntroAudioPlaying(): void {
+        const video = this.introVideo;
+        if (!this.isIntroVideoPlaying || !video || video.mute || video.volume <= 0) return;
+        const nativeVideo = video.nativeVideo;
+        if (nativeVideo ? !nativeVideo.paused && !nativeVideo.ended : video.isPlaying) {
+            this.hasIntroAudioPlayed = true;
+        }
+    }
+
+    private registerAudioInput(): void {
+        if (this.isAudioInputRegistered) return;
+        this.isAudioInputRegistered = true;
+        input.on(Input.EventType.TOUCH_START, this.onAudioGesture, this);
+        input.on(Input.EventType.MOUSE_DOWN, this.onAudioGesture, this);
+        input.on(Input.EventType.TOUCH_END, this.onAudioGesture, this);
+        input.on(Input.EventType.MOUSE_UP, this.onAudioGesture, this);
+    }
+
+    private unregisterAudioInput(): void {
+        this.isAudioInputRegistered = false;
+        input.off(Input.EventType.TOUCH_START, this.onAudioGesture, this);
+        input.off(Input.EventType.MOUSE_DOWN, this.onAudioGesture, this);
+        input.off(Input.EventType.TOUCH_END, this.onAudioGesture, this);
+        input.off(Input.EventType.MOUSE_UP, this.onAudioGesture, this);
+    }
+
+    private onAudioGesture(): void {
+        this.hasReceivedAudioGesture = true;
+        if (this.isBgmPlayRequested && !this.bgmAudioSource?.playing) {
+            this.isBgmPlayRequested = false;
+        }
+        this.startBgmOnce();
+    }
+
+    private onBgmStarted(source: AudioSource): void {
+        if (source !== this.bgmAudioSource) return;
+        this.hasStartedBgm = true;
+        this.isBgmPlayRequested = false;
+        source.node.off(AudioSource.EventType.STARTED, this.onBgmStarted, this);
+        this.unregisterAudioInput();
     }
 
     private startBgmOnce(): void {
-        if (this.hasStartedBgm) {
+        if (this.hasStartedBgm || this.isBgmPlayRequested || this.isIntroVideoPlaying
+            || !this.hasStartedDrawing || !this.hasReceivedAudioGesture) {
             return;
         }
 
-        this.hasStartedBgm = true;
-        this.audioManager.init();
-        this.audioManager.playMusic(Constant.AUDIO_NAME.BGM, true, true);
+        const source = this.bgmAudioSource;
+        if (!source?.clip) {
+            console.error('TatooContext1: assign bgmAudioSource with a BGM clip.');
+            return;
+        }
+
+        this.isBgmPlayRequested = true;
+        source.node.off(AudioSource.EventType.STARTED, this.onBgmStarted, this);
+        source.node.on(AudioSource.EventType.STARTED, this.onBgmStarted, this);
+        source.playOnAwake = false;
+        source.loop = true;
+        const time = this.bgmStartTime;
+        // Wrap around when the video is longer than the looping music clip.
+        source.currentTime = source.duration > 0 ? time % source.duration : time;
+        source.play();
     }
 
-    private startGameFromIntro(): void {
+    private startGameFromIntro(videoTime = this.introVideo?.currentTime || 0): void {
         if (this.hasStartedDrawing) return;
+        // Read the video's time before stop() resets it.
+        this.bgmStartTime = this.hasIntroAudioPlayed && Number.isFinite(videoTime)
+            ? Math.max(0, videoTime) : 0;
         this.isIntroVideoPlaying = false;
         this.unregisterIntroInput();
         if (this.introVideo) {
@@ -338,6 +438,7 @@ export class TatooContext1 extends TattoContext {
         input.off(Input.EventType.MOUSE_DOWN, this.onIntroTap, this);
         if (this.introVideo) {
             this.introVideo.node.off(VideoPlayer.EventType.CLICKED, this.onIntroTap, this);
+            this.introVideo.node.off(VideoPlayer.EventType.PLAYING, this.onIntroAudioPlaying, this);
         }
     }
 
@@ -356,6 +457,7 @@ export class TatooContext1 extends TattoContext {
         }
 
         this.hasStartedDrawing = true;
+        this.startBgmOnce();
         this.isGameplayZoomComplete = false;
         this.isGameplayPenVisible = false;
         this.isGameplayTextVisible = false;
@@ -388,6 +490,7 @@ export class TatooContext1 extends TattoContext {
         this.node.on(Input.EventType.TOUCH_START, this.onFirstTouch, this);
         this.node.on(Input.EventType.MOUSE_DOWN, this.onFirstTouch, this);
         this.scheduleGameplayIdleTutorial();
+        this.audioManager.init();
         this.startBgmOnce();
         this.init();
         this.onIntro();
@@ -599,6 +702,7 @@ export class TatooContext1 extends TattoContext {
 
     private applyResponsiveLayout(updateStartedGameplay: boolean): void {
         this.applyResponsiveResolutionPolicy();
+        this.fitIntroVideoToVisibleViewport();
         this.updateCtaForCurrentOrientation();
         this.fitRoomToVisibleViewport(this.roomScenePort);
         this.fitRoomToVisibleViewport(this.roomSceneLand);
@@ -653,6 +757,21 @@ export class TatooContext1 extends TattoContext {
         if (ctaRoot.parent) {
             ctaRoot.setSiblingIndex(ctaRoot.parent.children.length - 1);
         }
+    }
+
+    private fitIntroVideoToVisibleViewport(): void {
+        const videoNode = this.introVideo?.node;
+        const transform = videoNode?.getComponent(UITransform);
+        if (!videoNode || !transform || transform.width <= 0 || transform.height <= 0) {
+            return;
+        }
+
+        // Use the unscaled size, including updates from the video's metadata.
+        const visibleSize = view.getVisibleSize();
+        const scale = this.isPortraitScreen()
+            ? Math.max(1, visibleSize.height) / transform.height
+            : Math.max(1, visibleSize.width) / transform.width;
+        videoNode.setScale(scale, scale, videoNode.scale.z);
     }
 
     private fitRoomToVisibleViewport(roomNode: Node): void {
@@ -796,12 +915,16 @@ export class TatooContext1 extends TattoContext {
             return;
         }
 
-        Tween.stopAllByTarget(this.colorNode);
-        this.colorNode.active = false;
-        this.colorNode.setParent(this.colorBeginNode);
-        this.colorNode.setPosition(Vec3.ZERO);
-        this.colorNode.setParent(this.colorTargetNode, true);
+        this.resetColorEntry();
+        this.colorSelectionController?.prepare();
+        // Resolve both responsive markers while the panel is still hidden.
+        this.colorBeginWidget?.updateAlignment();
+        this.colorTargetWidget?.updateAlignment();
+        const startPosition = this.convertPositionBetweenNodes(Vec3.ZERO, this.colorBeginNode, this.colorTargetNode);
+        this.colorNode.setParent(this.colorTargetNode);
+        this.colorNode.setPosition(startPosition);
         this.colorNode.active = true;
+        this.colorTargetNode.active = true;
         tween(this.colorNode)
             .to(this.colorEntryDuration, { position: Vec3.ZERO })
             .call(() => {
@@ -814,7 +937,7 @@ export class TatooContext1 extends TattoContext {
     private beginTattooMachinePhase(): void {
         if (this.tattooMachineStarted) return;
         const sticker = this.tattooStickers[0] as TattooLineSticker;
-        const firstPatch = sticker?.patchs?.find((patch) => !(patch instanceof PatchLineSticker));
+        const firstPatch = sticker?.currentPatchSticker;
         if (!firstPatch) {
             console.error('TatooContext1: first PatchSticker is not assigned.');
             return;
@@ -840,10 +963,11 @@ export class TatooContext1 extends TattoContext {
             console.error('TatooContext1: Color selection controller is not assigned.');
             return;
         }
+        const hintIndex = (this.colorHintOrder[this.colorHintPatchIndex] ?? 1) - 1;
         this.colorSelectionController.beginSelection((index) => {
             if (this.coloringComplete) return;
             const color = this.colorSelectionController.getPaintColor(index);
-            sticker.patchs.forEach((patch) => {
+            sticker.currentGroup.forEach((patch) => {
                 if (!(patch instanceof PatchLineSticker)) {
                     patch.sprayColor = color.clone();
                     patch.sprayComp.sprayColor = color.clone();
@@ -863,7 +987,32 @@ export class TatooContext1 extends TattoContext {
                 this.colorPhaseReady = true;
                 sticker.resumeColorPhase();
             }, this.machineInputRegistrationDelay);
-        });
+        }, hintIndex);
+    }
+
+    private resetColorEntry(): void {
+        if (!this.colorNode) return;
+        Tween.stopAllByTarget(this.colorNode);
+        this.colorNode.active = false;
+        if (this.colorTargetNode) this.colorTargetNode.active = false;
+        if (this.colorNodeWidget) this.colorNodeWidget.enabled = false;
+        if (this.colorBeginNode) {
+            this.colorBeginWidget?.updateAlignment();
+            this.colorNode.setParent(this.colorBeginNode);
+            this.colorNode.setPosition(Vec3.ZERO);
+        }
+    }
+
+    onColorPatchDrawStarted(): void {
+        this.resetColorEntry();
+    }
+
+    onColorPatchGroupDone(): void {
+        this.resetColorEntry();
+        this.colorHintPatchIndex++;
+        this.colorPhaseReady = false;
+        this.colorEntryStarted = false;
+        this.tattooMachineStarted = false;
     }
 
     private stopTattooMachinePhase(hideVisuals = true): void {
@@ -880,6 +1029,8 @@ export class TatooContext1 extends TattoContext {
     onDestroy(): void {
         this.isIntroVideoPlaying = false;
         this.unregisterIntroInput();
+        this.unregisterAudioInput();
+        this.bgmAudioSource?.node.off(AudioSource.EventType.STARTED, this.onBgmStarted, this);
         if (this.introVideo) {
             this.introVideo.node.off(VideoPlayer.EventType.COMPLETED, this.onIntroVideoCompleted, this);
         }
@@ -932,7 +1083,7 @@ export class TatooContext1 extends TattoContext {
         }
 
         if (this.sampleSprite) {
-            // this.sampleSprite.node.active = true;
+            this.sampleSprite.node.active = true;
         }
     }
 
