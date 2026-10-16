@@ -881,6 +881,7 @@ export class TatooContext1 extends TattoContext {
     }
 
     onCurrentStickerClearFoamDone() {
+        if (!this.coloringComplete || this.playMoreButton.active) return;
         if (this.stickerIterator.getCurrentPosition() === 1) {
             this.isFirstStickerDone = true;
         }
@@ -895,9 +896,11 @@ export class TatooContext1 extends TattoContext {
             this.coloringComplete = true;
             this.stopTextColorEffect();
             this.audioManager.stopAll();
-            if (this.colorNode) this.colorNode.active = false;
-            this.showConfetti();
-            this.playMoreButton.active = true;
+            this.resetColorEntry();
+            this.stopTattooMachinePhase();
+            this.tattoMachineOpacity.opacity = 0;
+            this.tattoLineMachineOpacity.opacity = 0;
+            this.foarmContext.startFillFoam();
             return;
         }
         if (this.colorEntryStarted || this.tattooMachineStarted) {
